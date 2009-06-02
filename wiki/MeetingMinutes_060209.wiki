@@ -8,6 +8,6 @@
 
   * Discuss and finalize the Phase 0 Software Project Management Plan document.
   * Determine project leaders for different phases.
-  * Ensure group is on the same page in regards to general project details (architecture, submission methods, wiki pages, etc)
+  * Ensure group is on the same page in regards to general project details (architecture, submission methods, wiki pages, etc).
 
 ==Meeting Notes==
