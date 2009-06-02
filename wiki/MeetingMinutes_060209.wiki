@@ -1,9 +1,9 @@
-= Attendees =
+=Attendees=
   * Katie 
   * Chad
   * Akhil
   * Rajeev
 
-= Proposed Agenda
+=Proposed Agenda=
 
-= Meeting Notes
+=Meeting Notes=
