@@ -1,10 +1,10 @@
 #summary Meeting Minutes 060209
 
 = Attendees =
-* Katie 
-* Chad
-* Akhil
-* Rajeev
+  * Katie 
+  * Chad
+  * Akhil
+  * Rajeev
 
 = Proposed Agenda = 
 
