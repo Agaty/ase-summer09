@@ -1,8 +1,8 @@
 ==Attendees==
-  *Katie*
-  *Chad*
-  *Akhil*
-  *Rajeev*
+  * Katie
+  * Chad
+  * Akhil
+  * Rajeev
 
 ==Proposed Agenda==
 
