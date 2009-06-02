@@ -12,3 +12,6 @@
   * Determine project leaders for different phases.
 
 ==Meeting Notes==
+
+==Action Items==
+|| Assignee || Task || Status ||
