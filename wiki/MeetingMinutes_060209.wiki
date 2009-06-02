@@ -6,4 +6,6 @@
 
 ==Proposed Agenda==
 
+  * Discuss and finalize the Phase 0 Software Project Management Plan document.
+
 ==Meeting Notes==
