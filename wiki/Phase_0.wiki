@@ -13,3 +13,12 @@
     _1.4 References_
 
     _1.5 Definitions, acronyms, and abbreviations_
+
+----
+
+=== 2. Project organization ===
+
+    _2.1 Process model_
+    _2.2 Organizational structure_
+    _2.3 Organizational boundaries and interfaces_
+    _2.4 Project responsibilities_
