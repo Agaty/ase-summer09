@@ -19,6 +19,47 @@
 === 2. Project organization ===
 
     _2.1 Process model_
+
     _2.2 Organizational structure_
+
     _2.3 Organizational boundaries and interfaces_
+
     _2.4 Project responsibilities_
+
+----
+
+=== 3. Managerial process ===
+
+    _3.1 Management objectives and priorities_
+
+    _3.2 Assumptions, dependencies, and constraints_
+
+    _3.3 Risk management_
+
+    _3.4 Monitoring and controlling mechanisms_
+
+----
+
+=== 4. Technical process ===
+
+    _4.1 Methods, tools, and techniques_
+
+    _4.2 Software documentation_
+
+    _4.3 Project support functions_
+
+----
+
+=== 5. Work elements, schedule, and budget ===
+
+    _5.1 Work Elements_
+
+    _5.2 Schedule_
+
+	Phase		Date Due	Documentation			Deliverable
+	Phase 0	June 4		Software Project Management Plan	N/A
+	Phase 1	June 16		Requirements Specification		0.1
+	Phase 2	June 23		Analysis				0.2
+	Phase 3	July 7		Architecture Specification		0.3
+	Phase 4	July 16		Component/Object Specification		0.4
+	Phase 5	July 28		Final Project Demo/Documentation	1.0 	
