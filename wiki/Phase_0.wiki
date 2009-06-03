@@ -68,6 +68,8 @@
 
     _3.2 Assumptions, dependencies, and constraints_
 
+  * The team will make every effort to match the situation and environment of a "real life" team developing an Ambulance Dispatch System, but some aspects of project development may be limited given the innate constraints of a classroom environment.
+
     _3.3 Risk management_
 
     _3.4 Monitoring and controlling mechanisms_
