@@ -14,5 +14,5 @@
 ==Meeting Notes==
 
 ==Action Items==
-|| Assignee || Task || Status ||
-|| x || do something || done - 6/2 ||
+|| *Assignee* || *Task                    * || *Due Date* || *Status     * ||
+|| x || do something || 6/2 || done - 6/2 ||
