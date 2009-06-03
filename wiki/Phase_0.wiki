@@ -2,6 +2,8 @@
 
 == Software Project Management Plan ==
 
+<wiki:toc max_depth="1" />
+
 === 1. Introduction ===
 
     _1.1 Project overview_
