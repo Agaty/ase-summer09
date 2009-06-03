@@ -17,6 +17,7 @@
 
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/2/09 || Akhil || Initial draft ||
+|| 0.2 || 6/3/09 || Ryan || Updated Managerial Process section ||
 
     _1.4 References_
 
@@ -70,7 +71,9 @@
     _3.3 Risk management_
 
     _3.4 Monitoring and controlling mechanisms_
+  * During team meetings, team members will be assigned work to be completed by a specified date.  Each team member is responsible for making sure they are able to complete the work allocated to them.  
 
+  * If for some reason they are unable to complete their assigned work they should contact the project manager immediately so the work can be completed by someone else.  This is only expected to occur during emergency situations, however.
 ----
 
 === 4. Technical process ===
