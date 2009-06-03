@@ -1,0 +1,7 @@
+
+
+== Tips related to Google Code webpage ==
+
+=== Create a PDF doc to turn in ===
+  * Any wiki page can be viewed in a printable format by adding "?show=content" to the end of the appropriate url, i.e.: http://code.google.com/p/ase-summer09/wiki/Phase_0?show=content
+  * This document can be printed and submitted
