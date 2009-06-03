@@ -16,9 +16,10 @@
 
 || *Acronym* || *Definition* ||
 || ADS || Ambulance Dispatch System ||
-|| Ajax || Asynchronous JavaScript and XML ||
+|| Ajax || Asynchronous !JavaScript and XML ||
 || GUI || Graphical User Interface ||
-|| JS || JavaScript ||
+|| JS || !JavaScript ||
+|| SPMP || Software Project Management Plan (this document) ||
 
 ----
 
