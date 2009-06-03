@@ -64,25 +64,33 @@
 
     _3.1 Management objectives and priorities_
 
-  The team leader is responsible for the following:
+      The team leader is responsible for the following:
 
-    * Scheduling and announcing meetings
-    * Setting the agenda at meetings
-    * Requesting status reports
-    * Ensuring group members submit their contributions to deliverables on time
-    * Verifying group members' submitted work is of acceptable quality
-    * Ensuring assembly of the final draft of the deliverable
+       * Scheduling and announcing meetings
+       * Setting the agenda at meetings
+       * Requesting status reports
+       * Ensuring group members submit their contributions to deliverables on time
+       * Verifying group members' submitted work is of acceptable quality
+       * Ensuring assembly of the final draft of the deliverable
 
     _3.2 Assumptions, dependencies, and constraints_
 
-  * The team will make every effort to match the situation and environment of a "real life" team developing an Ambulance Dispatch System, but some aspects of project development may be limited given the innate constraints of a classroom environment.
+      The team will make every effort to match the situation and environment of a "real life" team developing an Ambulance Dispatch System, but some aspects of project development may be limited given the innate constraints of a classroom environment.
 
     _3.3 Risk management_
 
-    _3.4 Monitoring and controlling mechanisms_
-  * During team meetings, team members will be assigned work to be completed by a specified date.  Each team member is responsible for making sure they are able to complete the work allocated to them.  
+      Given that the schedule for the project is very aggressive, precautions will need to be taken to assure that all deliverables are ready by the time they are due.
 
-  * If for some reason they are unable to complete their assigned work they should contact the project manager immediately so the work can be completed by someone else.  This is only expected to occur during emergency situations, however.
+      The team will attempt to accomplish this by allowing contingency time when scheduling work on the project.
+
+      If after all efforts, a due date still appears to be untenable, the group will request that deliverable be rolled into the subsequent deliverable as outlined on the course syllabus. 
+
+    _3.4 Monitoring and controlling mechanisms_
+
+      During team meetings, team members will be assigned work to be completed by a specified date.  Each team member is responsible for making sure they are able to complete the work allocated to them.  
+
+      If for some reason they are unable to complete their assigned work they should contact the project manager immediately so the work can be completed by someone else.  This is only expected to occur during emergency situations, however.
+
 ----
 
 === 4. Technical process ===
