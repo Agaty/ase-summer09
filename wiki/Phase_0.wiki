@@ -6,11 +6,19 @@
 
     _1.1 Project overview_
 
+  * Recent research indicates that there is a great demand for a good ambulance dispatch system. Calling 911 and asking for the ambulance service would connect the caller to a dispatcher (also called dispatch controller) who feeds the information s/he receives from the caller into the system. The system would allocate and mobilize a suitable ambulance within 3 minutes, transmit details to the selected vehicle, and track and monitor actual performance and position. An exception message shall be generated if no free ambulance is available for at least 11 minutes. The system would show the location of each patient and the nearest three ambulances. The system would utilize the notion of ubiquitous computing as much as possible to help with human health and life, which might necessitate going beyond the scope of the traditional ambulance dispatch system.
+
+
     _1.2 Project deliverables_
 
     _1.3 Evolution of this document_
 
+|| *Version* || *Date* || *Author* || *Comments                                   * ||
+|| 0.1 || 6/2/09 || Akhil || Initial draft ||
+
     _1.4 References_
+
+[http://www.utdallas.edu/~chung/CS6354/ UT-Dallas CS 6354 homepage]
 
     _1.5 Definitions, acronyms, and abbreviations_
 
@@ -27,17 +35,33 @@
 
     _2.1 Process model_
 
+  * We will be following the Waterfall model for the project, which means that it is possible to go to higher stage and change the process if at some later stage the process seems to have any faulty assumptions. 
+
     _2.2 Organizational structure_
+
+  * The team has 5 team members and there are 5 deliverables with 6 phases. There is a team leader for each phase
 
     _2.3 Organizational boundaries and interfaces_
 
+  * The following is the information of team members with their details in alphabetical order:
+|| *Name                      * || *Email              * ||
+|| Akhil Chopra	|| airakhil@gmail.com ||
+|| Chad Gabrysch || chadgabrysch@gmail.com ||
+|| Katie Roberts Hoffman || katierh@gmail.com ||
+|| Rajeev Sharma || snrajeev@gmail.com ||
+|| Ryan Kelly || ryak2002@gmail.com ||
+
     _2.4 Project responsibilities_
+
+  * Team leaders during each phase will be responsible for coordinating team meetings, updates, communications, and team deliverables. 
 
 ----
 
 === 3. Managerial process ===
 
     _3.1 Management objectives and priorities_
+
+  * The main objective of the management position is to organize the meetings for discussions, setting the time limit, checking the status of the project, and to make the members submit the project on time.
 
     _3.2 Assumptions, dependencies, and constraints_
 
@@ -50,6 +74,13 @@
 === 4. Technical process ===
 
     _4.1 Methods, tools, and techniques_
+
+  * The following is the tentative list of the tools used for different purposes during the life cycle of the project
+|| *Purpose            * || *Tool                        *||
+|| UML Tools || Rational Rose, jude ||
+|| Communication Tools || Google Group, this wiki ||
+|| Source Control || Google Code SVN ||
+|| Website || This [http://code.google.com/p/ase-summer09 webpage] ||
 
     _4.2 Software documentation_
 
