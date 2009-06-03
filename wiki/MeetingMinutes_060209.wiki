@@ -19,6 +19,7 @@
   * Initial draft of project created on wiki (Phase_0)
   * Discussed how Google Code group works, added all members to group 
   * Project leaders selected for each page
+  * Scheduled next meeting on Sat June 6 at noon at ECS open lab
 
 ==Action Items==
 || *Assignee* || *Task                    * || *Due Date* || *Status     * ||
