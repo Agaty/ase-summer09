@@ -14,6 +14,10 @@
 
     _1.5 Definitions, acronyms, and abbreviations_
 
+|| *Acronym* || *Definition* ||
+|| ADS || Ambulance Dispatch System ||
+|| Ajax || Asynchronous JavaScript and XML ||
+
 ----
 
 === 2. Project organization ===
