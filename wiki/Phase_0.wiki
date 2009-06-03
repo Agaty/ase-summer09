@@ -18,6 +18,7 @@
 || ADS || Ambulance Dispatch System ||
 || Ajax || Asynchronous JavaScript and XML ||
 || GUI || Graphical User Interface ||
+|| JS || JavaScript ||
 
 ----
 
