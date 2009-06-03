@@ -64,7 +64,14 @@
 
     _3.1 Management objectives and priorities_
 
-  * The main objective of the management position is to organize the meetings for discussions, setting the time limit, checking the status of the project, and to make the members submit the project on time.
+  The team leader is responsible for the following:
+
+    * Scheduling and announcing meetings
+    * Setting the agenda at meetings
+    * Requesting status reports
+    * Ensuring group members submit their contributions to deliverables on time
+    * Verifying group members' submitted work is of acceptable quality
+    * Ensuring assembly of the final draft of the deliverable
 
     _3.2 Assumptions, dependencies, and constraints_
 
