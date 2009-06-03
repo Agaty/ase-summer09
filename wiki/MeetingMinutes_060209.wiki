@@ -22,4 +22,5 @@
 
 ==Action Items==
 || *Assignee* || *Task                    * || *Due Date* || *Status     * ||
-|| x || do something || 6/2 || done - 6/2 ||
+|| All || Review Phase 0 online || 6/3 || In progress ||
+|| Chad|| Print hard copy || 6/4 || In progress ||
