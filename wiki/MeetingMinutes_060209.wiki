@@ -15,6 +15,10 @@
   * Determine project leaders for different phases.
 
 ==Meeting Notes==
+  
+  * Initial draft of project created on wiki (Phase_0)
+  * Discussed how Google Code group works, added all members to group 
+  * Project leaders selected for each page
 
 ==Action Items==
 || *Assignee* || *Task                    * || *Due Date* || *Status     * ||
