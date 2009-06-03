@@ -56,10 +56,10 @@
 
     _5.2 Schedule_
 
-|| *Phase* || *Date Due* || *Documentation                    * || *Deliverable* ||
-|| Phase 0 || June 4 || Software Project Management Plan || N/A ||
-|| Phase 1 || June 16 || Requirements Specification || 0.1 ||
-|| Phase 2 || June 23 || Analysis || 0.2 ||
-|| Phase 3 || July 7 || Architecture Specification || 0.3 ||
-|| Phase 4 || July 16 || Component/Object Specification || 0.4 ||
-|| Phase 5 || July 28 || Final Project Demo/Documentation || 1.0 ||	
+|| *Phase* || *Date Due* || *Documentation                    * || *Deliverable* || *Manager* ||
+|| Phase 0 || June 4 || Software Project Management Plan || N/A || x ||
+|| Phase 1 || June 16 || Requirements Specification || 0.1 || x ||
+|| Phase 2 || June 23 || Analysis || 0.2 || x ||
+|| Phase 3 || July 7 || Architecture Specification || 0.3 || x ||
+|| Phase 4 || July 16 || Component/Object Specification || 0.4 || x ||
+|| Phase 5 || July 28 || Final Project Demo/Documentation || 1.0 || x ||	
