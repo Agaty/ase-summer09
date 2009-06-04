@@ -1,6 +1,6 @@
 #summary Software Project Management Plan
 
-Akhil Chopra
+Akhil Chopra<br>
 Chad Gabrysch
 Katie Roberts Hoffman
 Rajeev Sharma
