@@ -20,8 +20,8 @@
     _1.3 Project deliverables_
 
 || 1 || Requirements Specification || Includes Functional and Non-functional requirements plus use cases ||
-|| 2 || Requirements Analysis || Includes content from 1 plus a high level object model and sequence diagrams ||
-|| 3 || Architecture Specification || Includes sub-system decomposition of 2 plus additional system-scale planning ||
+|| 2 || Requirements Analysis || Includes content from 1 plus high level object model and sequence diagrams ||
+|| 3 || Architecture Specification || Includes a sub-system decomposition of 2 plus additional system-scale planning ||
 || 4 || Object Specification || Includes detailed, low level class design based on 2 and 3 ||
 || 5 || Code || Includes a functioning prototype of the system ||
 || 6 || Test Plan || Includes test cases and a plan for implementing them ||
