@@ -10,14 +10,23 @@
 
   * Recent research indicates that there is a great demand for a good ambulance dispatch system. Calling 911 and asking for the ambulance service would connect the caller to a dispatcher (also called dispatch controller) who feeds the information s/he receives from the caller into the system. The system would allocate and mobilize a suitable ambulance within 3 minutes, transmit details to the selected vehicle, and track and monitor actual performance and position. An exception message shall be generated if no free ambulance is available for at least 11 minutes. The system would show the location of each patient and the nearest three ambulances. The system would utilize the notion of ubiquitous computing as much as possible to help with human health and life, which might necessitate going beyond the scope of the traditional ambulance dispatch system.
 
-
-    _1.2 Project deliverables_
-
-    _1.3 Evolution of this document_
+    _1.2 Evolution of this document_
 
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/2/09 || Akhil || Initial draft ||
 || 0.2 || 6/3/09 || Ryan || Updated Managerial Process section ||
+|| 0.3 || 6/3/09 || Ryan || filled in project deliverables ||
+
+    _1.3 Project deliverables_
+
+|| 1 || Requirements Specification || Includes Functional and Non-functional requirements plus use cases ||
+|| 2 || Requirements Analysis || Includes content from 1 plus a high level object model and sequence diagrams ||
+|| 3 || Architecture Specification || Includes sub-system decomposition of 2 plus additional system-scale planning ||
+|| 4 || Object Specification || Includes detailed, low level class design based on 2 and 3 ||
+|| 5 || Code || Includes a functioning prototype of the system ||
+|| 6 || Test Plan || Includes test cases and a plan for implementing them ||
+
+
 
     _1.4 References_
 
