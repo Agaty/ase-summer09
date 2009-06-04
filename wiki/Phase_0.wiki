@@ -1,10 +1,10 @@
 #summary Software Project Management Plan
 
 Akhil Chopra<br>
-Chad Gabrysch
-Katie Roberts Hoffman
-Rajeev Sharma
-Ryan Kelly
+Chad Gabrysch<br>
+Katie Roberts Hoffman<br>
+Rajeev Sharma<br>
+Ryan Kelly<br>
 
 
 == Software Project Management Plan ==
