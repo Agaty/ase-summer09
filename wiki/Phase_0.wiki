@@ -24,6 +24,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.1 || 6/2/09 || Akhil || Initial draft ||
 || 0.2 || 6/3/09 || Ryan || Updated Managerial Process section ||
 || 0.3 || 6/3/09 || Ryan || filled in project deliverables ||
+|| 0.4 || 6/3/09 || Ryan || General editing ||
 
     _1.3 Project deliverables_
 
@@ -38,7 +39,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
     _1.4 References_
 
-[http://www.utdallas.edu/~chung/CS6354/ UT-Dallas CS 6354 homepage]
+  * UT-Dallas CS 6354 homepage - [http://www.utdallas.edu/~chung/CS6354/ link]
 
     _1.5 Definitions, acronyms, and abbreviations_
 
@@ -67,13 +68,22 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || *Name                      * || *Email              * ||
 || Akhil Chopra	|| airakhil@gmail.com ||
 || Chad Gabrysch || chadgabrysch@gmail.com ||
+|| Ryan Kelly || ryak2002@gmail.com ||
 || Katie Roberts Hoffman || katierh@gmail.com ||
 || Rajeev Sharma || snrajeev@gmail.com ||
-|| Ryan Kelly || ryak2002@gmail.com ||
 
     _2.4 Project responsibilities_
 
-  * Team leaders during each phase will be responsible for coordinating team meetings, updates, communications, and team deliverables. 
+Team leaders during each phase will be responsible for coordinating the following:
+  * Team meetings: Arranging a date, time and place for the meeting, Creating and maintaining meeting minute notes on the team wiki, Verifying all action items are completed
+  * Team communications: Distributing relevant information to all team members
+  * Team deliverables: Including but not limited to assembly and submitting a hard-copy of the report, creating a relevant TAG in SVN, Verifying submitted work is of acceptable quality
+Team members are expected to do the following in every stage:
+  * Attend team meetings
+  * Review each Phase Report for delivery and make necessary modifications
+  * Complete agreed upon action items by stated deadline
+  * Working on their assigned code in a separate TAG
+  * Merging code changes into the trunk at least 3 days prior to any formal code delivery(while leaving the trunk in a stable condition)
 
 ----
 
@@ -81,14 +91,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
     _3.1 Management objectives and priorities_
 
-      The team leader is responsible for the following:
-
-       * Scheduling and announcing meetings
-       * Setting the agenda at meetings
-       * Requesting status reports
-       * Ensuring group members submit their contributions to deliverables on time
-       * Verifying group members' submitted work is of acceptable quality
-       * Ensuring assembly of the final draft of the deliverable
+      The team leader's responsibilities are outlined in Section 2.4.
 
     _3.2 Assumptions, dependencies, and constraints_
 
@@ -119,9 +122,11 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || UML Tools || Rational Rose, jude ||
 || Communication Tools || Google Group, this wiki ||
 || Source Control || Google Code SVN ||
-|| Website || This [http://code.google.com/p/ase-summer09 webpage] ||
+|| Website || [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09] ||
 
     _4.2 Software documentation_
+
+  * Each team member is responsible for adequately documenting their code
 
     _4.3 Project support functions_
 
