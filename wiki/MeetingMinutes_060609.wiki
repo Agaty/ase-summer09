@@ -17,6 +17,7 @@
   * Initial draft of all phases on the wiki.
   * Discussed how Google Maps API is used/tested.
   * Sections for Phase 1 assigned to individuals - decided not to assign Phase 2 until Phase 1 completed.
+  * Next meeting scheduled for Sat June 13 - noon, Open Labs. Rajeev absent. 
 
 ==Phase 1 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
