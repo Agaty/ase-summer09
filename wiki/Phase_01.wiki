@@ -45,7 +45,16 @@ The overview presents a functional overview of the system.
  
     _3.2 Functional requirements_
 
-  * 
+  * Dispatch system receives information from the call-taker. The dispatch system operator cannot request further information. It is assumed that the call-taker has requested as much information as possible.
+  * What information does the call taker need: Age, sex, location, condition 
+  * Dispatch system is aware of: Location of ambulances, hospitals, patients. Assumption is ambulance has GPS systems. Therefore ambulance requires the location of the patient and status of the patient/other relevant information about the patient (allergies, activities that need prepping)
+  * Detect multiple reports of the same incident
+  * Potentially send multiple ambulances for critical conditions dependent upon the load of the ambulance. Therefore must be able to dispatch multiple ambulances at the same time.
+  * If system is idle for a certain amount of time, then system should start dispatching automatically.
+  * Assume call taker has clearly defined guidelines for how to enter information into system.
+  * Dispatched in priority - if multiple ambulance requests come in, dispatch ambulances to highly critical patients. Assume call taker has input priority level.
+  * Assume dispatcher is qualified user of the system
+  * Future implementations: Accounting for variety of types of ambulances (some equipped for special scenarios like pregnant women, etc). Assume caller will notify other agencies, such as police, fire department, etc.
 
 Functional requirements describes the high-level functionality of the system.
  
