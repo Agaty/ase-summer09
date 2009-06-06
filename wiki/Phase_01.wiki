@@ -12,6 +12,10 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
 <wiki:toc max_depth="3" />
 
+=== Version ===
+|| *Version* || *Date* || *Author* || *Comments                                   * ||
+|| 0.1 || 6/6/09 || Katie || Initial draft ||
+
 === Introduction ===
     _1.1 Purpose of the system_
 
@@ -40,6 +44,8 @@ The third section documents the requirements elicitation and the analysis model 
 The overview presents a functional overview of the system.
  
     _3.2 Functional requirements_
+
+  * 
 
 Functional requirements describes the high-level functionality of the system.
  
