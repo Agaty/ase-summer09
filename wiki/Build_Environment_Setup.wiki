@@ -20,3 +20,6 @@
   # Run Instant Rails.exe
   # Click OK to regenerate config files.
   # I -> Configure -> Windows Hosts File - Make sure the line "127.0.0.1    localhost" appears in the file
+  # I -> Rails Applications -> Open Ruby Console
+    ## gem install login_generator
+    ## gem install ruby-debug
