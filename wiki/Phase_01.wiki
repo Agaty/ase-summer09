@@ -51,7 +51,7 @@ Functional requirements describes the high-level functionality of the system.
  
     _3.3 Nonfunctional requirements_
 
-  * 3.3.1 Usability
+  * 3.3.1 Usability: The system is usable since its a web based system 
 
   * 3.3.2 Reliability
 
