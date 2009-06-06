@@ -14,7 +14,7 @@
 
 ==Meeting Notes==
   
-  * Initial draft of project Phase 1 and 2 on wiki.
+  * Initial draft of all phases on the wiki.
   * Discussed how Google Maps API is used/tested.
   * Sections for Phase 1 and 2 assigned to individuals.
 
