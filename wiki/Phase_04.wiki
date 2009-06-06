@@ -1,4 +1,4 @@
-#summary Requirement Analysis Document
+#summary Component/Object Specification
 
 Akhil Chopra<br>
 Chad Gabrysch<br>
