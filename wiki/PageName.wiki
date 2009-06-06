@@ -1,7 +1,0 @@
-#summary How to set up a build environment
-
-
-= Setup =
-
-  # Install Instant Rails v2.0 from here: 
-    [http://rubyforge.org/frs/?group_id=904 Instant Rails]
