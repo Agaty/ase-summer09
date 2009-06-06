@@ -1,5 +1,7 @@
 #summary Description of how to program and test an application using Google Maps
 
+<wiki:toc max_depth="1" />
+
 = Introduction =
 
 Add your content here.
