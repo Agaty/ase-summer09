@@ -1,7 +1,20 @@
 #summary How to set up a build environment
 
 
-= Setup =
+= Overall Setup =
 
-  # Install Instant Rails v2.0 from here: 
-    [http://rubyforge.org/frs/?group_id=904 Instant Rails]
+  # Install SVN if you haven't
+  # Install Instant Rails (as below)
+  # Install MySQL GUI tools
+  # Install eclipse
+  # Start the Mongrel web server to serve up the app by:
+    ## I -> Rails apps -> Manage rails apps
+    ## Check the app to run 
+    ## Press "Start with Mongrel" button.
+  # Browse to http://localhost:3000/cs6359Project/home_page
+
+= Instant Rails Setup =
+
+  # Download Instant Rails v2.0 from here: <br>[http://rubyforge.org/frs/?group_id=904 Instant Rails]
+  # Unzip the file to C:/ (it will expand to C:/Instant Rails)
+  # Run InstantRails.exe
