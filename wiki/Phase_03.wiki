@@ -1,40 +1,57 @@
-=*System Design Document Template*=
+# System Design Document 
 
-==*Purpose*== 
+
+Akhil Chopra<br>
+Chad Gabrysch<br>
+Katie Roberts Hoffman<br>
+Rajeev Sharma<br>
+Ryan Kelly<br>
+
+Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09]
+
+== System Design Document ==
+
+=== Purpose === 
+
 System design is documented in the System Design Document (SDD). It describes design goals set by the project, subsystem decomposition (with UML class diagrams), hardware/software mapping (with UML deployment diagrams), data management, access control, control flow mechanisms, and boundary conditions. The SDD is used to define interfaces between teams of developers and serve as a reference when architecture-level decisions need to be revisited. 
 
-==*Audience*== 
+=== Audience === 
+
 The audience for the SDD includes the project management, the system architects (i.e., the developers who participate in the system design), and the developers who design and implement each subsystem. 
 
-==*Template*==  
+=== Introduction === 
+    _1.1 Purpose of the system_
 
+    _1.2 Design goals_
+
+    _1.3 Definitions, acronyms, and abbreviations_
+
+    _1.4 References_
+
+    _1.5 Overview_ 
+
+=== Current software architecture ===
  
-===*1.Introduction*=== 
-    *1.1 Purpose of the system*
-    *1.2 Design goals*
-    *1.3 Definitions, acronyms, and abbreviations*
-    *1.4 References*
-    *1.5 Overview*  
-
-  
-
-===*2. Current software architecture*=== 
 The second section describes the architecture of the system being replaced. If there is no previous system, this section can be replaced by a survey of current architectures for similar systems. The purpose of this section is to make explicit the background information that system architects used, their assumptions, and common issues the new system will address.  
 
-  
+=== Proposed software architecture === 
 
-===*3. Proposed software architecture*=== 
- The third section documents the system design model of the new system.  
+The third section documents the system design model of the new system.  
 
-  
+    _3.1 Overview_
 
-    *3.1 Overview*
-    *3.2 Subsystem decomposition*
-    *3.3 Hardware/software mapping* 
-    *3.4 Persistent data management*
-    *3.5 Access control and security*
-    *3.6 Global software control* 
-    *3.7 Boundary conditions*  
+    _3.2 Subsystem decomposition_
 
-===*4. Subsystem services*=== 
-*Glossary*   
+    _3.3 Hardware/software mapping_ 
+
+    _3.4 Persistent data management_
+
+    _3.5 Access control and security_
+
+    _3.6 Global software control_ 
+
+    _3.7 Boundary conditions_  
+
+=== Subsystem services === 
+
+=== Glossary ===   
