@@ -1,4 +1,4 @@
-#summary Requirement Analysis Document
+#summary Requirement Elicitation Document
 
 Akhil Chopra<br>
 Chad Gabrysch<br>
