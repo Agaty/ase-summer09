@@ -5,7 +5,7 @@
 
   # Install SVN
   # Install Instant Rails (as below)
-  # Install MySQL GUI tools
+  # Install [http://dev.mysql.com/downloads/gui-tools/5.0.html MySQL GUI tools]
   # Install Eclipse
   # Start the Mongrel web server to serve up the app by:
     ## I -> Rails apps -> Manage rails apps
