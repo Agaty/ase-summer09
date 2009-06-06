@@ -1,0 +1,39 @@
+#summary Testing Document
+
+Akhil Chopra<br>
+Chad Gabrysch<br>
+Katie Roberts Hoffman<br>
+Rajeev Sharma<br>
+Ryan Kelly<br>
+
+Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09]
+
+== Software Project Management Plan ==
+
+<wiki:toc max_depth="3" />
+
+=== Test case specification identifier ===
+
+The Test Case Specification identifier is the name of the test case, used to distinguish it from other test cases. Conventions such as naming the test cases from the features or the component being tested allow developers to more easily refer to test cases.
+ 
+=== Test items ===
+
+Section 2 of the TCS lists the components under test and the features being exercised.
+ 
+=== Input specifications ===
+
+Section 3 lists the inputs required for the test cases.
+ 
+=== Output specifications ===
+
+Section 4 lists the expected output. This output is computed manually or with a competing system (such as a legacy system being replaced).
+ 
+=== Environmental needs ===
+
+Section 5 lists the hardware and software platform needed to execute the test, including any test drivers or stubs.
+ 
+=== Special procedural requirements ===
+
+Section 6 lists any constraints needed to execute the test such as timing, load, or operator intervention.
+ 
+=== Intercase dependencies ===
