@@ -1,13 +1,35 @@
 #summary Meeting Minutes 06/06/09
 
-= Introduction =
+==Attendees==
+  * Katie
+  * Chad
+  * Akhil
+  * Rajeev
+  * Ryan 
 
-Add your content here.
+==Proposed Agenda==
 
+  * Create templates for Phase 1 and 2 on the wiki.
+  * Discuss Google Maps for project development.
 
-= Details =
+==Meeting Notes==
+  
+  * Initial draft of project Phase 1 and 2 on wiki.
+  * Discussed how Google Maps API is used/tested.
+  * Sections for Phase 1 and 2 assigned to individuals.
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+==Phase 1 Section Delegation==
+|| *Assignee* || *Section                    * || *Due Date* || *Status     * ||
+|| Akhil || Section # || 6/16 || In progress ||
+|| Chad|| Section # || 6/16 || In progress ||
+|| Katie|| Section # || 6/16 || In progress ||
+|| Rajeev|| Section # || 6/16 || In progress ||
+|| Ryan|| Section # || 6/16 || In progress ||
+
+==Phase 2 Section Delegation==
+|| *Assignee* || *Section                    * || *Due Date* || *Status     * ||
+|| Akhil || Section # || 6/23 || In progress ||
+|| Chad|| Section # || 6/23 || In progress ||
+|| Katie|| Section # || 6/23 || In progress ||
+|| Rajeev|| Section # || 6/23 || In progress ||
+|| Ryan|| Section # || 6/23 || In progress ||
