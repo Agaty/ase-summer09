@@ -1,0 +1,44 @@
+#summary Requirement Analysis Document
+
+Akhil Chopra<br>
+Chad Gabrysch<br>
+Katie Roberts Hoffman<br>
+Rajeev Sharma<br>
+Ryan Kelly<br>
+
+Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09]
+
+== Software Project Management Plan ==
+
+<wiki:toc max_depth="3" />
+
+=== Introduction ===
+
+    _1.1 Object Design Trade offs_
+
+    _1.2 Interface documentation guidelines_
+
+    _1.3 Definitions, acronyms, and abbreviations_
+
+    _1.4 References_
+    
+
+The first section of the ODD is an introduction to the document. It describes the general trade-offs made by developers (e.g., buy vs. build, memory space vs. response time), guidelines and conventions (e.g., naming conventions, boundary cases, exception handling mechanisms), and an overview of the document.
+Interface documentation guidelines and coding conventions are the single most important factor that can improve communication between developers during object design. These include a list of rules that developers should use when designing and naming interfaces. These are examples of such conventions:
+
+    * Classes are named with singular nouns.
+    * Methods are named with verb phrases, fields, and parameters with noun phrases.
+    * Error status is returned via an exception, not a return value.
+    * Collections and containers have an elements() method returning an Enumeration.
+    * Enumerations returned by elements() methods are robust to element removals. 
+
+Such conventions help developers design interfaces consistently, even if many developers contribute to the interface specification. Moreover, making these conventions explicit before object design makes it easier for developers to follow them. In general, these conventions should not evolve during the project.
+ 
+=== Packages ===	
+
+The second section of the ODD, Packages, describes the decomposition of subsystems into packages and the file organization of the code. This includes an overview of each package, its dependencies with other packages, and its expected usage. 
+ 
+=== Class interfaces Glossary ===
+
+The third section, Class interfaces, describes the classes and their public interfaces. This includes an overview of each class, its dependencies with other classes and packages, its public attributes, operations, and the exceptions they can raise. 
+ 
