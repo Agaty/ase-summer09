@@ -45,17 +45,7 @@ The overview presents a functional overview of the system.
  
     _3.2 Functional requirements_
 
-  * Dispatch system receives information from the call-taker. The dispatch system operator cannot request further information. It is assumed that the call-taker has requested as much information as possible.
-  * What information does the call taker need: Age, sex, location, condition 
-  * Dispatch system is aware of: Location of ambulances, hospitals, patients. Assumption is ambulance has GPS systems. Therefore ambulance requires the location of the patient and status of the patient/other relevant information about the patient (allergies, activities that need prepping)
-  * Detect multiple reports of the same incident
-  * Potentially send multiple ambulances for critical conditions dependent upon the load of the ambulance. Therefore must be able to dispatch multiple ambulances at the same time.
-  * If system is idle for a certain amount of time, then system should start dispatching automatically.
-  * Assume call taker has clearly defined guidelines for how to enter information into system.
-  * Dispatched in priority - if multiple ambulance requests come in, dispatch ambulances to highly critical patients. Assume call taker has input priority level.
-  * Assume dispatcher is qualified user of the system
-  * Future implementations: Accounting for variety of types of ambulances (some equipped for special scenarios like pregnant women, etc). Assume caller will notify other agencies, such as police, fire department, etc.
-  * Add the requirements from project doc
+  * 
 
 Functional requirements describes the high-level functionality of the system.
  
@@ -80,8 +70,18 @@ Functional requirements describes the high-level functionality of the system.
 Nonfunctional requirements describes user-level requirements that are not directly related to functionality. This includes usability, reliability, performance, supportability, implementation, interface, operational, packaging, and legal requirements.
  
     _3.4 System models_
+
   * 3.4.1 Scenarios
 
+  # Carl is out walking his dog and sees Josh who has been stabbed.  Carl calls 911 and and speaks to Susan, the call taker.  Carl provides Susan with the address and details of the situation.  Steve the dispatcher dispatches an available ambulance to the scene.  The ambulance takes Josh to the hospital and reports it is available for dispatch again.<br><br>
+  # Little Joey sees his grandpa sprain his ankle.  Juan the call taker recieves the call and logs the incident.  Elijah the dispatcher dispatches an ambulance.  A severe fire breaks out and many people are injured.  Christian, a senior dispatcher decides the burn victims are in more critical condition and recalls the ambulance dispatched to Joey's grandpa directing it to help the burn victims.<br><br>
+  # Victoria is unsatisfied with her pizza delivery time.  She calls 911 to report that her pizza has not arrived.  Anna, the call taker files an incident and flags it to be ignored due to being a non-emergency situation.<br><br>
+  # Brandon calls 911 to report a broken ankle.  Tyler, the call taker flags the incident as non life-threatening.  Then Brandon's grandma, Allison falls down the stairs and is seriously wounded.  Brandon calls back and reports that the situation is now life treatening.  Savannah, the new call taker updates the incident to be serious and an ambulance is dispatched quickly.<br><br>
+  # The city just approved $500 million for new ambulances and Gabriel adds the new 12 ambulances to the dispatch system.<br><br>
+  # An off-duty ambulance is in a serious traffic accident and will be unable to be used anymore.  Emma removes the ambulance from the system.<br><br>
+  # Isabella, the ambulance driver reports her location to the system and Madison, the dispatcher updates the system with the new position data.<br><br>
+  # Logan calls in a false fire emergency.  Mia, the call taker logs an incident.  Hannah, the dispatcher dispatches an ambulance to the emergency.  When Ella, the ambulance driver arrives on the scene, she calls and reports that it was a false alarm.  Lily, the call taker flags the incident as a false alarm.<br><br>
+  # Sarah calls and reports a fire.  Mia logs an incident and Alexis dispatches an ambulance.  Then, Ryan calls and reports the same fire.  The system notifies the call taker that this incident is very simlilar to an existing incident.  Noah decides this is the same incident and flags the incident as a duplicate.<br><br>
   * 3.4.2 Use case model
 
   * 3.4.3 Object model *Omitted in Phase 1, Added in Phase 2*
