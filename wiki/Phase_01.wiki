@@ -63,14 +63,14 @@ Nonfunctional requirements describes user-level requirements that are not direct
 
   * 3.4.2 Use case model
 
-  * 3.4.3 Object model
+  * 3.4.3 Object model *Omitted in Phase 1, Added in Phase 2*
 
-  * 3.4.4 Dynamic model
+  * 3.4.4 Dynamic model *Omitted in Phase 1, Added in Phase 2*
 
-  * 3.4.5 
+  * 3.4.5 User interface navigational paths and screen mock-ups *Omitted in Phase 1, Added in Phase 2*	
 
-User interface�navigational paths and screen mock-ups 	System models describes the scenarios, use cases, object model, and dynamic models for the system. This section contains the complete functional specification, including mock-ups illustrating the user interface of the system and navigational paths representing the sequence of screens. The subsections Object model and Dynamic model are written during the Analysis activity.
+System models describes the scenarios, use cases, object model, and dynamic models for the system. This section contains the complete functional specification, including mock-ups illustrating the user interface of the system and navigational paths representing the sequence of screens. The subsections Object model and Dynamic model are written during the Analysis activity.
  
-=== 4. Glossary ===
+=== Glossary ===
 
-A glossary of important terms, to ensure consistency in the specification and to ensure that we use the client�s terms.
+A glossary of important terms, to ensure consistency in the specification and to ensure that we use the client's terms.
