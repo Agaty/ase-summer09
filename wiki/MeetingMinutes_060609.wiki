@@ -20,16 +20,16 @@
 
 ==Phase 1 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || Section # || 6/16 || In progress ||
-|| Chad|| Section # || 6/16 || In progress ||
-|| Katie|| Section # || 6/16 || In progress ||
-|| Rajeev|| Section # || 6/16 || In progress ||
-|| Ryan|| Section # || 6/16 || In progress ||
+|| Akhil || Section # || 6/13 || In progress ||
+|| Chad|| Section # || 6/13 || In progress ||
+|| Katie|| Section 1, 2 || 6/13 || In progress ||
+|| Rajeev|| Section # || 6/13 || In progress ||
+|| Ryan|| Section # || 6/13 || In progress ||
 
 ==Phase 2 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || Section # || 6/23 || In progress ||
-|| Chad|| Section # || 6/23 || In progress ||
-|| Katie|| Section # || 6/23 || In progress ||
-|| Rajeev|| Section # || 6/23 || In progress ||
-|| Ryan|| Section # || 6/23 || In progress ||
+|| Akhil || Section # || 6/20 || In progress ||
+|| Chad|| Section # || 6/20 || In progress ||
+|| Katie|| Section # || 6/20 || In progress ||
+|| Rajeev|| Section # || 6/20 || In progress ||
+|| Ryan|| Section # || 6/20 || In progress ||
