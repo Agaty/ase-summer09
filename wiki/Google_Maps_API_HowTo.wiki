@@ -15,3 +15,6 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages
 
 = References =
+
+  * [http://code.google.com/apis/maps/ Google Maps API Home]
+  * [http://chadgabrysch.net Ambulance Dispatch System Production Page]
