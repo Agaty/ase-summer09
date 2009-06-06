@@ -1,4 +1,6 @@
-#summary One-sentence summary of this page.
+#summary Description of how to program and test an application using Google Maps
+
+<wiki:toc max_depth="1" />
 
 = Introduction =
 
@@ -11,3 +13,8 @@ Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
+
+= References =
+
+  * [http://code.google.com/apis/maps/ Google Maps API Home]
+  * [http://chadgabrysch.net Ambulance Dispatch System Production Page]
