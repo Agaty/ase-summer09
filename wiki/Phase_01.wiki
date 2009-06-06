@@ -55,6 +55,7 @@ The overview presents a functional overview of the system.
   * Dispatched in priority - if multiple ambulance requests come in, dispatch ambulances to highly critical patients. Assume call taker has input priority level.
   * Assume dispatcher is qualified user of the system
   * Future implementations: Accounting for variety of types of ambulances (some equipped for special scenarios like pregnant women, etc). Assume caller will notify other agencies, such as police, fire department, etc.
+  * Add the requirements from project doc
 
 Functional requirements describes the high-level functionality of the system.
  
