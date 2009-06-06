@@ -1,0 +1,76 @@
+#summary Requirement Analysis Document
+
+Akhil Chopra<br>
+Chad Gabrysch<br>
+Katie Roberts Hoffman<br>
+Rajeev Sharma<br>
+Ryan Kelly<br>
+
+Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09]
+
+== Software Project Management Plan ==
+
+<wiki:toc max_depth="3" />
+
+=== Introduction ===
+    _1.1 Purpose of the system_
+    _1.2 Scope of the system_
+    _1.3 Objectives and success criteria of the project_
+    _1.4 Definitions, acronyms, and abbreviations_
+    _1.5 References_
+    _1.6 Overview_
+
+The first section of the RAD is an Introduction. Its purpose is to provide a brief overview of the function of the system and the reasons for its development, its scope, and references to the development context (e.g., reference to the problem statement written by the client, references to existing systems, feasibility studies). The introduction also includes the objectives and success criteria of the project.
+ 
+=== Current system ===	
+
+The second section, Current system, describes the current state of affairs. If the new system will replace an existing system, this section describes the functionality and the problems of the current system. Otherwise, this section describes how the tasks supported by the new system are accomplished now.
+ 
+=== Proposed system ===
+
+The third section documents the requirements elicitation and the analysis model of the new system.
+ 
+    _3.1 Overview_
+
+The overview presents a functional overview of the system.
+ 
+    _3.2 Functional requirements_
+
+Functional requirements describes the high-level functionality of the system.
+ 
+    _3.3 Nonfunctional requirements_
+
+  * 3.3.1 Usability
+
+  * 3.3.2 Reliability
+
+  * 3.3.3 Performance
+
+  * 3.3.4 Supportability
+
+  * 3.3.5 Implementation
+
+  * 3.3.6 Interface
+
+  * 3.3.7 Packaging
+
+  * 3.3.8 Legal 	
+
+Nonfunctional requirements describes user-level requirements that are not directly related to functionality. This includes usability, reliability, performance, supportability, implementation, interface, operational, packaging, and legal requirements.
+ 
+    _3.4 System models_
+  * 3.4.1 Scenarios
+
+  * 3.4.2 Use case model
+
+  * 3.4.3 Object model
+
+  * 3.4.4 Dynamic model
+
+  * 3.4.5 
+
+User interface�navigational paths and screen mock-ups 	System models describes the scenarios, use cases, object model, and dynamic models for the system. This section contains the complete functional specification, including mock-ups illustrating the user interface of the system and navigational paths representing the sequence of screens. The subsections Object model and Dynamic model are written during the Analysis activity.
+ 
+=== 4. Glossary ===
+
+A glossary of important terms, to ensure consistency in the specification and to ensure that we use the client�s terms.
