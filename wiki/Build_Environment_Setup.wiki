@@ -17,6 +17,6 @@
 
   # Download Instant Rails v2.0 from here: <br>[http://rubyforge.org/frs/?group_id=904 Instant Rails]
   # Unzip the file to C:/ (it will expand to C:/Instant Rails).
-  # Run InstantRails.exe
+  # Run "InstantRails.exe"
   # Click OK to regenerate config files.
   # I -> Configure -> Windows Hosts File - Make sure the line "127.0.0.1    localhost" appears in the file
