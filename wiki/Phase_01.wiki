@@ -69,25 +69,58 @@ The overview presents a functional overview of the system.
 
 Functional requirements describes the high-level functionality of the system.
  
-    _3.3 Nonfunctional requirements_
+    _3.3 *Nonfunctional requirements*_
 
-  * 3.3.1 Usability: The system is usable since its a web based system 
+*3.3.1 Reliability Requirements:*
 
-  * 3.3.2 Reliability
+The Ambulance Dispatch System is used to send ambulances to save the lives of the people who may be in emergency conditions. Thus reliability is one of the very important non functional requirements. Reliability can be classified into two categories:
 
-  * 3.3.3 Performance
+* Consistency:
 
-  * 3.3.4 Supportability
+The system shall consistently provide accurate results while finding the location of the ambulances and estimating their time to arrive at the reported location. The system shall not provide ambiguous results or randomly provide correct and incorrect results. The system shall notify the dispatcher of possible duplicate calls.
 
-  * 3.3.5 Implementation
+* Fault Detection and Tolerance:
 
-  * 3.3.6 Interface
+The system shall recover from any exceptions and other error conditions and does not crash while in operation. For this the system shall detect any such errors and report them to the user. In case of a serious exception, the system shall be able to recover from the error and restore the state back to the last stable state.
 
-  * 3.3.7 Packaging
+*3.3.2 Usability Requirements:*
 
-  * 3.3.8 Legal 	
+* Usability:
 
-Nonfunctional requirements describes user-level requirements that are not directly related to functionality. This includes usability, reliability, performance, supportability, implementation, interface, operational, packaging, and legal requirements.
+The system shall be user friendly and allows the user to quickly create new incidents, read and edit existing incidents. In order to facilitate this ease of use, the system shall provide a Graphical User Interface, which clearly shows the map of the site from where the incident was reported. This map shall show the exact locations of the nearest hospital and the ambulance and shall assist the call taker to send the nearest ambulance to the location of incident. The system shall automatically suggest address locations based on the descriptions provided by the caller.
+
+* Understandability:
+
+The system shall be easy to understand and learn how to use. The screens shown in the system shall have all the information that is used in the present manual system and thus shall be easy for the users to learn. It shall provide user manuals and other training materials that shall help the users to easily learn how to use the system effectively.
+
+*3.3.3 Performance Requirements:*
+
+* Responsiveness:
+
+The system shall be fast and provide accurate results within 1 minute of incident report input so that the ambulance could be sent within 3 minutes. The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher every 5 minutes. 
+
+* Load :
+
+The system shall be capable to process up to 500 calls per day. The system shall support 50 dispatchers to record incidents and can support up to 100 ambulances.
+
+*3.3.4 Security Requirements:*
+
+*Confidentiality:
+
+The system shall provide confidentiality to the users. The users shall be first authenticated with their user id and password and if found to be valid users are allowed access to use the system
+
+* Integrity:
+
+The system shall make sure that the data that is entered by the user is not altered without his/her knowledge and the data remains secure. This shall be achieved by means of a secure database server
+
+* Availability:
+
+The system shall be available 24X7 for 365 days a year
+
+*3.3.4 Supportability*
+
+The system shall provide the help of a system administrator who can help resolve technical difficulties that the users are facing. The system shall also provide the services of a system expert who helps the users in using the system. The system expert shall be supervisors and shall be available to answer the technical questions by phone.	
+
  
     _3.4 System models_
 
