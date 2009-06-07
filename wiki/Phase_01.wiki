@@ -17,8 +17,9 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.1 || 6/6/09 || Katie || Initial draft ||
 || 0.2 || 6/7/09 || Akhil & Rajeev || Added NFR's ||
 || 0.3 || 6/7/09 || Akhil & Rajeev || Added Assumptions & Dependencies ||
+|| 0.4 || 6/7/09 || Akhil & Rajeev || Uploaded SIG and Process Specification for review||
 
-=== Introduction ===
+=== 1 Introduction ===
     _1.1 Purpose of the system_
 
     _1.2 Scope of the system_
@@ -42,11 +43,11 @@ The first section of the RAD is an Introduction. Its purpose is to provide a bri
  * The dispatcher has requested as much information as possible from the caller.
  * The internet and telephone networks are working fine.
  * The system admin and the system experts are available.
-=== Current system ===	
+=== 2. Current system ===	
 
 The second section, Current system, describes the current state of affairs. If the new system will replace an existing system, this section describes the functionality and the problems of the current system. Otherwise, this section describes how the tasks supported by the new system are accomplished now.
  
-=== Proposed system ===
+=== 3. Proposed system ===
 
 The third section documents the requirements elicitation and the analysis model of the new system.
  
@@ -68,10 +69,12 @@ The overview presents a functional overview of the system.
   * Future implementations: Accounting for variety of types of ambulances (some equipped for special scenarios like pregnant women, etc). Assume caller will notify other agencies, such as police, fire department, etc. 
 
 Functional requirements describes the high-level functionality of the system.
+    
+    _3.3 *Softgoal Interdependency Diagram*_
  
-    _3.3 *Nonfunctional requirements*_
+    _3.4 *Nonfunctional requirements*_
 
-*3.3.1 Reliability Requirements:*
+*3.4.1 Reliability Requirements:*
 
 The Ambulance Dispatch System is used to send ambulances to save the lives of the people who may be in emergency conditions. Thus reliability is one of the very important non functional requirements. Reliability can be classified into two categories:
 
@@ -83,7 +86,7 @@ The system shall consistently provide accurate results while finding the locatio
 
 The system shall recover from any exceptions and other error conditions and does not crash while in operation. For this the system shall detect any such errors and report them to the user. In case of a serious exception, the system shall be able to recover from the error and restore the state back to the last stable state.
 
-*3.3.2 Usability Requirements:*
+*3.4.2 Usability Requirements:*
 
 * Usability:
 
@@ -93,7 +96,7 @@ The system shall be user friendly and allows the user to quickly create new inci
 
 The system shall be easy to understand and learn how to use. The screens shown in the system shall have all the information that is used in the present manual system and thus shall be easy for the users to learn. It shall provide user manuals and other training materials that shall help the users to easily learn how to use the system effectively.
 
-*3.3.3 Performance Requirements:*
+*3.4.3 Performance Requirements:*
 
 * Responsiveness:
 
@@ -103,7 +106,7 @@ The system shall be fast and provide accurate results within 1 minute of inciden
 
 The system shall be capable to process up to 500 calls per day. The system shall support 50 dispatchers to record incidents and can support up to 100 ambulances.
 
-*3.3.4 Security Requirements:*
+*3.4.4 Security Requirements:*
 
 *Confidentiality:
 
@@ -117,14 +120,14 @@ The system shall make sure that the data that is entered by the user is not alte
 
 The system shall be available 24X7 for 365 days a year
 
-*3.3.4 Supportability*
+*3.4.5 Supportability*
 
 The system shall provide the help of a system administrator who can help resolve technical difficulties that the users are facing. The system shall also provide the services of a system expert who helps the users in using the system. The system expert shall be supervisors and shall be available to answer the technical questions by phone.	
 
  
-    _3.4 System models_
+    *_3.5 System models_*
 
-  * 3.4.1 Scenarios
+  * 3.5.1 Scenarios
 
   # Carl is out walking his dog and sees Josh who has been stabbed.  Carl calls 911 and and speaks to Susan, the call taker.  Carl provides Susan with the address and details of the situation.  Steve the dispatcher dispatches an available ambulance to the scene.  The ambulance takes Josh to the hospital and reports it is available for dispatch again.<br><br>
   # Little Joey sees his grandpa sprain his ankle.  Juan the call taker recieves the call and logs the incident.  Elijah the dispatcher dispatches an ambulance.  A severe fire breaks out and many people are injured.  Christian, a senior dispatcher decides the burn victims are in more critical condition and recalls the ambulance dispatched to Joey's grandpa directing it to help the burn victims.<br><br>
@@ -135,13 +138,13 @@ The system shall provide the help of a system administrator who can help resolve
   # Isabella, the ambulance driver reports her location to the system and Madison, the dispatcher updates the system with the new position data.<br><br>
   # Logan calls in a false fire emergency.  Mia, the call taker logs an incident.  Hannah, the dispatcher dispatches an ambulance to the emergency.  When Ella, the ambulance driver arrives on the scene, she calls and reports that it was a false alarm.  Lily, the call taker flags the incident as a false alarm.<br><br>
   # Sarah calls and reports a fire.  Mia logs an incident and Alexis dispatches an ambulance.  Then, Ryan calls and reports the same fire.  The system notifies the call taker that this incident is very simlilar to an existing incident.  Noah decides this is the same incident and flags the incident as a duplicate.<br><br>
-  * 3.4.2 Use case model
+  * 3.5.2 Use case model
 
-  * 3.4.3 Object model *Omitted in Phase 1, Added in Phase 2*
+  * 3.5.3 Object model *Omitted in Phase 1, Added in Phase 2*
 
-  * 3.4.4 Dynamic model *Omitted in Phase 1, Added in Phase 2*
+  * 3.5.4 Dynamic model *Omitted in Phase 1, Added in Phase 2*
 
-  * 3.4.5 User interface navigational paths and screen mock-ups *Omitted in Phase 1, Added in Phase 2*	
+  * 3.5.5 User interface navigational paths and screen mock-ups *Omitted in Phase 1, Added in Phase 2*	
 
 System models describes the scenarios, use cases, object model, and dynamic models for the system. This section contains the complete functional specification, including mock-ups illustrating the user interface of the system and navigational paths representing the sequence of screens. The subsections Object model and Dynamic model are written during the Analysis activity.
  
