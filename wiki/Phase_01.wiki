@@ -39,6 +39,7 @@ The first section of the RAD is an Introduction. Its purpose is to provide a bri
 
  * Assume dispatcher has clearly defined guidelines for how to enter information into system.
  * Assume dispatcher is qualified user of the system.
+ * The dispatcher has requested as much information as possible from the caller.
  * The internet and telephone networks are working fine.
  * The system admin and the system experts are available.
 === Current system ===	
