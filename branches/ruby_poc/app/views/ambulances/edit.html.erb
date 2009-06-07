@@ -1,0 +1,17 @@
+<h1>Editing ambulance</h1>
+
+<%= error_messages_for :ambulance %>
+
+<% form_for(@ambulance) do |f| %>
+  <p>
+    <b>Drivername</b><br />
+    <%= f.text_field :driverName %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ambulance %> |
+<%= link_to 'Back', ambulances_path %>

@@ -1,0 +1,21 @@
+<h1>Listing ambulances</h1>
+
+<table>
+  <tr>
+    <th>Drivername</th>
+  </tr>
+
+<% for ambulance in @ambulances %>
+  <tr>
+    <td><%=h ambulance.driverName %></td>
+    <td><%= link_to 'Show', ambulance %></td>
+    <td><%= link_to 'Edit', edit_ambulance_path(ambulance) %></td>
+    <td><%= link_to 'Destroy', ambulance, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ambulance', new_ambulance_path %><br>
+<%= link_to 'Home', '/' %>
