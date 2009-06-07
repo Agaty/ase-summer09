@@ -7,11 +7,12 @@
   # Install Instant Rails (as below)
   # Install [http://dev.mysql.com/downloads/gui-tools/5.0.html MySQL GUI tools]
   # Install Eclipse
+  # Download the project from SVN into the rails_apps folder
   # Start the Mongrel web server to serve up the app by:
     ## I -> Rails apps -> Manage rails apps
     ## Check the app to run 
     ## Press "Start with Mongrel" button.
-  # Browse to http://localhost:3000/projectName/home_page
+  # Browse to http://localhost:3000/cs6354/home/
 
 = Instant Rails Setup =
 
@@ -20,6 +21,3 @@
   # Run Instant Rails.exe
   # Click OK to regenerate config files.
   # I -> Configure -> Windows Hosts File - Make sure the line "127.0.0.1    localhost" appears in the file
-  # I -> Rails Applications -> Open Ruby Console
-    ## gem install login_generator
-    ## gem install ruby-debug
