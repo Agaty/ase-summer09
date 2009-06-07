@@ -15,6 +15,8 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 === Version ===
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/6/09 || Katie || Initial draft ||
+|| 0.2 || 6/7/09 || Akhil & Rajeev || Added NFR's ||
+|| 0.3 || 6/7/09 || Akhil & Rajeev || Added Assumptions & Dependencies ||
 
 === Introduction ===
     _1.1 Purpose of the system_
@@ -29,8 +31,16 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
     _1.6 Overview_
 
+    _1.7 Assumptions and Dependencies_
+
 The first section of the RAD is an Introduction. Its purpose is to provide a brief overview of the function of the system and the reasons for its development, its scope, and references to the development context (e.g., reference to the problem statement written by the client, references to existing systems, feasibility studies). The introduction also includes the objectives and success criteria of the project.
- 
+
+  _*1.7Assumptions and Dependencies_
+
+ * Assume dispatcher has clearly defined guidelines for how to enter information into system.
+ * Assume dispatcher is qualified user of the system.
+ * The internet and telephone networks are working fine.
+ * The system admin and the system experts are available.
 === Current system ===	
 
 The second section, Current system, describes the current state of affairs. If the new system will replace an existing system, this section describes the functionality and the problems of the current system. Otherwise, this section describes how the tasks supported by the new system are accomplished now.
