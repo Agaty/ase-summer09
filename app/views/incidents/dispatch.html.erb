@@ -1,0 +1,14 @@
+<h1>Dispatching Ambulance</h1>
+
+<% form_for(@incident) do |f| %>
+  <p>
+    <b>Ambulance</b><br />
+      <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :driverName)) %>
+  </p>
+  <p>
+    <%= f.submit "Dispatch" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @incident %> |
+<%= link_to 'Back', incidents_path %>
