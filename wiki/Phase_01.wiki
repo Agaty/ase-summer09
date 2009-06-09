@@ -15,9 +15,11 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 === Version ===
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/6/09 || Katie || Initial draft ||
+|| 0.15 || 6/6/09 || Ryan || Added scenerios ||
 || 0.2 || 6/7/09 || Akhil & Rajeev || Added NFR's ||
 || 0.3 || 6/7/09 || Akhil & Rajeev || Added Assumptions & Dependencies ||
 || 0.4 || 6/7/09 || Akhil & Rajeev || Uploaded SIG and Process Specification for review||
+
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
@@ -132,12 +134,12 @@ The system shall provide the help of a system administrator who can help resolve
   # Carl is out walking his dog and sees Josh who has been stabbed.  Carl calls 911 and and speaks to Susan, the call taker.  Carl provides Susan with the address and details of the situation.  Steve the dispatcher dispatches an available ambulance to the scene.  The ambulance takes Josh to the hospital and reports it is available for dispatch again.<br><br>
   # Little Joey sees his grandpa sprain his ankle.  Juan the call taker recieves the call and logs the incident.  Elijah the dispatcher dispatches an ambulance.  A severe fire breaks out and many people are injured.  Christian, a senior dispatcher decides the burn victims are in more critical condition and recalls the ambulance dispatched to Joey's grandpa directing it to help the burn victims.<br><br>
   # Victoria is unsatisfied with her pizza delivery time.  She calls 911 to report that her pizza has not arrived.  Anna, the call taker files an incident and flags it to be ignored due to being a non-emergency situation.<br><br>
-  # Brandon calls 911 to report a broken ankle.  Tyler, the call taker flags the incident as non life-threatening.  Then Brandon's grandma, Allison falls down the stairs and is seriously wounded.  Brandon calls back and reports that the situation is now life treatening.  Savannah, the new call taker updates the incident to be serious and an ambulance is dispatched quickly.<br><br>
-  # The city just approved $500 million for new ambulances and Gabriel adds the new 12 ambulances to the dispatch system.<br><br>
+  # Brandon calls 911 to report a broken ankle.  Tyler, the call taker flags the incident as non life-threatening.  Then Brandon's grandma, Allison falls down the stairs and is seriously wounded.  Brandon calls back and reports that the situation is now life threatening.  Savannah, the new call taker updates the incident to be serious and an ambulance is dispatched quickly.<br><br>
+  # The city just finished a $500 million program to purchase new ambulances and Gabriel adds the new 12 ambulances to the dispatch system.<br><br>
   # An off-duty ambulance is in a serious traffic accident and will be unable to be used anymore.  Emma removes the ambulance from the system.<br><br>
   # Isabella, the ambulance driver reports her location to the system and Madison, the dispatcher updates the system with the new position data.<br><br>
   # Logan calls in a false fire emergency.  Mia, the call taker logs an incident.  Hannah, the dispatcher dispatches an ambulance to the emergency.  When Ella, the ambulance driver arrives on the scene, she calls and reports that it was a false alarm.  Lily, the call taker flags the incident as a false alarm.<br><br>
-  # Sarah calls and reports a fire.  Mia logs an incident and Alexis dispatches an ambulance.  Then, Ryan calls and reports the same fire.  The system notifies the call taker that this incident is very simlilar to an existing incident.  Noah decides this is the same incident and flags the incident as a duplicate.<br><br>
+  # Sarah calls and reports a fire.  Mia logs an incident and Alexis dispatches an ambulance.  Then, Ryan calls and reports the same fire.  The system notifies the call taker that this incident is very similar to an existing incident.  Noah decides this must be the same incident and flags the incident as a duplicate.<br><br>
   * 3.5.2 Use case model
 
   * 3.5.3 Object model *Omitted in Phase 1, Added in Phase 2*
