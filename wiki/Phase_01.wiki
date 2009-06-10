@@ -63,9 +63,7 @@ The third section documents the requirements elicitation and the analysis model 
 
 The overview presents a functional overview of the system.
  
-    _3.2 Functional requirements_
-
-  * Functional Requirements:
+    _*3.2 Functional requirements*_
 
  # The call taker shall answer the call from the caller and use the system to record the conversation. The call taker shall see a list of specific pre-defined questions as soon as the call is connected. The questions shall be: What is the location of the caller and the concerned incident? What’s the nearest street the caller can see? What’s the nearest building the caller can see? What’s the nearest parking lot the caller can see? What’s the age of the patient? What‘s the sex of the patient? What’s the current situation of the patient: Is the patient conscious?, Is the patient bleeding?
  # The call taker shall submit the information in the following format:Number of Patients,Location,Status,Age,Sex.
