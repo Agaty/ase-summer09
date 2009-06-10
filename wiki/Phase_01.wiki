@@ -19,7 +19,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.2 || 6/7/09 || Akhil & Rajeev || Added Non Functional Requirements ||
 || 0.3 || 6/7/09 || Akhil & Rajeev || Added Assumptions & Dependencies ||
 || 0.4 || 6/7/09 || Akhil & Rajeev || Uploaded SIG and Process Specification for review||
-|| 0.5 || 6/9/09 || Akhil & Rajeev || Added Functional Requirements||
+|| 0.5 || 6/9/09 || Akhil & Rajeev || Added Functional Requirements,Updated Section 1.7||
 
 
 
