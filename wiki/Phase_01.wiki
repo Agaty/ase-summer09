@@ -45,6 +45,10 @@ The first section of the RAD is an Introduction. Its purpose is to provide a bri
  * The dispatcher has requested as much information as possible from the caller.
  * The internet and telephone networks are working fine.
  * The system admin and the system experts are available.
+ * All the ambulances are equipped with state of art GPS systems with traffic monitoring.
+ * All the ambulance drivers are experienced and are well familiar with the local area.
+ * All hospitals are of high standards with reasonable capacity with advanced and cutting edge technologies.
+ * All the ambulances also have maps for use in case of GPS failures.
 === 2. Current system ===	
 
 The second section, Current system, describes the current state of affairs. If the new system will replace an existing system, this section describes the functionality and the problems of the current system. Otherwise, this section describes how the tasks supported by the new system are accomplished now.
