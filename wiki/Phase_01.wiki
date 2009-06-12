@@ -32,7 +32,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
     _1.4 Definitions, acronyms, and abbreviations_
 
-  CRUD - Create, Read, Update, Delete.  Used for use cases involviping the manipulation of a particular set of data.  
+  CRUD - Create, Read, Update, Delete.  Used for use cases involving the manipulation of a particular set of data.  
 
   For example, the set of CRUD operations related to Ambulances would be:
   # *C* reating an ambulance<br>
