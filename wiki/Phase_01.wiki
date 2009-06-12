@@ -153,10 +153,36 @@ The system shall provide the help of a system administrator who can help resolve
   # Logan calls in a false fire emergency.  Mia, the call taker logs an incident.  Hannah, the dispatcher dispatches an ambulance to the emergency.  When Ella, the ambulance driver arrives on the scene, she calls and reports that it was a false alarm.  Lily, the call taker flags the incident as a false alarm.<br><br>
   # Sarah calls and reports a fire.  Mia logs an incident and Alexis dispatches an ambulance.  Then, Ryan calls and reports the same fire.  The system notifies the call taker that this incident is very similar to an existing incident.  Noah decides this must be the same incident and flags the incident as a duplicate.<br><br>
   * 3.5.2 Use case model
-
+  * 3.5.2.1 Use case diagrams
 http://ase-summer09.googlecode.com/files/use%20case%20model.png
 
 [http://ase-summer09.googlecode.com/files/use%20case%20model.uml This is a StarUML file of the use-case model]
+
+  * 3.5.2.2 Use case templates
+
+|| Use case name:  || CRUD Incidents ||
+|| Participating Actors: || ||
+|| Exceptions: || ||
+|| Flow of Events: || ||
+|| Special Requirements: || ||
+
+|| Use case name:  || CRUD Ambulances||
+|| Participating Actors: || ||
+|| Exceptions: || ||
+|| Flow of Events: || ||
+|| Special Requirements: || ||
+
+|| Use case name:  || Dispatch Ambulance to Incident ||
+|| Participating Actors: || ||
+|| Exceptions: || ||
+|| Flow of Events: || ||
+|| Special Requirements: || ||
+
+|| Use case name:  || Recall Ambulance from Incident ||
+|| Participating Actors: || ||
+|| Exceptions: || ||
+|| Flow of Events: || ||
+|| Special Requirements: || ||
 
   * 3.5.3 Object model *Omitted in Phase 1, Added in Phase 2*
 
