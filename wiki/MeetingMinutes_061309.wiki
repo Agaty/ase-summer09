@@ -1,4 +1,4 @@
-#summary Meeting Minutes 06/14/09
+#summary Meeting Minutes 06/13/09
 
 ==Attendees==
   * Katie
@@ -17,8 +17,16 @@
   * Next meeting scheduled for Sat June 20 - noon, Open Labs. 
   * Discussed minor inconsistencies within document
   * Decided team leader should verify that all spacing/etc. is correct before submitting
-  * 3.5.2.2 - Use Case diagrams/templates are not completed 
+  * 3.5.2.2 - Use Case diagrams/templates are not completed - added templates.
+  * AI: Akhil will sanitize/clean up Phase 01 - after, copy into Phase 2 - add requirements about adding/removing ambulances
 
+==Phase 2 Section Delegation==
+|| *Assignee* || *Section                    * || *Due Date* || *Status     * ||
+|| Akhil || Sequence diagrams with Katie - Draft 1|| 6/16 || In progress ||
+|| Chad|| 3.5.5 - navigational paths + screen mockups || 6/20 || In progress ||
+|| Katie|| Class diagrams with Akhil - Draft 1|| 6/16 || In progress ||
+|| Rajeev|| Review sequence/class - Draft 2 || 6/20 || In progress ||
+|| Ryan|| Review sequence/class - Draft 2, Confirm wiki format || 6/20 || In progress ||
 
 ==Phase 1 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
@@ -27,11 +35,3 @@
 || Katie|| Section 1, 2 || 6/13 || Done ||
 || Rajeev|| Section 3.3, Edit 3.2 || 6/13 ||Done ||
 || Ryan|| Section 3.4.1, 3.4.2 || 6/13 || Done ||
-
-==Phase 2 Section Delegation==
-|| *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || Section # || 6/20 || In progress ||
-|| Chad|| Section # || 6/20 || In progress ||
-|| Katie|| Section # || 6/20 || In progress ||
-|| Rajeev|| Section # || 6/20 || In progress ||
-|| Ryan|| Section # || 6/20 || In progress ||
