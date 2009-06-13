@@ -229,14 +229,14 @@ http://ase-summer09.googlecode.com/files/use%20case%20model.png
 || Participating Actors: || Dispatcher ||
 || Preconditions: || The ambulance is available. ||
 || Postconditions: || The ambulance is allocated to the incident. ||
-|| Flow of Events: || 1. The Dispatcher chooses an ambulance to send to the particular incident.<br>2. The Dispatcher allocates that ambulance to the given incident.  ||
+|| Flow of Events: || 1. The Dispatcher chooses an incident.<br>2. The Dispatcher chooses an available ambulance to dispatch to the given incident.<br>3. The Dispatcher allocates the chosen ambulance. ||
 || Special Requirements: || ||
 
 || Use case name:  || Recall Ambulance from Incident ||
 || Participating Actors: || Dispatcher ||
 || Preconditions: || The ambulance is allocated to an incident. ||
 || Postconditions: || The ambulance is available. ||
-|| Flow of Events: || 1. The Dispatcher chooses an allocated ambulance to recall.<br>2. The Dispatcher recalls the ambulance from the given incident. ||
+|| Flow of Events: || 1. The Dispatcher chooses an incident.<br>2. The Dispatcher chooses a dispatched ambulance to recall.<br>3. The Dispatcher recalls the chosen ambulance. ||
 || Special Requirements: || ||
 
   * 3.5.3 Object model 
