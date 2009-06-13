@@ -22,6 +22,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.5 || 6/9/09 || Akhil & Rajeev || Added Functional Requirements,Updated Section 1.7||
 || 0.6 || 6/12/09 || Katie || Added Introduction and Current System Info ||
 || 0.7 || 6/13/09 || Chad || Added Additional Nonfunctional Requirements and Usability ||
+|| 0.8 || 6/13/09 || Ryan || Added use-case diagrams and templates ||
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
