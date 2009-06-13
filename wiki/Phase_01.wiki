@@ -21,7 +21,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.4 || 6/7/09 || Akhil & Rajeev || Uploaded SIG and Process Specification for review||
 || 0.5 || 6/9/09 || Akhil & Rajeev || Added Functional Requirements,Updated Section 1.7||
 || 0.6 || 6/12/09 || Katie || Added Introduction and Current System Info ||
-
+|| 0.7 || 6/13/09 || Chad || Added Additional Nonfunctional Requirements and Usability ||
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
@@ -114,7 +114,11 @@ This section presents the initial analysis of the ADS. It includes both function
 
   * 3.4.1 Reliability Requirements
 
-The Ambulance Dispatch System is used to send ambulances to save the lives of the people who may be in emergency conditions. Thus reliability is one of the very important non functional requirements. Reliability can be classified into two categories:
+The Ambulance Dispatch System is used to send ambulances to save the lives of the people who may be in emergency conditions. Thus reliability is one of the very important non functional requirements. Reliability can be classified into several categories:
+
+    * Availability:
+
+The system shall be available for use by the users at all times or as often as can be reasonably expected.  This will involve ensuring redundant internet access, database access, and wireless access for all relevant parties.
 
     * Consistency:
 
@@ -123,6 +127,10 @@ The system shall consistently provide accurate results while finding the locatio
     * Fault Detection and Tolerance:
 
 The system shall recover from any exceptions and other error conditions and does not crash while in operation. For this the system shall detect any such errors and report them to the user. In case of a serious exception, the system shall be able to recover from the error and restore the state back to the last stable state.
+
+    * Robust:
+
+The system shall handle any conditions outside of normal operating conditions, yet not at the error level, without compromising the system or violating any other functional or nonfunctional requirements.
 
   * 3.4.2 Usability Requirements
 
