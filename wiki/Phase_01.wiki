@@ -20,19 +20,29 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.3 || 6/7/09 || Akhil & Rajeev || Added Assumptions & Dependencies ||
 || 0.4 || 6/7/09 || Akhil & Rajeev || Uploaded SIG and Process Specification for review||
 || 0.5 || 6/9/09 || Akhil & Rajeev || Added Functional Requirements,Updated Section 1.7||
-
+|| 0.6 || 6/12/09 || Katie || Added Introduction and Current System Info ||
 
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
 
+This ambulance dispatch system (ADS) is designed to facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life. Unfortunately there have been several reported failures of similar ambulance dispatch systems resulting in casualties (see Section 1.5 - References for more information).
+
     _1.2 Scope of the system_
+
+This system will accept input from an emergency call taker, such as those on the receiving end of a 911 call amongst others. It will provide information to the ambulance dispatcher so that s/he can best inform the ambulance drivers of their next destination. In addition, the dispatcher will be able to continuously monitor the ambulance's progress to the hospital and update the ambulance driver's destination if needed.
 
     _1.3 Objectives and success criteria of the project_
 
-    _1.4 Definitions, acronyms, and abbreviations_
+The primary objective of this system is to provide ambulance drivers the requisite information such that the maximum number of human lives can be saved. An outline of said information is discussed in detail throughout this document.
 
-  CRUD - Create, Read, Update, Delete.  Used for use cases involving the manipulation of a particular set of data.  
+This project will be deemed successful if it meets the requirements as set forth in this document. Included in these requirements are commitments to ensure that the output from the system reduces the number of casualties.
+
+    _1.4 Definitions, acronyms, and abbreviations_
+  
+  * ADS - Ambulance Dispatch System, the name of this software system.
+
+  * CRUD - Create, Read, Update, Delete.  Used for use cases involving the manipulation of a particular set of data.  
 
   For example, the set of CRUD operations related to Ambulances would be:
   # *C* reating an ambulance<br>
@@ -40,15 +50,22 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
   # *U* pdating data about a particular ambulance<br>
   # *D* eleting an ambulance.
 
+  * ECT - Emergency Call Taker, receives information from 911 callers. 
+
+  * GPS - Global Positioning System, provides vehicle operators with the most efficient directions to reach a specific address using up-to-date traffic information.
+
+  * RAD - Requirements Analysis Document (this document)
+
     _1.5 References_
+
+  * Ambulance Dispatch System Articles provided by Dr. Lawrence Chung - [http://utdallas.edu/~chung/CS6354/ http://utdallas.edu/~chung/CS6354/]
+  * Ambulance Dispatch System Project Definition provided by Dr. Lawrence Chung - [http://utdallas.edu/~chung/CS6354/Project.doc http://utdallas.edu/~chung/CS6354/Project.doc]
 
     _1.6 Overview_
 
-    _1.7 Assumptions and Dependencies_
+The problem statement has been provided by Dr. Lawrence Chung and is available at [http://utdallas.edu/~chung/CS6354/Project.doc http://utdallas.edu/~chung/CS6354/Project.doc]. Additional references have been provided that show examples of known failures of existing systems.
 
-The first section of the RAD is an Introduction. Its purpose is to provide a brief overview of the function of the system and the reasons for its development, its scope, and references to the development context (e.g., reference to the problem statement written by the client, references to existing systems, feasibility studies). The introduction also includes the objectives and success criteria of the project.
-
-  _*1.7Assumptions and Dependencies_
+    _1.7Assumptions and Dependencies_
 
  * Assume dispatcher has clearly defined guidelines for how to enter information into system.
  * Assume dispatcher is qualified user of the system.
@@ -59,9 +76,11 @@ The first section of the RAD is an Introduction. Its purpose is to provide a bri
  * All the ambulance drivers are experienced and are well familiar with the local area.
  * All hospitals are of high standards with reasonable capacity with advanced and cutting edge technologies.
  * All the ambulances also have maps for use in case of GPS failures.
+
 === 2. Current system ===	
 
-The second section, Current system, describes the current state of affairs. If the new system will replace an existing system, this section describes the functionality and the problems of the current system. Otherwise, this section describes how the tasks supported by the new system are accomplished now.
+This ADS is designed to be used in a city which does not currently have a software system to assist in the dispatch of ambulances. Thus they currently have few metrics to determine their current efficiency (as measured in total time to transport a patient to the hospital from the time a dispatcher is contacted). However, many other cities are presently using similar ADS. The following system requirements and analysis include failures that have been encountered in other ADS as well as providing additional logical insight to minimize the risk to human life.
+
  
 === 3. Proposed system ===
 
