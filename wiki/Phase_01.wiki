@@ -56,6 +56,10 @@ This project will be deemed successful if it meets the requirements as set forth
 
   * RAD - Requirements Analysis Document (this document)
 
+  * Call Taker - A person who takes the call from the caller and enters the case information as reported into the ADS.
+
+  * Dispatcher - A person who receives the information entered by the call taker and assigns resources to the case through the ADS.
+
     _1.5 References_
 
   * Ambulance Dispatch System Articles provided by Dr. Lawrence Chung - [http://utdallas.edu/~chung/CS6354/ http://utdallas.edu/~chung/CS6354/]
