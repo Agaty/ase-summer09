@@ -198,38 +198,44 @@ http://ase-summer09.googlecode.com/files/use%20case%20model.png
 
 || Use case name:  || CRUD Incidents ||
 || Participating Actors: || Call Taker ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
-|| Special Requirements: || ||
+|| Preconditions: || none ||
+|| Postconditions: || The CRUD action is reflected in the system. ||
+|| Flow of Events: || 1. The Call Taker (Creates/Retrieves/Updates/Deletes) an incident in the system. ||
+|| Special Requirements: || Once an incident is created, it must be dispatched within 3 minutes. ||
 
 || Use case name:  || CRUD Ambulances||
 || Participating Actors: || Ambulance Administrator ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
+|| Preconditions: || none ||
+|| Postconditions: || The CRUD action is reflected in the system. ||
+|| Flow of Events: || 1. The Ambulance Administrator (Creates/Retrieves/Updates/Deletes) an ambulance in the system. ||
 || Special Requirements: || ||
 
 || Use case name:  || Retrieve Incident ||
 || Participating Actors: || Dispatcher ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
+|| Preconditions: || none ||
+|| Postconditions: || none ||
+|| Flow of Events: || 1. The Dispatcher retrieves an incident from the system. ||
 || Special Requirements: || ||
 
 || Use case name:  || Retrieve Ambulance ||
 || Participating Actors: || Dispatcher ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
+|| Preconditions: || none ||
+|| Postconditions: || none ||
+|| Flow of Events: || 1. The Dispatcher retrieves an ambulance from the system. ||
 || Special Requirements: || ||
 
 || Use case name:  || Dispatch Ambulance to Incident ||
 || Participating Actors: || Dispatcher ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
+|| Preconditions: || The ambulance is available. ||
+|| Postconditions: || The ambulance is allocated to the incident. ||
+|| Flow of Events: || 1. The Dispatcher chooses an ambulance to send to the particular incident.<br>2. The Dispatcher allocates that ambulance to the given incident.  ||
 || Special Requirements: || ||
 
 || Use case name:  || Recall Ambulance from Incident ||
 || Participating Actors: || Dispatcher ||
-|| Exceptions: || ||
-|| Flow of Events: || ||
+|| Preconditions: || The ambulance is allocated to an incident. ||
+|| Postconditions: || The ambulance is available. ||
+|| Flow of Events: || 1. The Dispatcher chooses an allocated ambulance to recall.<br>2. The Dispatcher recalls the ambulance from the given incident. ||
 || Special Requirements: || ||
 
   * 3.5.3 Object model *Omitted in Phase 1, Added in Phase 2*
