@@ -66,16 +66,23 @@ This project will be deemed successful if it meets the requirements as set forth
 The problem statement has been provided by Dr. Lawrence Chung and is available at [http://utdallas.edu/~chung/CS6354/Project.doc http://utdallas.edu/~chung/CS6354/Project.doc]. Additional references have been provided that show examples of known failures of existing systems.
 
     _1.7Assumptions and Dependencies_
-
- * Assume dispatcher has clearly defined guidelines for how to enter information into system.
- * Assume dispatcher is qualified user of the system.
- * The dispatcher has requested as much information as possible from the caller.
- * The internet and telephone networks are working fine.
- * The system admin and the system experts are available.
- * All the ambulances are equipped with state of art GPS systems with traffic monitoring.
- * All the ambulance drivers are experienced and are well familiar with the local area.
- * All hospitals are of high standards with reasonable capacity with advanced and cutting edge technologies.
- * All the ambulances also have maps for use in case of GPS failures.
+  
+  # Dispatcher
+    # Assume the dispatcher has clearly defined guidelines for how to enter information into the ADS.
+    # Assume the dispatcher has been sufficiently trained to use the ADS correctly.
+  # Emergency Call Taker
+    # Assume the ECT has obtained as much information about the location and condition of the patient from the caller as possible.
+    # Assume the ECT has correctly entered this information into the ADS.
+  # Ambulance
+    # Assume that each ambulance is equipped with a state-of-the-art GPS system which provides directions to a specific address.
+    # Assume the GPS system includes traffic conditions in the calculation of routes.
+    # Assume ambulance drivers are knowledgeable of the roads throughout the city and can navigate via maps (located on each ambulance) in the case of GPS failure.
+  # Hospitals
+    # Assume that every hospital has sufficient capacity and is technologically capable of handling every patient, thus it is sufficient for the ambulance driver to take the patient to the nearest available hospital.
+  # Technological
+    # Assume that the system has sufficient physical fault tolerance: Assume the Internet connection (backup via Satellite), phone network (both landline and cellular systems used), and electrical system (backup with in-house power generator).
+    # Assume that the ADS will be run from several physical locations throughout the city thus minimizing the risk that the entire system is inaccessible.
+    # Assume that system administrators are always accessible to return ADS to a stable condition at each location the ADS is being operated. This again minimizes the risk of failure at a single location affecting the entire ADS.
 
 === 2. Current system ===	
 
