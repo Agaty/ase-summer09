@@ -61,6 +61,8 @@ This project will be deemed successful if it meets the requirements as set forth
 
   * Dispatcher - A person who receives the information entered by the call taker and assigns resources to the case through the ADS.
 
+  * Ambulance Administrator - A person who adds or removes the number of available ambulances.
+
     _1.5 References_
 
   * Ambulance Dispatch System Articles provided by Dr. Lawrence Chung - [http://utdallas.edu/~chung/CS6354/ http://utdallas.edu/~chung/CS6354/]
@@ -78,6 +80,7 @@ The problem statement has been provided by Dr. Lawrence Chung and is available a
   # Emergency Call Taker
     # Assume the ECT has obtained as much information about the location and condition of the patient from the caller as possible.
     # Assume the ECT has correctly entered this information into the ADS.
+    # Assume the ECT has been trained with assignment of priorities to the case incidents according to the pre defined rules set by American Medical Association and Federal Drug Agency.
   # Ambulance
     # Assume that each ambulance is equipped with a state-of-the-art GPS system which provides directions to a specific address.
     # Assume the GPS system includes traffic conditions in the calculation of routes.
@@ -88,6 +91,7 @@ The problem statement has been provided by Dr. Lawrence Chung and is available a
     # Assume that the system has sufficient physical fault tolerance: Assume the Internet connection (backup via Satellite), phone network (both landline and cellular systems used), and electrical system (backup with in-house power generator).
     # Assume that the ADS will be run from several physical locations throughout the city thus minimizing the risk that the entire system is inaccessible.
     # Assume that system administrators are always accessible to return ADS to a stable condition at each location the ADS is being operated. This again minimizes the risk of failure at a single location affecting the entire ADS.
+
 
 === 2. Current system ===	
 
