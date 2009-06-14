@@ -102,16 +102,15 @@ This section presents the initial analysis of the ADS. It includes both function
  
     _3.2 Functional requirements_
 
- # The call taker shall answer the call from the caller and use the system to record the conversation. The call taker shall see a list of specific pre-defined questions as soon as the call is connected. The questions shall be: What is the location of the caller and the concerned incident? What’s the nearest street the caller can see? What’s the nearest building the caller can see? What’s the nearest parking lot the caller can see? What’s the age of the patient? What‘s the sex of the patient? What’s the current situation of the patient: Is the patient conscious?, Is the patient bleeding?
- # The call taker shall submit the information in the following format:Number of Patients,Location,Status,Age,Sex.
- # The dispatcher shall receive all the information submitted by the caller taker and assign the following resources and status to the case:Priority, Number of Ambulances, Type of Ambulances, Location of 2 nearby hospitals.
- # The dispatcher shall provide the ambulance driver with the following information: Location, Priority, and Location of 2 nearest hospital to the incident location. 
+ # The system shall receive the information from the call taker for each case in the following format: Location, Patient Condition on priority scale of 1-10, Optional description of the case with the following information : Number of Patients and respective Age and Sex.
+ # The dispatcher shall receive all the information submitted by the caller taker for each case and all cases will be in ordered in a queue based on priority scale and time stamps. 
+ # The dispatcher shall assign the following resources to each individual case :Number of Ambulances, Type of Ambulances, Location of 2 nearby hospitals and provide the ambulance driver with the same information along with the incident location and the priority level.
  # The GPS on the ambulance shall acknowledge its position to the system so that the dispatcher is aware of the ambulance status and position every 10 mins.
  # The dispatcher shall be able to monitor all the cases and ambulances.
  # The dispatcher shall be able to edit the priority level to the case and convey the same to the ambulance driver.
  # The dispatcher shall communicate with the driver through the system via automated messages. Along with this the both dispatcher and ambulance driver shall be able to communicate with each other through Walkie-talkie.
- # If the caller calls from the same number more than once then the system shall route the case to the supervisor of the dispatcher. The supervisor shall review the case and take suitable action.
  # If system is idle for a more than 10 mins, then system shall start dispatching ambulances automatically based on priority.
+ # The ambulance administrator shall be able to add and remove the number and type of available ambulances which the dispatcher can use for assignment.
     
     _3.3 Softgoal Interdependency Diagram_
  
