@@ -58,8 +58,6 @@ This project will be deemed successful if it meets the requirements as set forth
 
   * RAD - Requirements Analysis Document (this document)
 
-  * Call Taker - A person who takes the call from the caller and enters the case information as reported into the ADS.
-
   * Dispatcher - A person who receives the information entered by the call taker and assigns resources to the case through the ADS.
 
   * Ambulance Administrator - A person who adds or removes the number of available ambulances.
@@ -108,7 +106,7 @@ This section presents the initial analysis of the ADS. It includes both function
     _3.2 Functional requirements_
 
   # System input
-    # The system shall receive the following information from the call taker for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The call taker must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or location (an exact room number in a large office building).
+    # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or location (an exact room number in a large office building).
   # Dispatcher
     # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. For example, a patient who has been shot in the chest and has been rated as severity 9 by the call taker should receive an ambulance prior to a patient who has broken a leg (with patient condition rank 4) regardless of the order of calls received. If two calls have equal priority, then the call whose information was submitted into the ADS shall be serviced first. This differs from the original project description which required an ambulance always be dispatched within 3 minutes if one was available as it defies the ADS main objective, that of saving human life.
     # The dispatcher shall assign the following resources to each submitted case (if believed not to be a duplicate of a previous request): Number of ambulances. For each ambulance dispatched, its driver must be provided at least the location of the patient and any information regarding the patient's condition that is provided by the call taker's ADS input.
@@ -132,11 +130,11 @@ The Ambulance Dispatch System is used to send ambulances to save the lives of th
 
     * Availability:
 
-The system shall be available for use by the users at all times or as often as can be reasonably expected.  This will involve ensuring redundant internet access, database access, and wireless access for all relevant parties.
+The system shall be available for use by the users at all times. This will involve ensuring redundant internet access, database access, and wireless access for all relevant parties.
 
     * Consistency:
 
-The system shall consistently provide accurate results while finding the location of the ambulances and estimating their time to arrive at the reported location. The system shall not provide ambiguous results or randomly provide correct and incorrect results. The system shall notify the dispatcher of possible duplicate calls.
+The system shall consistently provide accurate results, that is, the system shall always locate the nearest available ambulance to the patient. The system shall not provide ambiguous results or randomly provide correct and incorrect results. The system shall notify the dispatcher of possible duplicate calls.
 
     * Fault Detection and Tolerance:
 
@@ -150,7 +148,7 @@ The system shall handle any conditions outside of normal operating conditions, y
 
   # Usability:
 
-The system shall be user friendly and allows the user to quickly create new incidents, read and edit existing incidents. In order to facilitate this ease of use, the system shall provide a Graphical User Interface, which clearly shows the map of the site from where the incident was reported. This map shall show the exact locations of the nearest hospital and the ambulance and shall assist the call taker to send the nearest ambulance to the location of incident. The system shall automatically suggest address locations based on the descriptions provided by the caller.
+The system shall be user friendly. The system shall allow users to quickly create new incidents, and read and edit existing incidents. In order to facilitate this ease of use, the system shall provide a Graphical User Interface, which clearly shows the map of the site from where the incident was reported. This map shall show the exact locations of the nearest hospital and the ambulance and shall inform the nearest ambulance to the location of incident. 
 
   # Understandability:
 
@@ -160,29 +158,24 @@ The system shall be easy to understand and learn how to use. The screens shown i
 
   # Responsiveness:
 
-The system shall be fast and provide accurate results within 1 minute of incident report input so that the ambulance could be sent within 3 minutes. The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher every 5 minutes. 
+The system shall be fast and provide accurate results within 1 minute of incident report being examined; that is, from the time the dispatcher starts to work on an incident report (with incidents being pulled from a queue where patient's with higher priority conditions are placed higher). The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher periodically. 
 
   # Load :
 
-The system shall be capable to process up to 500 calls per day. The system shall support 50 dispatchers to record incidents and can support up to 100 ambulances.
+The system shall be capable to process up to 500 calls per day. This figure assumes a metropolitan population of approximately 500,000 people. The system shall support up to 50 dispatchers, 50 ECT and up to 100 ambulances.
 
   * 3.4.4 Security Requirements:
 
-  # Confidentiality:
-
-The system shall provide confidentiality to the users. The users shall be first authenticated with their user id and password and if found to be valid users are allowed access to use the system
-
-  # Integrity:
-
-The system shall make sure that the data that is entered by the user is not altered without his/her knowledge and the data remains secure. This shall be achieved by means of a secure database server
-
-  # Availability:
-
+  # Confidentiality:<br>
+The system shall only be made available to select employees. It is assumed that said employees who have the ADS installed on their system are required to separately log into their computers, thus no separate login is required for the ADS.<br>
+  # Integrity:<br>
+The system shall make sure that the data that is entered by the user is not altered without his/her knowledge and the data remains secure. This shall be achieved by means of a secure database server<br>
+  # Availability:<br>
 The system shall be available continuously, 24 hours per day, 365 days a year.
 
   * 3.4.5 Supportability
 
-The system shall provide the help of a system administrator who can help resolve technical difficulties that the users are facing. The system shall also provide the services of a system expert who helps the users in using the system. The system expert shall be supervisors and shall be available to answer the technical questions by phone.	
+The company using the ADS shall provide an ADS administrator who can resolve the technical difficulties that the users encounter while using the ADS. The system shall also provide the services of a system expert who is available to ensure the availability of backup systems (such as networking, etc).
 
  
     _3.5 System models_
