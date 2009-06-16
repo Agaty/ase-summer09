@@ -71,7 +71,7 @@ This project will be deemed successful if it meets the requirements as set forth
 
 The problem statement has been provided by Dr. Lawrence Chung and is available at [http://utdallas.edu/~chung/CS6354/Project.doc http://utdallas.edu/~chung/CS6354/Project.doc]. Additional references have been provided that show examples of known failures of existing systems.
 
-    _1.7Assumptions and Dependencies_
+    _1.7 Assumptions and Dependencies_
   
   # Dispatcher
     # Assume the dispatcher has clearly defined guidelines for how to enter information into the ADS.
@@ -146,31 +146,36 @@ The system shall handle any conditions outside of normal operating conditions, y
 
   * 3.4.2 Usability Requirements
 
-  # Usability:
+  * Usability:
 
 The system shall be user friendly. The system shall allow users to quickly create new incidents, and read and edit existing incidents. In order to facilitate this ease of use, the system shall provide a Graphical User Interface, which clearly shows the map of the site from where the incident was reported. This map shall show the exact locations of the nearest hospital and the ambulance and shall inform the nearest ambulance to the location of incident. 
 
-  # Understandability:
+  * Understandability:
 
 The system shall be easy to understand and learn how to use. The screens shown in the system shall have all the information that is used in the present manual system and thus shall be easy for the users to learn. It shall provide user manuals and other training materials that shall help the users to easily learn how to use the system effectively.
  
   * 3.4.3 Performance Requirements:
 
-  # Responsiveness:
+  * Responsiveness:
 
 The system shall be fast and provide accurate results within 1 minute of incident report being examined; that is, from the time the dispatcher starts to work on an incident report (with incidents being pulled from a queue where patient's with higher priority conditions are placed higher). The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher periodically. 
 
-  # Load :
+  * Load :
 
 The system shall be capable to process up to 500 calls per day. This figure assumes a metropolitan population of approximately 500,000 people. The system shall support up to 50 dispatchers, 50 ECT and up to 100 ambulances.
 
   * 3.4.4 Security Requirements:
 
-  # Confidentiality:<br>
-The system shall only be made available to select employees. It is assumed that said employees who have the ADS installed on their system are required to separately log into their computers, thus no separate login is required for the ADS.<br>
-  # Integrity:<br>
+  * Confidentiality:
+
+The system shall only be made available to select employees. It is assumed that said employees who have the ADS installed on their system are required to separately log into their computers, thus no separate login is required for the ADS.
+
+  * Integrity:
+
 The system shall make sure that the data that is entered by the user is not altered without his/her knowledge and the data remains secure. This shall be achieved by means of a secure database server<br>
-  # Availability:<br>
+
+  * Availability:
+
 The system shall be available continuously, 24 hours per day, 365 days a year.
 
   * 3.4.5 Supportability
