@@ -24,6 +24,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.7 || 6/13/09 || Chad || Added Additional Nonfunctional Requirements and Usability ||
 || 0.8 || 6/13/09 || Ryan || Added use-case diagrams and templates ||
 || 0.9 || 6/15/09 || Katie || General editing ||
+|| 0.95 || 6/18/09 || Katie || Added class diagram notes ||
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
@@ -266,6 +267,7 @@ getRole()
 
 ambulance (associated with incidents)
 ---------
+State state = {active, inactive}
 Int id
 Address location
 Address destination
@@ -277,10 +279,13 @@ setDestination() (done by dispatcher or ambulance driver)
 
 incident
 --------
+State state = {unserviceable, duplicate, inqueue, enroute}
 Time time
 Address patientLocation
 Int patientSeverity
+Int numberOfPatients
 String patientInfo
+String contactInfo
 create() (done by dispatcher only)
 delete() (done by dispatcher only)
 setPatientLocation()
