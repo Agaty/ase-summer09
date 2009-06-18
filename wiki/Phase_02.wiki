@@ -248,6 +248,49 @@ http://ase-summer09.googlecode.com/files/use%20case%20model.png
 
   * 3.5.3 Object model 
 
+This will be moved to a static drawing once reviewed by the team.
+<code>
+user
+----
+String name
+Int id
+String role = {"ect", "aa", "disp", "ad", "comp"} (for ECT, Ambulance Admin, Dispatcher, Ambulance driver, computer/bot dispatcher)
+create()
+delete()
+setName()
+setId()
+setRole()
+getName()
+getId()
+getRole()
+
+ambulance (associated with incidents)
+---------
+Int id
+Address location
+Address destination
+create() (done by AA only)
+delete() (done by AA only)
+setId() (done by AA only)
+setLocation() (done by ambulance driver only)
+setDestination() (done by dispatcher or ambulance driver)
+
+incident
+--------
+Time time
+Address patientLocation
+Int patientSeverity
+String patientInfo
+create() (done by dispatcher only)
+delete() (done by dispatcher only)
+setPatientLocation()
+setPatientSeverity()
+setPatientInfo()
+getPatientLocation()
+getPatientSeverity()
+getPatientInfo()
+</code>
+
   * 3.5.4 Dynamic model 
 
   * 3.5.5 User interface navigational paths and screen mock-ups 	
