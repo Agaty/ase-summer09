@@ -22,11 +22,11 @@
 
 ==Phase 2 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || Sequence diagrams with Katie - Draft 1|| 6/16 || In progress ||
-|| Chad|| 3.5.5 - navigational paths + screen mockups || 6/20 || In progress ||
-|| Katie|| Class diagrams with Akhil - Draft 1|| 6/16 || In progress ||
-|| Rajeev|| Review sequence/class - Draft 2 || 6/20 || In progress ||
-|| Ryan|| Review sequence/class - Draft 2, Confirm wiki format || 6/20 || In progress ||
+|| Akhil || Sequence diagrams with Katie - Draft 1|| 6/16 || Done ||
+|| Chad|| 3.5.5 - navigational paths + screen mockups || 6/20 || Done ||
+|| Katie|| Class diagrams with Akhil - Draft 1|| 6/16 || Done ||
+|| Rajeev|| Review sequence/class - Draft 2 || 6/20 || Done ||
+|| Ryan|| Review sequence/class - Draft 2, Confirm wiki format || 6/20 || Done ||
 
 ==Phase 1 Section Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
