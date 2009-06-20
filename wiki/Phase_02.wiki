@@ -82,7 +82,7 @@ The problem statement has been provided by Dr. Lawrence Chung and is available a
   # Emergency Call Taker
     # Assume the ECT has obtained as much information about the location and condition of the patient from the caller as possible.
     # Assume the ECT has correctly entered this information into the ADS.
-    # Assume the ECT has been trained with assignment of priorities to the case incidents according to the pre defined rules set by American Medical Association and Federal Drug Agency.
+    # Assume the ECT has been trained with assignment of severities to the case incidents according to the pre defined rules set by American Medical Association and Federal Drug Agency.
     # Assume the ECT assigns a severity level to each incident in a scale of 1 to 10, where 10 implies highest level of emergency for cases such as being shot in the chest and 1 being the lowest level of severity for cases such as a sprain in the ankle.
   # Ambulance
     # Assume that each ambulance is equipped with a state-of-the-art GPS system which provides directions to a specific address.
@@ -113,7 +113,7 @@ This section presents the initial analysis of the ADS. It includes both function
   # System input
     # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or any other additional information (an exact room number in a large office building).
   # Dispatcher
-    # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. The ambulances are assigned as per the severity and not the order of calls received. If two calls have equal priority, then the call whose information was submitted into the ADS shall be serviced first. 
+    # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. The ambulances are assigned as per the severity and not the order of calls received. If two calls have equal severity, then the call whose information was submitted into the ADS shall be serviced first. 
 Note: This differs from the original project description which required an ambulance always be dispatched within 3 minutes if one was available as it defies the ADS main objective, that of saving human life.
     # The dispatcher shall assign the following resources to each submitted case: Number of ambulances. For each ambulance dispatched, its driver must be provided at least the location of the patient and any information regarding the patient's condition that is provided by the call taker's ADS input.
     # The dispatcher shall be able to monitor the location of every operational ambulance.
@@ -160,7 +160,7 @@ The system shall be easy to understand and learn how to use. The screens shown i
 
   * Responsiveness:
 
-The system shall be fast and provide accurate results within 1 minute of incident report being examined; that is, from the time the dispatcher starts to work on an incident report (with incidents being pulled from a queue where patient's with higher priority conditions are placed higher). The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher periodically. 
+The system shall be fast and provide accurate results within 1 minute of incident report being examined; that is, from the time the dispatcher starts to work on an incident report (with incidents being pulled from a queue where patient's with higher severity conditions are placed higher). The system shall immediately update the location information of the ambulance every time it receives an update from the operator. The ambulance operator shall report his/her location to the dispatcher periodically. 
 
   * Load :
 
