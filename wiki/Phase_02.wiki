@@ -25,6 +25,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.8 || 6/13/09 || Ryan || Added use-case diagrams and templates ||
 || 0.9 || 6/15/09 || Katie || General editing ||
 || 0.95 || 6/18/09 || Katie || Added class diagram notes ||
+|| 0.96 || 6/20/09 || Rajeev || Made corrections to the requirements section ||
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
