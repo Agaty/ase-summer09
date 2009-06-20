@@ -84,7 +84,7 @@ The problem statement has been provided by Dr. Lawrence Chung and is available a
     # Assume the ECT has obtained as much information about the location and condition of the patient from the caller as possible.
     # Assume the ECT has correctly entered this information into the ADS.
     # Assume the ECT has been trained with assignment of severities to the case incidents according to the pre defined rules set by American Medical Association and Federal Drug Agency.
-    # Assume the ECT assigns a severity level to each incident in a scale of 1 to 10, where 10 implies highest level of emergency for cases such as being shot in the chest and 1 being the lowest level of severity for cases such as a sprain in the ankle.
+    # Assume the ECT assigns a severity level to each incident in a scale of 1 to 5, where 5 implies highest level of emergency for cases such as being shot in the chest and 1 being the lowest level of severity for cases such as a sprain in the ankle.
   # Ambulance
     # Assume that each ambulance is equipped with a state-of-the-art GPS system which provides directions to a specific address.
     # Assume the GPS system includes traffic conditions in the calculation of routes.
@@ -112,7 +112,7 @@ This section presents the initial analysis of the ADS. It includes both function
     _3.2 Functional requirements_
 
   # System input
-    # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or any other additional information (an exact room number in a large office building).
+    # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-5 where 5 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or any other additional information (an exact room number in a large office building).
   # Dispatcher
     # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. The ambulances are assigned as per the severity and not the order of calls received. If two calls have equal severity, then the call whose information was submitted into the ADS shall be serviced first. Note: This differs from the original project description which required an ambulance always be dispatched within 3 minutes if one was available as it defies the ADS main objective, that of saving human life.
     # The dispatcher shall assign the following resources to each submitted case: Number of ambulances. For each ambulance dispatched, its driver must be provided at least the location of the patient and any information regarding the patient's condition that is provided by the call taker's ADS input.
