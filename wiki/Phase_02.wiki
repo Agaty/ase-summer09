@@ -77,14 +77,18 @@ The problem statement has been provided by Dr. Lawrence Chung and is available a
   # Dispatcher
     # Assume the dispatcher has clearly defined guidelines for how to enter information into the ADS.
     # Assume the dispatcher has been sufficiently trained to use the ADS correctly.
+    # Assume the dispatcher has the ability to detect duplicate incidents. However if in doubt the dispatcher shall leave the incidents as it is.
+    # In cases where the same caller is calling after intervals of time to check whether the ambulance is dispatched or not then there is some problem and in those cases the call is routed to the supervisor.
   # Emergency Call Taker
     # Assume the ECT has obtained as much information about the location and condition of the patient from the caller as possible.
     # Assume the ECT has correctly entered this information into the ADS.
     # Assume the ECT has been trained with assignment of priorities to the case incidents according to the pre defined rules set by American Medical Association and Federal Drug Agency.
+    # Assume the ECT assigns a severity level to each incident in a scale of 1 to 10, where 10 implies highest level of emergency for cases such as being shot in the chest and 1 being the lowest level of severity for cases such as a sprain in the ankle.
   # Ambulance
     # Assume that each ambulance is equipped with a state-of-the-art GPS system which provides directions to a specific address.
     # Assume the GPS system includes traffic conditions in the calculation of routes.
     # Assume ambulance drivers are knowledgeable of the roads throughout the city and can navigate via maps (located on each ambulance) in the case of GPS failure.
+    # Assume that the ambulances are sent as per the number of patients and not as per the severity of the incident.
   # Hospitals
     # Assume that every hospital has sufficient capacity and is technologically capable of handling every patient, thus it is sufficient for the ambulance driver to take the patient to the nearest available hospital.
   # Technological
@@ -107,17 +111,18 @@ This section presents the initial analysis of the ADS. It includes both function
     _3.2 Functional requirements_
 
   # System input
-    # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or location (an exact room number in a large office building).
+    # The system shall receive the following information from the ECT for each call: Location (exact, nearest or best-guess location), Patient condition (on a scale of 1-10 where 10 indicates immediate care required to prevent loss of life and 1 a non-emergency), the number of patients. The ECT must optionally be able to provide a written description regarding the patient's condition (such as the nature of the patient's injuries, age and gender) or any other additional information (an exact room number in a large office building).
   # Dispatcher
-    # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. For example, a patient who has been shot in the chest and has been rated as severity 9 by the call taker should receive an ambulance prior to a patient who has broken a leg (with patient condition rank 4) regardless of the order of calls received. If two calls have equal priority, then the call whose information was submitted into the ADS shall be serviced first. This differs from the original project description which required an ambulance always be dispatched within 3 minutes if one was available as it defies the ADS main objective, that of saving human life.
-    # The dispatcher shall assign the following resources to each submitted case (if believed not to be a duplicate of a previous request): Number of ambulances. For each ambulance dispatched, its driver must be provided at least the location of the patient and any information regarding the patient's condition that is provided by the call taker's ADS input.
+    # The dispatcher shall receive the information submitted by the call taker in the order of patient severity followed by the time of the received data by the ADS. The ambulances are assigned as per the severity and not the order of calls received. If two calls have equal priority, then the call whose information was submitted into the ADS shall be serviced first. 
+Note: This differs from the original project description which required an ambulance always be dispatched within 3 minutes if one was available as it defies the ADS main objective, that of saving human life.
+    # The dispatcher shall assign the following resources to each submitted case: Number of ambulances. For each ambulance dispatched, its driver must be provided at least the location of the patient and any information regarding the patient's condition that is provided by the call taker's ADS input.
     # The dispatcher shall be able to monitor the location of every operational ambulance.
-    # The dispatcher shall be able to edit the priority level of each submitted case.
-    # The dispatcher shall be able to change the ambulance's destination while it is en route to any location. For example, ambulances may need to be redirected to more critical patients. Before ambulances are redirected, there must be no other available ambulances. If the severity of an incoming case exceeds 3 points on the 10 point patient condition scale, then the ambulance shall be redirected as the new patient requires more immediate attention.
-    # The dispatcher shall assign the ambulances through the ADS. Should the ADS messaging system fail, then the dispatcher can resort to cell phone or walkie-talkie communication with the ambulance driver.
+    # The dispatcher shall be able to edit the severity level of each submitted case.
+    # The dispatcher shall be able to change the ambulance's destination while it is en route to any location depending on the severity of the incident. Before ambulances are redirected, there shall be no other available ambulances. If the severity of an incoming case exceeds 3 points on the 10 point patient condition scale, then the ambulance shall be redirected as the new patient requires more immediate attention.
+    # The dispatcher shall assign the ambulances through the ADS using the messaging system to communicate with the ambulance driver. Should the ADS messaging system fail, then the dispatcher can resort to cell phone or walkie-talkie communication with the ambulance driver.
     # If the ADS is idle for more than 10 minutes and there are cases in the ADS queue (implying that there is no human servicing the system), the ADS shall start assigning ambulances per the same requirements as the human operator.
   # Ambulance driver    
-    # The GPS on the ambulance shall periodically send its position and status to the system so that the dispatcher is aware of the ambulance status and position.
+    # The GPS on the ambulance shall periodically send its position and status to the system using the ADS messaging system so that the dispatcher is aware of the ambulance status and position.
   # Ambulance administrator
     # The ambulance administrator shall be able to add and remove ambulances to the ADS system. Each added ambulance shall be added to the ADS with a location. 
     
@@ -128,10 +133,6 @@ This section presents the initial analysis of the ADS. It includes both function
   * 3.4.1 Reliability Requirements
 
 The Ambulance Dispatch System is used to send ambulances to save the lives of the people who may be in emergency conditions. Thus reliability is one of the very important non functional requirements. Reliability can be classified into several categories:
-
-    * Availability:
-
-The system shall be available for use by the users at all times. This will involve ensuring redundant internet access, database access, and wireless access for all relevant parties.
 
     * Consistency:
 
@@ -177,7 +178,7 @@ The system shall make sure that the data that is entered by the user is not alte
 
   * Availability:
 
-The system shall be available continuously, 24 hours per day, 365 days a year.
+The system shall be available for use by the users at all times. This will involve ensuring redundant internet access, database access, and wireless access for all relevant parties. The system shall be available continuously, 24 hours per day, 365 days a year.
 
   * 3.4.5 Supportability
 
