@@ -209,7 +209,7 @@ The company using the ADS shall provide an ADS administrator who can resolve the
   3.5.2.1 Use case diagrams
 http://ase-summer09.googlecode.com/files/Ucase.jpg
 
-  3.5.2.2 Use case templates
+  3.5.2.2 Use case templates and Black Box Sequence Diagram
 
 || Use case name:  || CRUD Incidents ||
 || Participating Actors: || Call Taker ||
@@ -259,10 +259,10 @@ http://ase-summer09.googlecode.com/files/bb5.jpg
 || Special Requirements: || ||
 http://ase-summer09.googlecode.com/files/bb6.jpg
 
-  3.5.3 Object model 
+  3.5.3 Object model: Class Diagram 
 http://ase-summer09.googlecode.com/files/DesignClass.jpg
 
-  3.5.4 Dynamic model 
+  3.5.4 Dynamic model: White Box Sequence Diagram 
 http://ase-summer09.googlecode.com/files/WhiteBox.jpg
 
   3.5.5 User interface navigational paths and screen mock-ups 	
