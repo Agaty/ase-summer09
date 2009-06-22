@@ -129,6 +129,7 @@ This section presents the initial analysis of the ADS. It includes both function
     # The ambulance administrator shall be able to add and remove ambulances to the ADS system. Each added ambulance shall be added to the ADS with a location. 
     
     _3.3 Softgoal Interdependency Diagram_
+http://ase-summer09.googlecode.com/files/SIG.jpg
  
     _3.4 Nonfunctional requirements_
 
