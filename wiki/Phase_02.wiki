@@ -212,6 +212,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || The CRUD action is reflected in the system. ||
 || Flow of Events: || 1. The Call Taker (Creates/Retrieves/Updates/Deletes) an incident in the system. ||
 || Special Requirements: || Once an incident is created, it must be dispatched within 3 minutes. ||
+http://ase-summer09.googlecode.com/files/bb1.jpg
 
 || Use case name:  || CRUD Ambulances||
 || Participating Actors: || Ambulance Administrator ||
@@ -219,6 +220,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || The CRUD action is reflected in the system. ||
 || Flow of Events: || 1. The Ambulance Administrator (Creates/Retrieves/Updates/Deletes) an ambulance in the system. ||
 || Special Requirements: || ||
+http://ase-summer09.googlecode.com/files/bb2.jpg
 
 || Use case name:  || Retrieve Incident ||
 || Participating Actors: || Dispatcher ||
@@ -226,6 +228,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || none ||
 || Flow of Events: || 1. The Dispatcher retrieves an incident from the system. ||
 || Special Requirements: || ||
+http://ase-summer09.googlecode.com/files/bb3.jpg
 
 || Use case name:  || Retrieve Ambulance ||
 || Participating Actors: || Dispatcher ||
@@ -233,6 +236,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || none ||
 || Flow of Events: || 1. The Dispatcher retrieves an ambulance from the system. ||
 || Special Requirements: || ||
+http://ase-summer09.googlecode.com/files/bb4.jpg
 
 || Use case name:  || Dispatch Ambulance to Incident ||
 || Participating Actors: || Dispatcher ||
@@ -240,6 +244,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || The ambulance is allocated to the incident. ||
 || Flow of Events: || 1. The Dispatcher chooses an incident.<br>2. The Dispatcher chooses an available ambulance to dispatch to the given incident.<br>3. The Dispatcher allocates the chosen ambulance. ||
 || Special Requirements: || ||
+http://ase-summer09.googlecode.com/files/bb5.jpg
 
 || Use case name:  || Recall Ambulance from Incident ||
 || Participating Actors: || Dispatcher ||
@@ -247,6 +252,7 @@ http://ase-summer09.googlecode.com/files/Ucase.jpg
 || Postconditions: || The ambulance is available. ||
 || Flow of Events: || 1. The Dispatcher chooses an incident.<br>2. The Dispatcher chooses a dispatched ambulance to recall.<br>3. The Dispatcher recalls the chosen ambulance. ||
 || Special Requirements: || ||
+http://ase-summer09.googlecode.com/files/bb6.jpg
 
   3.5.3 Object model 
 http://ase-summer09.googlecode.com/files/DesignClass.jpg
