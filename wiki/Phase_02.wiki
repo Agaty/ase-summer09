@@ -75,6 +75,10 @@ This project will be deemed successful if it meets the requirements as set forth
 
 The problem statement has been provided by Dr. Lawrence Chung and is available at [http://utdallas.edu/~chung/CS6354/Project.doc http://utdallas.edu/~chung/CS6354/Project.doc]. Additional references have been provided that show examples of known failures of existing systems.
 
+The project has been separated into distinct phases for development. Below is the general process specification as well as specific Phase 1 and Phase 2 specification. Further phases can be found on this project's website.
+http://ase-summer09.googlecode.com/files/IDEF0.jpg
+http://ase-summer09.googlecode.com/files/IDEF0.1.jpg
+
     _1.7 Assumptions and Dependencies_
   
   # Dispatcher
