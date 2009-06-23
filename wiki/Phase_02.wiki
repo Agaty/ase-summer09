@@ -28,6 +28,7 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 || 0.12 || 6/20/09 || Rajeev || Made corrections to the requirements section ||
 || 0.13 || 6/20/09 || Ryan || Made corrections to scenarios ||
 || 0.14 || 6/22/09 || Katie || Added object, seq and use case diagrams ||
+|| 0.15 || 6/23/09 || Chad || Added navigation path and mock up diagrams ||
 
 === 1 Introduction ===
     _1.1 Purpose of the system_
@@ -265,4 +266,18 @@ http://ase-summer09.googlecode.com/files/DesignClass.jpg
   3.5.4 Dynamic model: White Box Sequence Diagram 
 http://ase-summer09.googlecode.com/files/WhiteBox.jpg
 
-  3.5.5 User interface navigational paths and screen mock-ups 	
+  3.5.5 User interface navigational paths and screen mock-ups 
+Navigation Path<br>
+http://ase-summer09.googlecode.com/files/Navigation.jpg
+<br>
+
+Call Taker User Interface<br>
+http://ase-summer09.googlecode.com/files/CallTaker.png
+<br>
+
+Dispatcher User Interface<br>
+http://ase-summer09.googlecode.com/files/Dispatcher.png
+<br>
+
+Ambulance Administrator User Interface<br>
+http://ase-summer09.googlecode.com/files/AmbulanceAdmin.png
