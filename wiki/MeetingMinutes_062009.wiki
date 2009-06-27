@@ -23,8 +23,8 @@
 ==Phase 2 Section Final Draft Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
 || Akhil || Send updated class & seq diagrams per user discussion today  || 6/22 || Done ||
-|| Akhil || Print and turn in doc || 6/23 || In progress ||
-|| Chad|| Finish screen mockups/navigational paths & post || 6/22 || In progress ||
+|| Akhil || Print and turn in doc || 6/23 || Done||
+|| Chad|| Finish screen mockups/navigational paths & post || 6/22 || Done ||
 || Katie|| Review class & seq diagrams + post || 6/22 || Done ||
 || Rajeev|| Send updated class & seq diagrams per user discussion today || 6/22 || Done ||
 || Ryan|| Review class & seq diagrams, update scenarios for consistency || 6/22 || Done ||
