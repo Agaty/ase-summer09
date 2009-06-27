@@ -25,15 +25,15 @@ System design is documented in the System Design Document (SDD). It describes de
 The audience for the SDD includes the project management, the system architects (i.e., the developers who participate in the system design), and the developers who design and implement each subsystem. 
 
 == Introduction == 
-    _1.1 Purpose of the system_
+    === _1.1 Purpose of the system_ ===
 
-    _1.2 Design goals_
+    === _1.2 Design goals_ ===
 
-    _1.3 Definitions, acronyms, and abbreviations_
+    === _1.3 Definitions, acronyms, and abbreviations_ ===
 
-    _1.4 References_
+    === _1.4 References_ ===
 
-    _1.5 Overview_ 
+    === _1.5 Overview_ ===
 
 == Current software architecture ==
  
@@ -43,19 +43,19 @@ The second section describes the architecture of the system being replaced. If t
 
 The third section documents the system design model of the new system.  
 
-    _3.1 Overview_
+    === _3.1 Overview_ ===
 
-    _3.2 Subsystem decomposition_
+    === _3.2 Subsystem decomposition_ ===
 
-    _3.3 Hardware/software mapping_ 
+    === _3.3 Hardware/software mapping_ ===
 
-    _3.4 Persistent data management_
+    === _3.4 Persistent data management_ ===
 
-    _3.5 Access control and security_
+    === _3.5 Access control and security_ ===
 
-    _3.6 Global software control_ 
+    === _3.6 Global software control_ === 
 
-    _3.7 Boundary conditions_  
+    === _3.7 Boundary conditions_ ===  
 
 == Subsystem services == 
 
