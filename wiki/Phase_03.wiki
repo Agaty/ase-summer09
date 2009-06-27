@@ -21,11 +21,9 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
     === _1.2 Design goals_ ===
 
-    === _1.3 Definitions, acronyms, and abbreviations_ ===
+    === _1.3 References_ ===
 
-    === _1.4 References_ ===
-
-    === _1.5 Overview_ ===
+    === _1.4 Overview_ ===
 
 == 2. Current software architecture ==
  
@@ -36,19 +34,27 @@ The second section describes the architecture of the system being replaced. If t
 The third section documents the system design model of the new system.  
 
     === _3.1 Overview_ ===
-
+Client-server using a web browser with 3 layered architecture.  
     === _3.2 Subsystem decomposition_ ===
-
+http://ase-summer09.googlecode.com/files/component%20diagram.PNG
     === _3.3 Hardware/software mapping_ ===
+Client only requires a basic computer running a web browser with a connection to the server.
 
+Server requires access to the database and sufficient computing power to handle the load of users expected.
     === _3.4 Persistent data management_ ===
-
+We'll use Active records to store the model to an MySQL database.
     === _3.5 Access control and security_ ===
-
+Users will be logged into the system.  Client systems must maintain their own physical and data security.
     === _3.6 Global software control_ === 
-
+User uses the view to make requests and is provided with responses.  The view communicates through the controller to the model.  The model provides an interface to get and set attributes.  The controller handles all requests.
     === _3.7 Boundary conditions_ ===  
-
+The server needs to be running for the clients to connect.  If a client shuts down there is no significant effect.  If the server shuts down clients requests will time out and fail.
 == 4. Subsystem services == 
+The interface provided by the model allows the getting and setting of attributes within the model.
 
-== 5. Glossary ==   
+The interface provided by the controller allows user requests to be handled.
+
+The view is interacted with directly by the user.
+== 5. Glossary ==  
+
+MVC: Model View Controller 
