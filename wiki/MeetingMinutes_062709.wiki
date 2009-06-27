@@ -1,0 +1,29 @@
+#summary Meeting Minutes 06/27/09
+
+==Attendees==
+  * Katie
+  * Chad
+  * Akhil
+  * Ryan 
+  * Rajeev
+
+==Proposed Agenda==
+
+  * Assign tasks for Phase 3 - due 7/7/09
+  * Schedule next meeting
+
+==Meeting Notes==
+  
+  * Reviewed class & seq diagrams - changed user diagrams
+  * Reviewed screen mockups
+  * Drafted navigational paths
+  * Next meeting scheduled for June 27 (Phase 03 due July 7, work to be assigned on June 27) at Noon in Open Labs
+
+==Phase 3 Section Draft Delegation==
+|| *Assignee* || *Section                    * || *Due Date* || *Status     * ||
+|| Akhil || x  || 7/3 || In progress ||
+|| Akhil || x || 7/3 || In progress ||
+|| Chad|| x || 7/3 || In progress ||
+|| Katie|| x || 7/3 || In progress ||
+|| Rajeev|| x || 7/3 || In progress ||
+|| Ryan|| x || 7/3 || In progress ||
