@@ -16,47 +16,39 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 = System Design Document =
 
-== 1. Purpose == 
+== 1. Introduction == 
+    === _1.1 Purpose of the system_ ===
 
-System design is documented in the System Design Document (SDD). It describes design goals set by the project, subsystem decomposition (with UML class diagrams), hardware/software mapping (with UML deployment diagrams), data management, access control, control flow mechanisms, and boundary conditions. The SDD is used to define interfaces between teams of developers and serve as a reference when architecture-level decisions need to be revisited. 
+    === _1.2 Design goals_ ===
 
-== 2. Audience == 
+    === _1.3 Definitions, acronyms, and abbreviations_ ===
 
-The audience for the SDD includes the project management, the system architects (i.e., the developers who participate in the system design), and the developers who design and implement each subsystem. 
+    === _1.4 References_ ===
 
-== 3. Introduction == 
-    === _3.1 Purpose of the system_ ===
+    === _1.5 Overview_ ===
 
-    === _3.2 Design goals_ ===
-
-    === _3.3 Definitions, acronyms, and abbreviations_ ===
-
-    === _3.4 References_ ===
-
-    === _3.5 Overview_ ===
-
-== 4. Current software architecture ==
+== 2. Current software architecture ==
  
 The second section describes the architecture of the system being replaced. If there is no previous system, this section can be replaced by a survey of current architectures for similar systems. The purpose of this section is to make explicit the background information that system architects used, their assumptions, and common issues the new system will address.  
 
-== 5. Proposed software architecture == 
+== 3. Proposed software architecture == 
 
 The third section documents the system design model of the new system.  
 
-    === _5.1 Overview_ ===
+    === _3.1 Overview_ ===
 
-    === _5.2 Subsystem decomposition_ ===
+    === _3.2 Subsystem decomposition_ ===
 
-    === _5.3 Hardware/software mapping_ ===
+    === _3.3 Hardware/software mapping_ ===
 
-    === _5.4 Persistent data management_ ===
+    === _3.4 Persistent data management_ ===
 
-    === _5.5 Access control and security_ ===
+    === _3.5 Access control and security_ ===
 
-    === _5.6 Global software control_ === 
+    === _3.6 Global software control_ === 
 
-    === _5.7 Boundary conditions_ ===  
+    === _3.7 Boundary conditions_ ===  
 
-== 6. Subsystem services == 
+== 4. Subsystem services == 
 
-== 7. Glossary ==   
+== 5. Glossary ==   
