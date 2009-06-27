@@ -22,7 +22,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
     === _1.2 Design goals_ ===
 
     === _1.3 References_ ===
-
+[http://code.google.com/p/ase-summer09/wiki/Phase_02]
     === _1.4 Overview_ ===
 
 == 2. Current software architecture ==
