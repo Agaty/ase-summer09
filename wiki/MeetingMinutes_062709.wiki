@@ -3,9 +3,7 @@
 ==Attendees==
   * Katie
   * Chad
-  * Akhil
   * Ryan 
-  * Rajeev
 
 ==Proposed Agenda==
 
@@ -14,16 +12,13 @@
 
 ==Meeting Notes==
   
-  * Reviewed class & seq diagrams - changed user diagrams
-  * Reviewed screen mockups
-  * Drafted navigational paths
-  * Next meeting scheduled for June 27 (Phase 03 due July 7, work to be assigned on June 27) at Noon in Open Labs
+  * Drafted proposed software architecture
+  * Next meeting scheduled for July 4 by conference call. Katie to email conference call #. 10AM CST.
 
 ==Phase 3 Section Draft Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || x  || 7/3 || In progress ||
-|| Akhil || x || 7/3 || In progress ||
-|| Chad|| x || 7/3 || In progress ||
-|| Katie|| x || 7/3 || In progress ||
-|| Rajeev|| x || 7/3 || In progress ||
-|| Ryan|| x || 7/3 || In progress ||
+|| Akhil || Write up Introduction & Current System  || 7/3 || In progress  ||
+|| Chad|| Review draft for consistency || 7/3 || In progress ||
+|| Katie|| Review draft for consistency || 7/3 ||   In progress ||
+|| Rajeev|| Subsystem Services || 7/3 ||   In progress ||
+|| Ryan|| Post software architecture || 7/3 || In progress ||
