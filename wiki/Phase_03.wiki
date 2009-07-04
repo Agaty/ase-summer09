@@ -21,19 +21,19 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
     === _1.2 Design goals_ ===
 
-Functionality
-Increased Productivity
-Minimum Errors
-Fault Tolerant
-Good Documentation
-Security
-Flexibility
-Low Cost
-User Friendliness
-Modifiable
-Traceability of Requirements
+We will consider the following design goals with the highest priority items appearing first:
 
-in that order high to low
+  * Functionality
+  * Increased Productivity
+  * Minimum Errors
+  * Fault Tolerant
+  * Good Documentation
+  * Security
+  * Flexibility
+  * Low Cost
+  * User Friendliness
+  * Modifiability
+  * Traceability of Requirements
 
     === _1.3 References_ ===
 [http://code.google.com/p/ase-summer09/wiki/Phase_02]
