@@ -48,7 +48,7 @@ The second section describes the architecture of the system being replaced. If t
 The third section documents the system design model of the new system.  
 
     === _3.1 Overview_ ===
-Client-server using a web browser with 3 layered architecture.  
+The overall design is client-server over the web with a 3 layered architecture.  The view runs on the client and is displayed in a web browser.  The view makes control requests to the Controller via the provided interface.  The controller then gets and sets attributes of the model which is the third layer.  The model is an active record running off of a SQL database.
     === _3.2 Subsystem decomposition_ ===
 http://ase-summer09.googlecode.com/files/component.png
     === _3.3 Hardware/software mapping_ ===
