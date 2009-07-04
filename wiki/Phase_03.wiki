@@ -50,11 +50,14 @@ The third section documents the system design model of the new system.
     === _3.1 Overview_ ===
 Client-server using a web browser with 3 layered architecture.  
     === _3.2 Subsystem decomposition_ ===
-http://ase-summer09.googlecode.com/files/component%20diagram.PNG
+http://ase-summer09.googlecode.com/files/component.png
     === _3.3 Hardware/software mapping_ ===
-Client only requires a basic computer running a web browser with a connection to the server.
+The client only requires a basic computer running a web browser with a connection to the server.
 
-Server requires access to the database and sufficient computing power to handle the load of users expected.
+The server requires access to the database and sufficient computing power to handle the load of users expected.
+
+http://ase-summer09.googlecode.com/files/deployment.png
+
     === _3.4 Persistent data management_ ===
 We'll use Active records to store the model to an MySQL database.
     === _3.5 Access control and security_ ===
