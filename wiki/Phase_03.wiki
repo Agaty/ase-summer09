@@ -34,25 +34,25 @@ The current system has no prevalent architecture , so for coming up with the arc
 
 2.1.1 Client-Server Architecture
 
-*One or many servers provides services to instances of subsystems, called clients. 
+ One or many servers provides services to instances of subsystems, called clients. 
 
-*Client calls on the server, which performs some service and returns the result.
+ Client calls on the server, which performs some service and returns the result.
 
-*Client knows the interface of the server (its service).
+ Client knows the interface of the server (its service).
 
-*Server does not need to know the interface of the client.
+ Server does not need to know the interface of the client.
 
-*Response in general is immediate.
+ Response in general is immediate.
 
-*Users interact only with the client.
+ Users interact only with the client.
 
 2.1.2 Layered Architecture
 
 The layered architecture has two types:
 
-*Closed Layer: Any layer can only invoke operations from the immediate layer below. The design goals are high maintainability, flexibility.
+ Closed Layer: Any layer can only invoke operations from the immediate layer below. The design goals are high maintainability, flexibility.
 
-*Open Layer: Any layer can invoke operations from any layers below with design goal of having high runtime efficiency.
+ Open Layer: Any layer can invoke operations from any layers below with design goal of having high runtime efficiency.
 
 2.1.3 Peer-to-Peer Architecture
 
@@ -71,15 +71,15 @@ View subsystem: Responsible for displaying application domain objects to the use
 
 Controller subsystem:  Responsible for sequence of interactions with the user and notifying views of changes in the model. 
 
-*MVC is a special case of a repository architecture:
+MVC is a special case of a repository architecture:
 
-*Model subsystem implements the central data structure and the Controller subsystem explicitly dictate the control flow.
+Model subsystem implements the central data structure and the Controller subsystem explicitly dictate the control flow.
 
-*Subsystems access and modify data from a single data structure.
+Subsystems access and modify data from a single data structure.
 
-*Subsystems are loosely coupled (interact only through the repository.
+Subsystems are loosely coupled (interact only through the repository).
 
-*Control flow is dictated by central repository (triggers) or by the subsystems (locks, synchronization primitives).
+Control flow is dictated by central repository (triggers) or by the subsystems (locks, synchronization primitives).
 
 
 2.1.5 Middleware Architecture:
