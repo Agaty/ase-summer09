@@ -45,14 +45,15 @@ In general the architectural is defined as the underlying structure of things. T
 == 2. Current software architecture ==
  
 The current system has no prevalent architecture, so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
-2.1.1 Client-Server Architecture
+
+*2.1.1 Client-Server Architecture*
 
 The client server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn looks up for the service and returns the result back to the client.
 
 The client has the knowledge about the server services and knows the server interface. The server has no knowledge about the client interface. 
 The client server interaction in general is immediate and the users interact only with the client.
 
-2.1.2 Layered Architecture
+*2.1.2 Layered Architecture*
 
 The layered architecture is based on horizontal layering of the system with each layer providing a set of services and known as Virtual Machines.
 
@@ -62,11 +63,11 @@ Open Layer: Any layer can invoke operations from any layers below with design go
 
 Example of Layered Architecture is the OSI Network Layer Model
 
-2.1.3 Peer-to-Peer Architecture
+*2.1.3 Peer-to-Peer Architecture*
 
 “Peer-to-peer (P2P) networking is a method of delivering computer network services in which the participants share a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. Such resources are provided directly to other participants without intermediary network hosts or servers.Peer-to-peer network participants are providers and consumers of network services simultaneously, which contrasts with other service models, such as traditional client-server computing.” Source: Dr Chung Course Slide
 
-2.1.4 Repository Architecture:
+*2.1.4 Repository Architecture*
 
 The repository architecture is composed of three sub-systems:
 Knowledge source: It is responsible for the application domain knowledge.
@@ -80,7 +81,7 @@ The MVC is a special case of a repository architecture wherein knowledge source 
 The Subsystems access and modify data from a single data structure with the primary design goal of low coupling. The Control flow is dictated by central knowledge source.
 Example of repository architecture is Microsoft Speech Recognition system.
 
-2.1.5 Middleware Architecture:
+*2.1.5 Middleware Architecture*
 
 The middleware architecture provides many services one of being the translation services between subsystems which allows communication between two different subsystems. The communications happens via a software bus which is the underlying communication between the various sub-systems.
 
