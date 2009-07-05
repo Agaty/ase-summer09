@@ -32,7 +32,7 @@ In general the architectural is defined as the underlying structure of things. T
  
 The current system has no prevalent architecture , so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
 
-*2.1.1 Client-Server Architecture
+2.1.1 Client-Server Architecture
 
 *One or many servers provides services to instances of subsystems, called clients. 
 
@@ -44,7 +44,7 @@ The current system has no prevalent architecture , so for coming up with the arc
 
 *Response in general is immediate.
 
-*Users interact only with the client
+*Users interact only with the client.
 
 2.1.2 Layered Architecture
 
@@ -73,7 +73,7 @@ Controller subsystem:  Responsible for sequence of interactions with the user an
 
 *MVC is a special case of a repository architecture:
 
-*Model subsystem implements the central data structure, the Controller subsystem explicitly dictate the control flow.
+*Model subsystem implements the central data structure and the Controller subsystem explicitly dictate the control flow.
 
 *Subsystems access and modify data from a single data structure.
 
