@@ -23,6 +23,20 @@ The ADS system under consideration will facilitate the orderly and timely direct
     === _1.2 Design goals_ ===
 The major design goal is to have a high cohesion and low coupling. The system is divided into sub-systems taking into consideration the fact that the MVC architecture style which is a special case of repository architecture style is preserved. The notion behind MVC is the client server and the closed layered architecture style. The design goals basically can be traced to the non-functional requirements of modularity, robust-ability and fault tolerance.
 
+We will consider the following design goals with the highest priority items appearing first:
+
+  * Functionality
+  * Increased Productivity
+  * Minimum Errors
+  * Fault Tolerant
+  * Good Documentation
+  * Security
+  * Flexibility
+  * Low Cost
+  * User Friendliness
+  * Modifiability
+  * Traceability of Requirements
+
     === _1.3 References_ ===
 [http://code.google.com/p/ase-summer09/wiki/Phase_02]
     === _1.4 Overview_ ===
