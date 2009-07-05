@@ -65,8 +65,10 @@ Knowledge source, Controller and the Blackboard.
 
 *Subsystems are classified into 3 different types:
 
-Model subsystem: Responsible for application domain knowledge
-View subsystem: Responsible for displaying application domain objects to the user
+Model subsystem: Responsible for application domain knowledge.
+
+View subsystem: Responsible for displaying application domain objects to the user.
+
 Controller subsystem:  Responsible for sequence of interactions with the user and notifying views of changes in the model. 
 
 *MVC is a special case of a repository architecture:
