@@ -44,61 +44,52 @@ In general the architectural is defined as the underlying structure of things. T
 
 == 2. Current software architecture ==
  
-The current system has no prevalent architecture , so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
-
+The current system has no prevalent architecture, so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
 2.1.1 Client-Server Architecture
 
- One or many servers provides services to instances of subsystems, called clients. 
+The client server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn looks up for the service and returns the result back to the client.
 
- Client calls on the server, which performs some service and returns the result.
-
- Client knows the interface of the server (its service).
-
- Server does not need to know the interface of the client.
-
- Response in general is immediate.
-
- Users interact only with the client.
+The client has the knowledge about the server services and knows the server interface. The server has no knowledge about the client interface. 
+The client server interaction in general is immediate and the users interact only with the client.
 
 2.1.2 Layered Architecture
 
-The layered architecture has two types:
+The layered architecture is based on horizontal layering of the system with each layer providing a set of services and known as Virtual Machines.
 
- Closed Layer: Any layer can only invoke operations from the immediate layer below. The design goals are high maintainability, flexibility.
+Closed Layer: Any layer can only invoke operations from the immediate layer below. The design goals are high maintainability, flexibility because even any layer is affected the subsequent effect is not spread across the layers. This also enables the closed architecture to have high fault tolerance and portability. On the other hand the closed layer architecture becomes complex with increasing size with the introduction of dummies. Also closed architecture has low runtime efficiency.
 
- Open Layer: Any layer can invoke operations from any layers below with design goal of having high runtime efficiency.
+Open Layer: Any layer can invoke operations from any layers below with design goal of having high runtime efficiency and thus it violates the true spirit of the layered architecture. This style is not fault tolerant but is easy to understand. 
+
+Example of Layered Architecture is the OSI Network Layer Model
 
 2.1.3 Peer-to-Peer Architecture
 
-Peer-to-peer (P2P) networking is a method of delivering computer network services in which the participants share a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. Such resources are provided directly to other participants without intermediary network hosts or servers.Peer-to-peer network participants are providers and consumers of network services simultaneously, which contrasts with other service models, such as traditional client-server computing.
+“Peer-to-peer (P2P) networking is a method of delivering computer network services in which the participants share a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. Such resources are provided directly to other participants without intermediary network hosts or servers.Peer-to-peer network participants are providers and consumers of network services simultaneously, which contrasts with other service models, such as traditional client-server computing.” Source: Dr Chung Course Slide
 
-2.1.4 Repository Architecture
+2.1.4 Repository Architecture:
 
-The repository architecture is composed of three parts:
-Knowledge source, Controller and the Blackboard.
+The repository architecture is composed of three sub-systems:
+Knowledge source: It is responsible for the application domain knowledge.
 
-*Subsystems are classified into 3 different types:
+Controller: It is responsible for controlling the sequence of actions of the interactions between the user i.e the knowledge source and inform it about the corresponding changes in the model.
 
-Model subsystem: Responsible for application domain knowledge.
+Blackboard: It is responsible for displaying the domain objects requested by the user.
 
-View subsystem: Responsible for displaying application domain objects to the user.
+The MVC is a special case of a repository architecture wherein knowledge source subsystem implements the central data structure; the controller subsystem explicitly dictates the control flow. Thus there is a two way communication which differs from the traditional data base repository architecture which has only one way communication.
 
-Controller subsystem:  Responsible for sequence of interactions with the user and notifying views of changes in the model. 
-
-MVC is a special case of a repository architecture:
-
-Model subsystem implements the central data structure and the Controller subsystem explicitly dictate the control flow.
-
-Subsystems access and modify data from a single data structure.
-
-Subsystems are loosely coupled (interact only through the repository).
-
-Control flow is dictated by central repository (triggers) or by the subsystems (locks, synchronization primitives).
-
+The Subsystems access and modify data from a single data structure with the primary design goal of low coupling. The Control flow is dictated by central knowledge source.
+Example of repository architecture is Microsoft Speech Recognition system.
 
 2.1.5 Middleware Architecture:
 
-The middleware architecture provides many services one of being the translation services between subsystems which allows communication between two different subsystems. The communications happens via a software bus. A Subsystem Interface Object publishes the service (= Set of public methods) provided by the subsystem.
+The middleware architecture provides many services one of being the translation services between subsystems which allows communication between two different subsystems. The communications happens via a software bus which is the underlying communication between the various sub-systems.
+
+
+
+Other popular architecture style are:
+•	Pipes and Filter
+•	Data Abstraction and Object oriented architecture 
+•	Event Based Implicit Invocation
 
 
 == 3. Proposed software architecture == 
