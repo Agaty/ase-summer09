@@ -70,6 +70,7 @@ Example of Layered Architecture is the OSI Network Layer Model
 *2.1.4 Repository Architecture*
 
 The repository architecture is composed of three sub-systems:
+
 Knowledge source: It is responsible for the application domain knowledge.
 
 Controller: It is responsible for controlling the sequence of actions of the interactions between the user i.e the knowledge source and inform it about the corresponding changes in the model.
