@@ -18,15 +18,17 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 == 1. Introduction == 
     === _1.1 Purpose of the system_ ===
-The ADS system under consideration will facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life.
+The Ambulance Dispatch System (ADS) system under consideration will facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life. Further information regarding this project's requirements and scope can be found at the project's website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09].
 
     === _1.2 Design goals_ ===
-The major design goal is to have a high cohesion and low coupling. The system is divided into sub-systems taking into consideration the fact that the MVC architecture style which is a special case of repository architecture style is preserved. The notion behind MVC is the client server and the closed layered architecture style. The design goals basically can be traced to the non-functional requirements of modularity, robust-ability and fault tolerance.
+As in many software projects, the primary design goal is to maximize cohesion and reduce coupling. This philosophy can be examined in further detail in Bruegge's book Object-Oriented Software Engineering: Using UML, Patterns and Java.
 
-We will consider the following design goals with the highest priority items appearing first:
+This ADS project is divided into sub-systems using the MVC architecture style. This special case of repository architecture uses ideas from the MVC (Model, View, Controller) and cloud layered architecture styles. The following design goals can be directly traced to the non-functional requirements (see the ADS project website for details) where emphasis was placed on modularity, robustness and fault tolerance.
 
-  * Functionality
-  * Increased Productivity
+Below we outline a number of design goals that will be explicitly addressed in our ADS, with the design goals listed first receiving higher priority:
+
+  * Functionality (See the Requirements Analysis Document for further functional requirements)
+  * Increased Productivity (over the existing, non-software based system)
   * Minimum Errors
   * Fault Tolerant
   * Good Documentation
@@ -39,8 +41,12 @@ We will consider the following design goals with the highest priority items appe
 
     === _1.3 References_ ===
 [http://code.google.com/p/ase-summer09/wiki/Phase_02]
+
     === _1.4 Overview_ ===
-In general the architectural is defined as the underlying structure of things. The architecture gives an abstract solution to conquer complexity. The system is divided into sub sub-systems which in turn supports reuse, facilitates testing, parallel development and system evolvability.
+
+The architecture of a system is defined as the structure of the system's components. In this document, the Architecture Specification, we provide details on subsystem decomposition, hardware/software mapping, data management, and security. We spend significant effort on the subsystem decomposition since this abstraction reduces complexity and in turn supports re-use, testing, and parallel development.
+
+This document is intended for both project managers as well as the implementors of each individual subsystem.
 
 == 2. Current software architecture ==
  
