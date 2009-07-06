@@ -50,7 +50,10 @@ Below we outline a number of design goals that will be explicitly addressed in o
   * Traceability of Requirements
 
     === _1.3 References_ ===
-[http://code.google.com/p/ase-summer09/wiki/Phase_02]
+
+  * [http://code.google.com/p/ase-summer09/wiki/Phase_02 Phase 2: Requirements Analysis]
+  * [http://wwwbruegge.in.tum.de/OOSE/ Bruegge's website on Object Oriented Software Engineering]
+  * [http://utdallas.edu/~chung/CS6354/ Dr. Chung's CS 6354 Class Notes]
 
     === _1.4 Overview_ ===
 
@@ -211,12 +214,16 @@ Users will be logged into the system.  Client systems must maintain their own ph
 User uses the view to make requests and is provided with responses.  The view communicates through the controller to the model.  The model provides an interface to get and set attributes.  The controller handles all requests.
     === _3.7 Boundary conditions_ ===  
 The server needs to be running for the clients to connect.  If a client shuts down there is no significant effect.  If the server shuts down clients requests will time out and fail.
+
 == 4. Subsystem services == 
 The interface provided by the model allows the getting and setting of attributes within the model.
 
 The interface provided by the controller allows user requests to be handled.
 
 The view is interacted with directly by the user.
+
 == 5. Glossary ==  
 
-MVC: Model View Controller 
+  * ADS: Ambulance Dispatch System (the system being designed)
+  * GPS: Global Positioning System (to be used by ambulance drivers)
+  * MVC: Model View Controller Architecture
