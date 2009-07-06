@@ -24,6 +24,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.5 || 7/5/09 || Akhil || Reformatted Section 2 ||
 || 0.6 || 7/5/09 || Katie || Edited document for consistancy and clarity ||
 || 0.7 || 7/6/09 || Katie || Added 3.5-3.7, 4, Edited 3.1-3.4  ||
+|| 0.8 || 7/6/09 || Chad || Proofread/Edited ||
 
 = System Design Document =
 
@@ -32,7 +33,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 The Ambulance Dispatch System (ADS) under consideration will facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life. Further information regarding this project's requirements and scope can be found at the project's website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09].
 
     === _1.2 Design goals_ ===
-As in many software projects, the primary design goal is to maximize cohesion and reduce coupling. This philosophy can be examined in further detail in Bruegge's book Object-Oriented Software Engineering: Using UML, Patterns and Java.
+As in many software projects, a primary design goal is to maximize cohesion and reduce coupling. This philosophy can be examined in further detail in Bruegge's book Object-Oriented Software Engineering: Using UML, Patterns and Java.
 
 This ADS project is divided into sub-systems using the MVC architecture style. This special case of repository architecture uses ideas from the MVC (Model, View, Controller) and cloud layered architecture styles. The following design goals can be directly traced to the non-functional requirements (see the ADS project website for details) where emphasis was placed on modularity, robustness and fault tolerance.
 
@@ -76,7 +77,7 @@ The client requires knowledge about the available server services and correspond
 
 The layered architecture involves the horizontal layering of the system with each layer providing a set of services. Each layer is commonly referred to as a Virtual Machine. There are two types of layered architecture systems as outlined below:
 
-Closed Layer: Any layer can only invoke operations from the immediate layer below. This architecture achieves the design goals of high maintainability and flexibility because changes to a single layer do not spread across other layers. This also enables the closed architecture to have high fault tolerance and portability. On the other hand the closed layer architecture becomes complex with increasing size. In general, closed architecture are also less efficient at runtime than open layered systems. 
+Closed Layer: Any layer can only invoke operations from the immediate layer below. This architecture achieves the design goals of high maintainability and flexibility because changes to a single layer do not spread across other layers. This also enables the closed architecture to have high fault tolerance and portability. On the other hand the closed layer architecture becomes complex with increasing size. In general, closed architectures are also less efficient at runtime than open layered systems. 
 
 Open Layer: In this architecture, any layer can invoke operations from any layer beneath it. It achieves the design goal of high runtime efficiency. While this style is not fault tolerant, it is easy to understand. 
 
@@ -104,7 +105,7 @@ Example of repository architecture is Microsoft Speech Recognition system.
 
 The middleware architecture involves the interaction amongst subsystems, but not in a layered approach. This architecture requires translation services to allow subsystems to communicate with one another. Many times, subsystems are written in different languages. Note that not all subsystems can communicate directly with each other. 
 
-    === _2.6 Other Architecutres_ ===
+    === _2.6 Other Architectures_ ===
 
 While not explored in detail, other popular architecture styles include:
   * Pipes and Filter
@@ -116,11 +117,12 @@ While not explored in detail, other popular architecture styles include:
 Following the brief summary of existing software architectures above, we now outline the ADS design model. 
 
     === _3.1 Overview_ ===
+
 The ADS will use a client-server model with an MVC architecture to maximally achieve the design goals set forth in Section 1. We shall discuss particular advantages to this design in the following section, although the architecture seems to fit for the following reasons:
   * Our highest priority design goals (Functionality, increased productivity, minimum errors, and good documentation) should be achievable regardless of the architecture, thus we focus on the remaining design goals.
   * The client-server model works particularly well for systems requiring high fault tolerance since we have assumed our system supports multiple servers, to be located at various locations. Thus our architecture must support the seamless connection between many clients and any number of servers. 
   * The client-server model over the web also has a number of off-the-shelf security options. 
-  * MVC is a centralized design that allows for easy modifications to the control structure. The main drawback of a centralized design may be that bottlenecks occur during model access, however, the amount of computation occuring in this system is assumed to be minimal and that the servers shall be adequately equipped to handle requests. Thus MVC naturally meets the design goals of flexibility and modifiability. This may also help meet the low cost design goal.
+  * MVC is a centralized design that allows for easy modifications to the control structure. The main drawback of a centralized design may be that bottlenecks occur during model access, however, the amount of computation occurring in this system is assumed to be minimal and that the servers shall be adequately equipped to handle requests. Thus MVC naturally meets the design goals of flexibility and modifiability. This may also help meet the low cost design goal.
   * Finally, the client-server and MVC models support client-side GUIs and server-side databases. The clients can support appealing GUIs which increases the usability of the system (thus meeting the user friendliness design goal)
   
 A high level summary of the ADS MVC model is as follows:
@@ -137,7 +139,7 @@ http://ase-summer09.googlecode.com/files/component.png
     * The View layer
     * The Controller layer
 
-The ADS uses a closed form of layered architecture, which thus renders the system more maintainable and flexible for changes. Each of the three layers have subsystems in the form of components that interact with each other to perform their respective tasks. Since each subsystem is single-minded and only performs  its designated tasks, it is highly cohesive and thus this also reduces coupling which thus satisfied the principle software design goal.
+The ADS uses a closed form of layered architecture, which thus renders the system more maintainable and flexible for changes. Each of the three layers have subsystems in the form of components that interact with each other to perform their respective tasks. Since each subsystem is single-minded and only performs its designated tasks, it is highly cohesive and thus this also reduces coupling which therefore satisfies the principle software design goal.
 
 Each of the layers is now discussed in further detail:
 
@@ -172,7 +174,7 @@ Here we list the various hardware devices and show how each of the subsystems is
 
   * Web Server: The ADS system uses a web server, which runs the UI and controller subsystems of the call taker, dispatcher and ambulance administrator. The UI is layer is implemented by JSP and the controller by Servlets. 
   * Database Server: The ADS system uses a database to implement the ADS database subsystem. The database used for this purpose is MySQL.
-  * The Web browser: The client systems access the ADS software system using a web browser. Since the software is web-based and implemented using JSP, the rendered pages will be in HTML. So any web browser like Internet explorer, Mozilla Fire-Fox shall suffice.
+  * The Web browser: The client systems access the ADS software system using a web browser. Since the software is web-based and implemented using JSP, the rendered pages will be in HTML. So any web browser like Internet Explorer, Mozilla Firefox shall suffice.
   * The ADS messaging system: This is one of the off-the-shelf products that will be used inside the ambulance by the ambulance drivers. It uses its own custom software that will be part of the device.
   * The GPS: The ambulances have some of the latest and most advanced GPS systems running their own software, updating the location, giving directions and traffic indications.
 
