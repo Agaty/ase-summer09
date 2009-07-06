@@ -46,14 +46,14 @@ In general the architectural is defined as the underlying structure of things. T
  
 The current system has no prevalent architecture, so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
 
-*2.1.1 Client-Server Architecture*
+    === _2.1 Client-Server Architecture_ ===
 
 The client server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn looks up for the service and returns the result back to the client.
 
 The client has the knowledge about the server services and knows the server interface. The server has no knowledge about the client interface. 
 The client server interaction in general is immediate and the users interact only with the client.
 
-*2.1.2 Layered Architecture*
+    === _2.2 Layered Architecture_ ===
 
 The layered architecture is based on horizontal layering of the system with each layer providing a set of services and known as Virtual Machines.
 
@@ -63,11 +63,11 @@ Open Layer: Any layer can invoke operations from any layers below with design go
 
 Example of Layered Architecture is the OSI Network Layer Model
 
-*2.1.3 Peer-to-Peer Architecture*
+    === _2.3 Peer-to-Peer Architecture_ ===
 
 “Peer-to-peer (P2P) networking is a method of delivering computer network services in which the participants share a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. Such resources are provided directly to other participants without intermediary network hosts or servers.Peer-to-peer network participants are providers and consumers of network services simultaneously, which contrasts with other service models, such as traditional client-server computing.” Source: Dr Chung Course Slide
 
-*2.1.4 Repository Architecture*
+    === _2.4 Repository Architecture_ ===
 
 The repository architecture is composed of three sub-systems:
 
@@ -82,17 +82,14 @@ The MVC is a special case of a repository architecture wherein knowledge source 
 The Subsystems access and modify data from a single data structure with the primary design goal of low coupling. The Control flow is dictated by central knowledge source.
 Example of repository architecture is Microsoft Speech Recognition system.
 
-*2.1.5 Middleware Architecture*
+    === _2.5 Middleware Architecture_ ===
 
 The middleware architecture provides many services one of being the translation services between subsystems which allows communication between two different subsystems. The communications happens via a software bus which is the underlying communication between the various sub-systems.
 
-
-
 Other popular architecture style are:
-•	Pipes and Filter
-•	Data Abstraction and Object oriented architecture 
-•	Event Based Implicit Invocation
-
+  * Pipes and Filter
+  * Data Abstraction and Object oriented architecture 
+  * Event Based Implicit Invocation
 
 == 3. Proposed software architecture == 
 
@@ -100,45 +97,50 @@ The third section documents the system design model of the new system.
 
     === _3.1 Overview_ ===
 The overall design is client-server over the web with a 3 layered architecture.  The view runs on the client and is displayed in a web browser.  The view makes control requests to the Controller via the provided interface.  The controller then gets and sets attributes of the model which is the third layer.  The model is an active record running off of a SQL database.
+
     === _3.2 Subsystem decomposition_ ===
 http://ase-summer09.googlecode.com/files/component.png
 
-•	The ADS system uses the layered architecture system. The system is decomposed into 3 layers:
-o	The Model layer
-o	The View layer
-o	The Controller layer
+  * The ADS system uses the layered architecture system. The system is decomposed into 3 layers:
+    * The Model layer
+    * The View layer
+    * The Controller layer
 
-•	The system also uses the closed form of layered architecture, which thus renders the system more maintainable and flexible for changes.
+  * The system also uses the closed form of layered architecture, which thus renders the system more maintainable and flexible for changes.
 
-•	Each of these three layers has subsystems in the form of components that interact with each other to perform its respective tasks.
+  * Each of these three layers has subsystems in the form of components that interact with each other to perform its respective tasks.
 
-•	Since each subsystem is single minded and performs only its designated task, it is highly cohesive and thus this also reduces coupling.
+  * Since each subsystem is single minded and performs only its designated task, it is highly cohesive and thus this also reduces coupling.
 
+  * The Model layer: The model layer corresponds to persistent storing of incident and ambulance data. It consists of the ADS Database subsystem. We are using MySQL database to implement the ADS database subsystem. This subsystem is responsible for creating, retrieving, updating and deleting records from the database.  
 
-•	The Model layer: The model layer corresponds to persistent storing of incident and ambulance data. It consists of the ADS Database subsystem. We are using MySQL database to implement the ADS database subsystem. This subsystem is responsible for creating, retrieving, updating and deleting records from the database.  
+  * The View layer: The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems. We also list the services provided by each of these subsystems.
 
+  * The Call taker UI subsystem: The call taker UI subsystem handles the screens that the call taker uses. It provides the following services to the call taker:
 
-•	The View layer: The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems. We also list the services provided by each of these subsystems.
+    * Create Incidents
 
-o	The Call taker UI subsystem: The call taker UI subsystem handles the screens that the call taker uses. It provides the following services to the call taker:
-	Create Incidents
+    * The Dispatcher UI subsystem: The dispatcher UI subsystem handles the screens that the dispatcher uses. It provides the following services to the dispatcher:
+    * View assigned and unassigned incidents
+    * View list of ambulances
+    * Recall ambulance
+    * Review and update incident
 
-o	The Dispatcher UI subsystem: The dispatcher UI subsystem handles the screens that the dispatcher uses. It provides the following services to the dispatcher:
-	View assigned and unassigned incidents
-	View list of ambulances
-	Recall ambulance
-	Review and update incident
+  * The Ambulance Admin UI subsystem: The ambulance administrator UI subsystem handles the screens that the ambulance administrator uses. It provides the following services to the ambulance administrator:
 
-o	The Ambulance Admin UI subsystem: The ambulance administrator UI subsystem handles the screens that the ambulance administrator uses. It provides the following services to the ambulance administrator:
-	View list of ambulances
-	Add new ambulance
-	Update the status of ambulance
+    * View list of ambulances
+    * Add new ambulance
+    * Update the status of ambulance
 
-•	The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems one corresponding to each of the three subsystems in the UI layer. And there is one master controller subsystem that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
-o	Call Taker controller: The call taker controller subsystem is responsible for receiving data from the call taker UI subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
-o	Dispatcher controller: The dispatcher controller subsystem is responsible for receiving data from the dispatcher subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
-o	Ambulance Admin controller: The ambulance admin controller subsystem is responsible for receiving data from the ambulance admin UI subsystem, processing it and passing it onto the ADS controller for further processing or saving in the database.
-o	ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem.
+  * The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems one corresponding to each of the three subsystems in the UI layer. And there is one master controller subsystem that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
+
+    * Call Taker controller: The call taker controller subsystem is responsible for receiving data from the call taker UI subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+
+    * Dispatcher controller: The dispatcher controller subsystem is responsible for receiving data from the dispatcher subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+
+    * Ambulance Admin controller: The ambulance admin controller subsystem is responsible for receiving data from the ambulance admin UI subsystem, processing it and passing it onto the ADS controller for further processing or saving in the database.
+
+    * ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem.
 
     === _3.3 Hardware/software mapping_ ===
 The client only requires a basic computer running a web browser with a connection to the server.
@@ -149,30 +151,31 @@ http://ase-summer09.googlecode.com/files/deployment.png
 
 Here we list the various hardware devices and show how each of the subsystems is mapped to the hardware devices.
 
-•	Web Server: The ADS system uses a web server, which runs the UI and controller subsystems of the call taker, dispatcher and ambulance administrator. The UI is layer is implemented by JSP and the controller by Servlets. 
+  * Web Server: The ADS system uses a web server, which runs the UI and controller subsystems of the call taker, dispatcher and ambulance administrator. The UI is layer is implemented by JSP and the controller by Servlets. 
 
-•	DB Server: The ADS system uses a database to implement the ADS database subsystem. The database used for this purpose is MySQL.
+  * DB Server: The ADS system uses a database to implement the ADS database subsystem. The database used for this purpose is MySQL.
 
-•	The Web browser: The client systems access the ADS software system using a web browser. Since the software is web-based and implemented using JSP, the rendered pages will be in HTML. So any web browser like Internet explorer, Mozilla Fire-Fox shall suffice.
+  * The Web browser: The client systems access the ADS software system using a web browser. Since the software is web-based and implemented using JSP, the rendered pages will be in HTML. So any web browser like Internet explorer, Mozilla Fire-Fox shall suffice.
 
-•	The ADS messaging system: This is one of the off-the-shelf products that will be used inside the ambulance by the ambulance drivers. It uses its own custom software that will be part of the device.
+  * The ADS messaging system: This is one of the off-the-shelf products that will be used inside the ambulance by the ambulance drivers. It uses its own custom software that will be part of the device.
 
-•	The GPS: The ambulances have some of the latest and most advanced GPS systems running their own software, updating the location, giving directions and traffic indications.
+  * The GPS: The ambulances have some of the latest and most advanced GPS systems running their own software, updating the location, giving directions and traffic indications.
 
 
     === _3.4 Persistent data management_ ===
 Here we describe the database schema of the various tables used by our ADS system. The database management system that we are going to use is MySQL 5.0. The tables that we are going to implement are:
-•	Incident
 
-•	Caller
+  * Incident
 
-•	Patient
+  * Caller
 
-•	Ambulance
+  * Patient
 
-•	Hospital
+  * Ambulance
 
-•	User
+  * Hospital
+
+  * User
 
 The Incident relation has the following attributes: Incident ID, number of people affected, severity, location, date and time of incident, age and sex of patient, type of problem, and other details.
 
