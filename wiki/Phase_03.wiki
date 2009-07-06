@@ -23,7 +23,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.4 || 7/5/09 || Rajeev || Added to 3.2-3.4 ||
 || 0.5 || 7/5/09 || Akhil || Reformatted Section 2 ||
 || 0.6 || 7/5/09 || Katie || Edited document for consistancy and clarity ||
-|| 0.7 || 7/6/09 || Katie || Added 3.5-3.7  ||
+|| 0.7 || 7/6/09 || Katie || Added 3.5-3.7, 4  ||
 
 = System Design Document =
 
@@ -217,7 +217,9 @@ The User relation has the following attributes: User ID, password, role, supervi
     === _3.5 Access control and security_ ===
 In this system we have a number of actors (such as Ambulance Dispatchers, Ambulance Administrators, and Ambulance Drivers), each with specific, and sometimes exclusive roles. For more details on these roles, see the Requirements Analysis document. 
 
-We have assumed that each user must successfully log into a computer to gain access to starting any client program. Each client program shall only expose the appropriate view to the user. Thus a person tasked with both Ambulance Dispatch and Ambulance Administrator duties shall have two clients accessible on their computer; one Ambulance Dispatch View and another Ambulance Administrator view. Each client only shows permitted activities in their respective GUIs thus limiting the access to the model. Additional security may also be implemented to insure that clients cannot be modified to gain undesired access to the model
+We have assumed that each user must successfully log into a computer to gain access to starting any client program. Each client program shall only expose the appropriate view to the user. Thus a person tasked with both Ambulance Dispatch and Ambulance Administrator duties shall have two clients accessible on their computer; one Ambulance Dispatch View and another Ambulance Administrator view. Each client only shows permitted activities in their respective GUIs thus limiting the access to the model. Additional security may also be implemented to insure that clients cannot be modified to gain undesired access to the model.
+
+An access diagram is not provided as it can easily be interpolated from the Requirements Analysis document diagrams.
 
     === _3.6 Global software control_ === 
 
@@ -233,11 +235,10 @@ We consider three boundary condition scenarios. Complete use cases are not provi
 
 == 4. Subsystem services == 
 
-The interface provided by the model allows the getting and setting of attributes within the model.
+This section is intended to describe the services provided by each subsystem. This will be addressed in detail in the Component/Object Specification document to be released by the end of July. Until this time, we initially provide the following references:
 
-The interface provided by the controller allows user requests to be handled.
-
-The view is interacted with directly by the user.
+  * View: The view (GUI) directly interacts with the end user (i.e. Ambulance Dispatchers, Ambulance Administrators, and Ambulance Drivers). We have provided Navigational Path diagrams and screen mock-ups in the Requirements Analysis document which allude to the services provided by each view.
+  * Interface: The interface provided by the model allows the retrieving and setting of attributes within the model. The functions associated with each object can be found within the Object Model in the Requirements Analysis document. This will lead to the development of an interface to be provided by the controller which would allow user requests to be handled. This interface shall be developed fully in the Component/Object Specification document.
 
 == 5. Glossary ==  
 
