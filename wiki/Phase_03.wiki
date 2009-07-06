@@ -63,28 +63,26 @@ This document is intended for both project managers as well as the implementors 
 
 == 2. Current software architecture ==
  
-The current system has no prevalent architecture, so for coming up with the architecture for the system a short review of popular architectural styles is presented which has been taken from Dr Chung’s class discussion and slides.
+The current system has no prevalent architecture since it was not a software-based dispatch system. Since the intended client may not be familiar with common software architectures, we outline them below for clarity. These outlines are based on notes of Dr. Chung that are available at [http://utdallas.edu/~chung/CS6354/ http://utdallas.edu/~chung/CS6354/].
 
     === _2.1 Client-Server Architecture_ ===
 
-The client server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn looks up for the service and returns the result back to the client.
+The client-server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn invokes the service and returns the result back to the client.
 
-The client has the knowledge about the server services and knows the server interface. The server has no knowledge about the client interface. 
-The client server interaction in general is immediate and the users interact only with the client.
+The client requires knowledge about the available server services and corresponding server interface. The server on the other hand, requires no knowledge about the client's interface. Users typically interact only with the client.
+
 
     === _2.2 Layered Architecture_ ===
 
-The layered architecture is based on horizontal layering of the system with each layer providing a set of services and known as Virtual Machines.
+The layered architecture involves the horizontal layering of the system with each layer providing a set of services. Each layer is commonly referred to as a Virtual Machine. There are two types of layered architecture systems as outlined below:
 
-Closed Layer: Any layer can only invoke operations from the immediate layer below. The design goals are high maintainability, flexibility because even any layer is affected the subsequent effect is not spread across the layers. This also enables the closed architecture to have high fault tolerance and portability. On the other hand the closed layer architecture becomes complex with increasing size with the introduction of dummies. Also closed architecture has low runtime efficiency.
+Closed Layer: Any layer can only invoke operations from the immediate layer below. This architecture achieves the design goals of high maintainability and flexibility because changes to a single layer do not spread across other layers. This also enables the closed architecture to have high fault tolerance and portability. On the other hand the closed layer architecture becomes complex with increasing size. In general, closed architecture are also less efficient at runtime than open layered systems. 
 
-Open Layer: Any layer can invoke operations from any layers below with design goal of having high runtime efficiency and thus it violates the true spirit of the layered architecture. This style is not fault tolerant but is easy to understand. 
-
-Example of Layered Architecture is the OSI Network Layer Model
+Open Layer: In this architecture, any layer can invoke operations from any layer beneath it. It achieves the design goal of high runtime efficiency. While this style is not fault tolerant, it is easy to understand. 
 
     === _2.3 Peer-to-Peer Architecture_ ===
 
-“Peer-to-peer (P2P) networking is a method of delivering computer network services in which the participants share a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. Such resources are provided directly to other participants without intermediary network hosts or servers.Peer-to-peer network participants are providers and consumers of network services simultaneously, which contrasts with other service models, such as traditional client-server computing.” Source: Dr Chung Course Slide
+Peer-to-peer (P2P) networking is a method of delivering computer services amongst a set of participants. Each participant shares a portion of their own resources, such as processing power, disk storage, network bandwidth, printing facilities. These resources are provided directly to other participants without intermediary network hosts or servers. Thus P2P network participants are both providers and consumers of services simultaneously in contrast with other service models.
 
     === _2.4 Repository Architecture_ ===
 
