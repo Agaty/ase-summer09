@@ -28,7 +28,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 == 1. Introduction == 
     === _1.1 Purpose of the system_ ===
-The Ambulance Dispatch System (ADS) system under consideration will facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life. Further information regarding this project's requirements and scope can be found at the project's website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09].
+The Ambulance Dispatch System (ADS) under consideration will facilitate the orderly and timely direction of ambulances throughout a metropolitan area to minimize the loss of human life. Further information regarding this project's requirements and scope can be found at the project's website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09].
 
     === _1.2 Design goals_ ===
 As in many software projects, the primary design goal is to maximize cohesion and reduce coupling. This philosophy can be examined in further detail in Bruegge's book Object-Oriented Software Engineering: Using UML, Patterns and Java.
@@ -59,7 +59,7 @@ Below we outline a number of design goals that will be explicitly addressed in o
 
 The architecture of a system is defined as the structure of the system's components. In this document, the Architecture Specification, we provide details on subsystem decomposition, hardware/software mapping, data management, and security. We spend significant effort on the subsystem decomposition since this abstraction reduces complexity and in turn supports re-use, testing, and parallel development.
 
-This document is intended for both project managers as well as the implementors of each individual subsystem.
+This document is intended for both project managers as well as the implementers of each individual subsystem.
 
 == 2. Current software architecture ==
  
@@ -70,7 +70,6 @@ The current system has no prevalent architecture since it was not a software-bas
 The client-server architecture consists of one or many servers which provide services to instances of subsystems, called clients. The client requests a service to the server, which in turn invokes the service and returns the result back to the client.
 
 The client requires knowledge about the available server services and corresponding server interface. The server on the other hand, requires no knowledge about the client's interface. Users typically interact only with the client.
-
 
     === _2.2 Layered Architecture_ ===
 
@@ -163,6 +162,7 @@ http://ase-summer09.googlecode.com/files/component.png
     * ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem.
 
     === _3.3 Hardware/software mapping_ ===
+
 The client only requires a basic computer running a web browser with a connection to the server.
 
 The server requires access to the database and sufficient computing power to handle the load of users expected.
@@ -211,12 +211,15 @@ The User relation has the following attributes: User ID, password, role, supervi
 
     === _3.5 Access control and security_ ===
 Users will be logged into the system.  Client systems must maintain their own physical and data security.
+
     === _3.6 Global software control_ === 
 User uses the view to make requests and is provided with responses.  The view communicates through the controller to the model.  The model provides an interface to get and set attributes.  The controller handles all requests.
+
     === _3.7 Boundary conditions_ ===  
 The server needs to be running for the clients to connect.  If a client shuts down there is no significant effect.  If the server shuts down clients requests will time out and fail.
 
 == 4. Subsystem services == 
+
 The interface provided by the model allows the getting and setting of attributes within the model.
 
 The interface provided by the controller allows user requests to be handled.
