@@ -23,6 +23,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.4 || 7/5/09 || Rajeev || Added to 3.2-3.4 ||
 || 0.5 || 7/5/09 || Akhil || Reformatted Section 2 ||
 || 0.6 || 7/5/09 || Katie || Edited document for consistancy and clarity ||
+|| 0.7 || 7/6/09 || Katie || Added 3.5-3.7  ||
 
 = System Design Document =
 
@@ -117,6 +118,10 @@ Following the brief summary of existing software architectures above, we now out
     === _3.1 Overview_ ===
 The overall design is client-server over the web with a 3 layered architecture.  The view runs on the client and is displayed in a web browser.  The view makes control requests to the Controller via the provided interface.  The controller then gets and sets attributes of the model which is the third layer.  The model is an active record running off of a SQL database.
 
+MVC Centralized design:
+  * Pro: Change in the control structure is easy
+  * Con: Single control object may be a bottleneck (unimportant due to type of work/processor)
+
     === _3.2 Subsystem decomposition_ ===
 http://ase-summer09.googlecode.com/files/component.png
 
@@ -210,13 +215,21 @@ The Hospital relation has the following attributes: Hospital ID, name, address, 
 The User relation has the following attributes: User ID, password, role, supervisor, contact address, and phone.
 
     === _3.5 Access control and security_ ===
-Users will be logged into the system.  Client systems must maintain their own physical and data security.
+In this system we have a number of actors (such as Ambulance Dispatchers, Ambulance Administrators, and Ambulance Drivers), each with specific, and sometimes exclusive roles. For more details on these roles, see the Requirements Analysis document. 
+
+We have assumed that each user must successfully log into a computer to gain access to starting any client program. Each client program shall only expose the appropriate view to the user. Thus a person tasked with both Ambulance Dispatch and Ambulance Administrator duties shall have two clients accessible on their computer; one Ambulance Dispatch View and another Ambulance Administrator view. Each client only shows permitted activities in their respective GUIs thus limiting the access to the model. Additional security may also be implemented to insure that clients cannot be modified to gain undesired access to the model
 
     === _3.6 Global software control_ === 
-User uses the view to make requests and is provided with responses.  The view communicates through the controller to the model.  The model provides an interface to get and set attributes.  The controller handles all requests.
+
+The MVC architecture is an event-driven centrally controlled software system. The system controller handles all requests. System users use the view to make requests and are provided with responses.  The view communicates through the controller to the model.  The model provides an interface to get and set attributes. Further details on MVC software control can be found in Bruegge's Object Oriented Software Engineering textbook.
 
     === _3.7 Boundary conditions_ ===  
-The server needs to be running for the clients to connect.  If a client shuts down there is no significant effect.  If the server shuts down clients requests will time out and fail.
+
+We consider three boundary condition scenarios. Complete use cases are not provided as the scenarios are not complex.
+
+  * Initialization: The server must be started prior to the connection of any clients. This shall be done by the Ambulance Administrator who shall then select to use data currently stored in the system database (i.e. present locations of the ambulances, unhandled incidents, etc.) or create a new system database (which would result in an empty database). Following the latter initialization, the Ambulance Administrator would then be required to add ambulances to the system.
+  * Termination: If a client disconnects, either intentionally (i.e. by logging out of the system) or unintentionally (i.e. unresponsive computer), this shall have no effect to the server. If the server shuts down, then each of the clients requests shall time out and an error shall be reported in the client's GUI.
+  * Failure: Failure of either the server or clients shall be treated the same as in the termination scenario.
 
 == 4. Subsystem services == 
 
