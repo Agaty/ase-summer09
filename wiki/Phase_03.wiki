@@ -90,27 +90,30 @@ The repository architecture is composed of three sub-systems:
 
 Knowledge source: It is responsible for the application domain knowledge.
 
-Controller: It is responsible for controlling the sequence of actions of the interactions between the user i.e the knowledge source and inform it about the corresponding changes in the model.
+Controller: It is responsible for controlling the sequence of actions following interactions between the user or changes in the model.
 
 Blackboard: It is responsible for displaying the domain objects requested by the user.
 
-The MVC is a special case of a repository architecture wherein knowledge source subsystem implements the central data structure; the controller subsystem explicitly dictates the control flow. Thus there is a two way communication which differs from the traditional data base repository architecture which has only one way communication.
+The MVC is a special case of a repository architecture where a knowledge source subsystem implements the central data structure and the controller subsystem explicitly dictates the control flow. Thus there is two-way communication which differs from the traditional repository architecture which has only one way communication. The control flow is dictated by the central knowledge source.
 
-The Subsystems access and modify data from a single data structure with the primary design goal of low coupling. The Control flow is dictated by central knowledge source.
+The subsystems access and modify data from a single data structure. Thus this achieves the initial design goal of reducing coupling.
+
 Example of repository architecture is Microsoft Speech Recognition system.
 
     === _2.5 Middleware Architecture_ ===
 
-The middleware architecture provides many services one of being the translation services between subsystems which allows communication between two different subsystems. The communications happens via a software bus which is the underlying communication between the various sub-systems.
+The middleware architecture involves the interaction amongst subsystems, but not in a layered approach. This architecture requires translation services to allow subsystems to communicate with one another. Many times, subsystems are written in different languages. Note that not all subsystems can communicate directly with each other. 
 
-Other popular architecture style are:
+    === _2.6 Other Architecutres_ ===
+
+While not explored in detail, other popular architecture styles include:
   * Pipes and Filter
   * Data Abstraction and Object oriented architecture 
   * Event Based Implicit Invocation
 
 == 3. Proposed software architecture == 
 
-The third section documents the system design model of the new system.  
+Following the brief summary of existing software architectures above, we now outline the ADS design model. 
 
     === _3.1 Overview_ ===
 The overall design is client-server over the web with a 3 layered architecture.  The view runs on the client and is displayed in a web browser.  The view makes control requests to the Controller via the provided interface.  The controller then gets and sets attributes of the model which is the third layer.  The model is an active record running off of a SQL database.
