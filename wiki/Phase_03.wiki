@@ -14,6 +14,16 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 <wiki:toc max_depth="5" />
 
+
+=== Version ===
+|| *Version* || *Date* || *Author* || *Comments                                   * ||
+|| 0.1 || 6/6/09 || Katie || Initial draft ||
+|| 0.2 || 6/27/09 || Ryan, Chad, Katie || Drafted Section 3 in Team Meeting on 6/27 ||
+|| 0.3 || 7/5/09 || Akhil || Subsystem and deployment diagrams ||
+|| 0.4 || 7/5/09 || Rajeev || Added to 3.2-3.4 ||
+|| 0.5 || 7/5/09 || Akhil || Reformatted Section 2 ||
+|| 0.6 || 7/5/09 || Katie || Edited document for consistancy and clarity ||
+
 = System Design Document =
 
 == 1. Introduction == 
