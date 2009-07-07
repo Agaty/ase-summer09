@@ -95,15 +95,15 @@ Controller: It is responsible for controlling the sequence of actions following 
 
 Blackboard: It is responsible for displaying the domain objects requested by the user.
 
-The MVC is a special case of a repository architecture where a knowledge source subsystem implements the central data structure and the controller subsystem explicitly dictates the control flow. Thus there is two-way communication which differs from the traditional repository architecture which has only one way communication. The control flow is dictated by the central knowledge source.
+Model-View-Controller (MVC) is a special case of a repository architecture where a knowledge source subsystem implements the central data structure and the controller subsystem explicitly dictates the control flow. Thus there is two-way communication which differs from the traditional repository architecture which has only one way communication. The control flow is dictated by the central knowledge source.
 
 The subsystems access and modify data from a single data structure. Thus this achieves the initial design goal of reducing coupling.
 
-Example of repository architecture is Microsoft Speech Recognition system.
+An example of repository architecture is Microsoft Speech Recognition system.
 
     === _2.5 Middleware Architecture_ ===
 
-The middleware architecture involves the interaction amongst subsystems, but not in a layered approach. This architecture requires translation services to allow subsystems to communicate with one another. Many times, subsystems are written in different languages. Note that not all subsystems can communicate directly with each other. 
+The middleware architecture involves the interaction amongst subsystems, but not in a layered approach. This architecture requires translation services to allow subsystems to communicate with one another. Subsystems can be written in different languages or be running on separate hardware. Subsystems do not communicate directly with each-other but instead do so via the middleware. 
 
     === _2.6 Other Architectures_ ===
 
@@ -118,12 +118,21 @@ Following the brief summary of existing software architectures above, we now out
 
     === _3.1 Overview_ ===
 
-The ADS will use a client-server model with an MVC architecture to maximally achieve the design goals set forth in Section 1. We shall discuss particular advantages to this design in the following section, although the architecture seems to fit for the following reasons:
-  * Our highest priority design goals (Functionality, increased productivity, minimum errors, and good documentation) should be achievable regardless of the architecture, thus we focus on the remaining design goals.
-  * The client-server model works particularly well for systems requiring high fault tolerance since we have assumed our system supports multiple servers, to be located at various locations. Thus our architecture must support the seamless connection between many clients and any number of servers. 
-  * The client-server model over the web also has a number of off-the-shelf security options. 
-  * MVC is a centralized design that allows for easy modifications to the control structure. The main drawback of a centralized design may be that bottlenecks occur during model access, however, the amount of computation occurring in this system is assumed to be minimal and that the servers shall be adequately equipped to handle requests. Thus MVC naturally meets the design goals of flexibility and modifiability. This may also help meet the low cost design goal.
-  * Finally, the client-server and MVC models support client-side GUIs and server-side databases. The clients can support appealing GUIs which increases the usability of the system (thus meeting the user friendliness design goal)
+The ADS will use a client-server model with an MVC architecture to maximize achievement of the design goals set forth in Section 1. MVC allows the system to achieve the goals of high fault tolerance, flexibility, modifiability, low cost, and usability.
+
+Our highest priority design goals (Functionality, increased productivity, minimum errors, and good documentation) are not strongly influenced by the architecture, thus we focus on the next-highest priority design goals.
+
+The client-server model works particularly well for systems requiring high fault tolerance since the architecture supports backup servers, to be located at various locations. (The client operations are independent from the actual server hardware) Client-server architecture supports the seamless connection between many clients and with an arbitrary number of servers. 
+
+The client-server model over the web also has a number of off-the-shelf security options including database security and secure internet connections based on encryption. 
+
+MVC is a well defined design that allows for easy modifications as long as the predefined interfaces remain the same.  Thus MVC naturally meets the design goals of flexibility and modifiability. 
+
+Basing the architecture on a well defined starting point will also help meet the low cost design goal by maximizing reuse of common software design strategies associated with MDC.
+
+One possible drawback of a centralized design may be that bottlenecks occur during model access, however, with careful design, the servers shall be equipped with adequate hardware to handle all requests quickly.
+
+Finally, the client-server and MVC models support client-side GUIs and server-side databases. The clients can support appealing GUIs which increases the usability of the system (thus meeting the user friendliness design goal)
   
 A high level summary of the ADS MVC model is as follows:
   * The view runs on the client and is displayed in a web browser.  
@@ -219,3 +228,4 @@ This section is intended to describe the services provided by each subsystem. Th
   * ADS: Ambulance Dispatch System (the system being designed)
   * GPS: Global Positioning System (to be used by ambulance drivers)
   * MVC: Model View Controller Architecture
+  * GUI: Graphical User Interface
