@@ -173,19 +173,19 @@ Each of the layers is now discussed in further detail:
 
     === _3.3 Hardware/software mapping_ ===
 
-The client only requires a basic x86-based computer running a web browser with a connection to the server.
+The client only requires a basic computer running a web browser with a connection to the server.
 
 The server requires access to the ADS database and sufficient computing power to handle the load of users expected.
 
 http://ase-summer09.googlecode.com/files/deployment.png
 
-Here we list the various hardware devices and show how each of the subsystems is mapped to the hardware devices.
+*Client*: The client systems access the ADS software system using a web browser. Since the software is web-based, the rendered pages will be in HTML. So any web browser like Internet Explorer or Mozilla Firefox shall function as the client.
 
-  * Web Server: The ADS system uses a web server, which runs the UI and controller subsystems of the call taker, dispatcher and ambulance administrator. The UI is layer is implemented by JSP and the controller by Servlets. 
-  * Database Server: The ADS system uses a database to implement the ADS database subsystem. The database used for this purpose is MySQL.
-  * The Web browser: The client systems access the ADS software system using a web browser. Since the software is web-based and implemented using JSP, the rendered pages will be in HTML. So any web browser like Internet Explorer, Mozilla Firefox shall suffice.
-  * The ADS messaging system: This is one of the off-the-shelf products that will be used inside the ambulance by the ambulance drivers. It uses its own custom software that will be part of the device.
-  * The GPS: The ambulances have some of the latest and most advanced GPS systems running their own software, updating the location, giving directions and traffic indications.
+The ambulance GPS system is also a client.  The ambulances have some of the latest and most advanced GPS systems running their own software, updating the location, giving directions and traffic indications.  Alternatively, the ambulance positions can be updated manually in case of GPS failure via the web client.
+
+*Web Server*: The ADS system uses a web server, which runs the UI and controller subsystems of the call taker, dispatcher and ambulance administrator. The web server communicates with the client and the database server. 
+
+*Database Server*: The ADS system uses a database to implement the ADS database subsystem. The database used for this purpose is MySQL.
 
     === _3.4 Persistent data management_ ===
 Here we describe the database schema of the various tables used by our ADS system. The database management system that we are going to use is MySQL 5.0. The tables that we are going to implement are as follows and directly correspond to the Object Model diagrams in the Requirements Analysis document:
