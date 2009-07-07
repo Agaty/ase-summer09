@@ -221,7 +221,8 @@ We consider three boundary condition scenarios. Complete use cases are not provi
 This section is intended to describe the services provided by each subsystem. This will be addressed in detail in the Component/Object Specification document to be released by the end of July. Until this time, we initially provide the following references:
 
   * View: The view (GUI) directly interacts with the end user (i.e. Ambulance Dispatchers, Ambulance Administrators, and Ambulance Drivers). We have provided Navigational Path diagrams and screen mock-ups in the Requirements Analysis document which allude to the services provided by each view.
-  * Interface: The interface provided by the model allows the retrieving and setting of attributes within the model. The functions associated with each object can be found within the Object Model in the Requirements Analysis document. This will lead to the development of an interface to be provided by the controller which would allow user requests to be handled. This interface shall be developed fully in the Component/Object Specification document.
+  * Controller: The controller provides a control interface to the view where user commands are converted to requests to which the controller responds.
+  * Model: The interface provided by the model allows the retrieving and setting of attributes within the model. The functions associated with each object can be found within the Object Model in the Requirements Analysis document. This will lead to the development of an interface to be provided by the controller which would allow user requests to be handled. This interface shall be developed fully in the Component/Object Specification document.
 
 == 5. Glossary ==  
 
