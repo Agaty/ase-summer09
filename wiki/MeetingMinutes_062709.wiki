@@ -17,8 +17,8 @@
 
 ==Phase 3 Section Draft Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
-|| Akhil || Write up Introduction & Current System  || 7/3 || In progress  ||
-|| Chad|| Review draft for consistency || 7/3 || In progress ||
-|| Katie|| Review draft for consistency || 7/3 ||   In progress ||
-|| Rajeev|| Subsystem Services || 7/3 ||   In progress ||
-|| Ryan|| Post software architecture || 7/3 || In progress ||
+|| Akhil || Write up Introduction & Current System  || 7/3 || Done ||
+|| Chad|| Review draft for consistency || 7/3 || Done  ||
+|| Katie|| Review draft for consistency || 7/3 ||   Done  ||
+|| Rajeev|| Subsystem Services || 7/3 ||   Done  ||
+|| Ryan|| Post software architecture || 7/3 || Done  ||
