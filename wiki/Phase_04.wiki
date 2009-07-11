@@ -16,24 +16,38 @@ Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p
 
     _1.1 Object Design Trade offs_
 
+Response time is the highest priority so memory space is not considered very important.  Additionally, except where outlined in the previous documentation we will be building all software in-house (as opposed to purchasing off-the-shelf solutions.  
+
     _1.2 Interface documentation guidelines_
 
-    _1.3 Definitions, acronyms, and abbreviations_
+We will follow all standard Ruby on Rails practices for naming of objects methods and attributes according to the following popular RoR naming conventions web site:
 
-    _1.4 References_
-    
+*http://itsignals.cascadia.com.au/?p=7
 
-The first section of the ODD is an introduction to the document. It describes the general trade-offs made by developers (e.g., buy vs. build, memory space vs. response time), guidelines and conventions (e.g., naming conventions, boundary cases, exception handling mechanisms), and an overview of the document.
-Interface documentation guidelines and coding conventions are the single most important factor that can improve communication between developers during object design. These include a list of rules that developers should use when designing and naming interfaces. These are examples of such conventions:
+The following is a summary of the conventions we will be following, from the above site:
 
-    * Classes are named with singular nouns.
-    * Methods are named with verb phrases, fields, and parameters with noun phrases.
-    * Error status is returned via an exception, not a return value.
-    * Collections and containers have an elements() method returning an Enumeration.
-    * Enumerations returned by elements() methods are robust to element removals. 
+*Model Naming Convention*
 
-Such conventions help developers design interfaces consistently, even if many developers contribute to the interface specification. Moreover, making these conventions explicit before object design makes it easier for developers to follow them. In general, these conventions should not evolve during the project.
- 
+  * Table: orders
+  * Class: Order
+  * File: /app/models/order.rb
+  * Primary Key: id
+  * Foreign Key: customer_id
+  * Link Tables: items_orders
+
+*Controller Naming Convention*
+
+  * Class: OrdersController
+  * File: /app/controllers/orders_controller.rb
+  * Layout: /app/layouts/orders.html.erb
+
+*View Naming Convention*
+
+  * Helper: /app/helpers/orders_helper.rb
+  * Helper Module: OrdersHelper
+  * Views: /app/views/orders/… (list.html.erb for example)
+
+
 === Packages ===	
 
 The second section of the ODD, Packages, describes the decomposition of subsystems into packages and the file organization of the code. This includes an overview of each package, its dependencies with other packages, and its expected usage. 
