@@ -25,6 +25,7 @@ class AmbulancesController < ApplicationController
   # GET /ambulances/new.xml
   def new
     @ambulance = Ambulance.new
+    @availabilities = Availability.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class AmbulancesController < ApplicationController
   # GET /ambulances/1/edit
   def edit
     @ambulance = Ambulance.find(params[:id])
+    @availabilities = Availability.find(:all)
   end
 
   # POST /ambulances

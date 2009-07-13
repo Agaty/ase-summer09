@@ -3,7 +3,7 @@
 <% form_for(@incident) do |f| %>
   <p>
     <b>Ambulance</b><br />
-      <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :driverName)) %>
+      <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number)) %>
   </p>
   <p>
     <%= f.submit "Dispatch" %>

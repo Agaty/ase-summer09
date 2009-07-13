@@ -4,6 +4,7 @@
   <tr>
     <th>Location</th>
     <th>Severity</th>
+    <th>Number of Patients</th>
     <th>Description</th>
   </tr>
 
@@ -11,6 +12,7 @@
   <tr>
     <td><%=h incident.location %></td>
     <td><%=h incident.severity %></td>
+    <td><%=h incident.number_patients %></td>
     <td><%=h incident.description %></td>
     <td><%= link_to 'Show', incident %></td>
     <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
