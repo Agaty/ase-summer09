@@ -4,8 +4,23 @@
 
 <% form_for(@ambulance) do |f| %>
   <p>
-    <b>Drivername</b><br />
-    <%= f.text_field :driverName %>
+    <b>Registration #</b><br />
+    <%= f.text_field :registration_number %>
+  </p>
+
+  <p>
+    <b>Driver Name</b><br />
+    <%= f.text_field :driver_name %>
+  </p>
+
+  <p>
+    <b>Initial Location</b><br />
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <b>Initial Availability</b><br />
+      <%= select_tag("ambulance[availability_id]", "<option>Select Availability</option>" + options_from_collection_for_select(@availabilities, :id, :description)) %>
   </p>
 
   <p>

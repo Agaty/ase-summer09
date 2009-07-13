@@ -87,7 +87,8 @@ class IncidentsController < ApplicationController
   end
 
   def dispatch
-    @ambulances = Ambulance.find(:all)
+    @availability_active = Availability.find(:first, :conditions => "description = 'Active'")
+    @ambulances = Ambulance.find(:all, :conditions => "availability_id = " + String(@availability_active.id) + " AND incident_id is null")
     @incident = Incident.find(params[:id])
   end
   

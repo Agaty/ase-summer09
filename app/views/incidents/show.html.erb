@@ -9,8 +9,23 @@
 </p>
 
 <p>
+  <b>Number of Patients:</b>
+  <%=h @incident.number_patients %>
+</p>
+
+<p>
   <b>Description:</b>
   <%=h @incident.description %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%=h @incident.created_at %>
+</p>
+
+<p>
+  <b>Last Modified:</b>
+  <%=h @incident.updated_at %>
 </p>
 
 <p>
@@ -18,9 +33,9 @@
   <% if @incident.ambulances.size == 0 %>
      <b>none</b>
   <% else %>
-    <% for ambulance in @incident.ambulances %>
-       <br>Id: <%= ambulance.id %> Driver: <%= ambulance.driverName %>
-       <%= link_to 'Undispatch', :action => 'undispatch', :id => ambulance.id, :incidentid => @incident.id %>
+    <% for @temp_ambulance in @incident.ambulances %>
+       <br>Registration #: <%= @temp_ambulance.registration_number %>
+       <%= link_to 'Undispatch', :action => 'undispatch', :id => @temp_ambulance.id, :incidentid => @incident.id %>
     <% end %>
   <% end %>
 </p>
