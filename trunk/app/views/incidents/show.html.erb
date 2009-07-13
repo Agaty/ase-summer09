@@ -1,0 +1,44 @@
+<p>
+  <b>Location:</b>
+  <%=h @incident.location %>
+</p>
+
+<p>
+  <b>Severity:</b>
+  <%=h @incident.severity %>
+</p>
+
+<p>
+  <b>Number of Patients:</b>
+  <%=h @incident.number_patients %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @incident.description %>
+</p>
+
+<p>
+  <b>Created:</b>
+  <%=h @incident.created_at %>
+</p>
+
+<p>
+  <b>Last Modified:</b>
+  <%=h @incident.updated_at %>
+</p>
+
+<p>
+  <b>Dispatched Ambulances:</b>
+  <% if @incident.ambulances.size == 0 %>
+     <b>none</b>
+  <% else %>
+    <% for @temp_ambulance in @incident.ambulances %>
+       <br>Registration #: <%= @temp_ambulance.registration_number %>
+       <%= link_to 'Undispatch', :action => 'undispatch', :id => @temp_ambulance.id, :incidentid => @incident.id %>
+    <% end %>
+  <% end %>
+</p>
+<%= link_to 'Edit', edit_incident_path(@incident) %> |
+<%= link_to 'Dispatch Ambulance', :action => 'dispatch', :id => @incident.id %> |
+<%= link_to 'Back', incidents_path %>
