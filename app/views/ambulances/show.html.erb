@@ -1,0 +1,22 @@
+<p>
+  <b>Registration #:</b>
+  <%= @ambulance.registration_number %>
+</p>
+
+<p>
+  <b>Driver Name:</b>
+  <%= @ambulance.driver_name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @ambulance.location %>
+</p>
+
+<p>
+  <b>Availability:</b>
+  <%= @ambulance.availability.description %>
+</p>
+
+<%= link_to 'Edit', edit_ambulance_path(@ambulance) %> |
+<%= link_to 'Back', ambulances_path %>
