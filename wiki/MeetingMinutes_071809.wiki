@@ -18,7 +18,7 @@
   * Everyone can run ruby on rails with mysql database
   * Attempted to integrate google maps - will be checked into trunk when available.
 
-==Phase 3 Section Draft Delegation==
+==Task Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
 || Akhil || Draft Phase 6 || 7/25 || In Progress ||
 || Chad|| Finalize Phase 4 || 7/25 || In Progress  ||
