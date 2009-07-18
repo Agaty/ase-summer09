@@ -10,17 +10,17 @@
 
   <p>
     <b>Severity</b><br />
-    <%= f.text_field :severity %>
+    <%= select_tag( "incident[severity]", options_for_select(["1","2","3","4","5"],String(@incident.severity))) %>
   </p>
 
   <p>
     <b>Number of Patients</b><br />
-    <%= f.text_field :number_patients %>
+    <%= f.text_field :number_patients, :size => 3 %>
   </p>
 
   <p>
     <b>Description</b><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :size => 80 %>
   </p>
 
   <p>

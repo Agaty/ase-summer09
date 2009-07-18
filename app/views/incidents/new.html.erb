@@ -1,6 +1,76 @@
+  <style type="text/css">
+    #map_canvas {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      width: 40%;
+      height: 80%;
+      padding: 4px;
+      border : 1px solid #000000;
+    }
+</style>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ"
+            type="text/javascript">
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript"> 
+    var map = null;
+    var mgr = null;
+    var geocoder = null;
+    google.load('visualization', '1',
+          {'packages': ['table']});
+    google.setOnLoadCallback(initialize);
+   
+    function initialize() 
+    {
+      geocoder = new GClientGeocoder();
+      if (GBrowserIsCompatible()) 
+      {
+        var map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(32.98426, -96.734447), 13);
+        map.setUIToDefault();
+
+        GEvent.addListener(map, 'click', 
+        function(overlay, latlng) 
+        {       
+		  var lat = latlng.lat();
+		  var lon = latlng.lng();
+		  cLat =lat;
+		  cLng = lon;
+		  var latOffset = 0.01;
+		  var lonOffset = 0.01;
+		  var point = new GLatLng(lat, lon); 
+		    
+          geocoder.getLocations(latlng, populateAddress);
+          
+        }
+        );
+      }
+    }  
+
+    function populateAddress(response) {
+      if (!response || response.Status.code != 200) {
+        alert("There was an error:" + response.Status.code);
+      } 
+      else 
+      {
+        place = response.Placemark[0];
+		document.getElementById("new_incident").incident_location.value = place.address;
+      }
+        
+    }
+      
+    </script>
+
+
 <h1>New incident</h1>
 
 <%= error_messages_for :incident %>
+
+<div id="map_canvas" class="canvasStyle"></div> 
 
 <% form_for(@incident) do |f| %>
   <p>
@@ -10,17 +80,17 @@
 
   <p>
     <b>Severity</b><br />
-    <%= f.text_field :severity %>
+    <%= select_tag( "incident[severity]", options_for_select(["1","2","3","4","5"])) %>
   </p>
 
   <p>
     <b>Number of Patients</b><br />
-    <%= f.text_field :number_patients %>
+    <%= f.text_field :number_patients, :size => 3 %>
   </p>
 
   <p>
     <b>Description</b><br />
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :size => 80 %>
   </p>
 
   <p>
