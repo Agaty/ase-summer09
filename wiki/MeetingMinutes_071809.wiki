@@ -17,7 +17,7 @@
   
   * Everyone can run ruby on rails with mysql database
   * Attempted to integrate google maps - will be checked into trunk when available.
-  * To do items on code: add google maps and allow the address to be copied into the form, beautification so it looks like screen mockups
+  * To do items on code: add google maps and allow the address to be copied into the form, beautification so it looks like screen mockups, consistent header/footer on every page
 
 ==Task Delegation==
 || *Assignee* || *Section                    * || *Due Date* || *Status     * ||
