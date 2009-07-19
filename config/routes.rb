@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :incidents
+  map.resources :incidents, :member => {:close => :put}
   map.resources :ambulances
 
   # The priority is based upon order of creation: first created -> highest priority.

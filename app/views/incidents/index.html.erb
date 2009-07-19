@@ -16,7 +16,7 @@
     <td><%=h incident.description %></td>
     <td><%= link_to 'Show', incident %></td>
     <td><%= link_to 'Edit', edit_incident_path(incident) %></td>
-    <td><%= link_to 'Destroy', incident, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Close', close_incident_path(incident), :confirm => 'Close this incident?', :method => :put %></td>
   </tr>
 <% end %>
 </table>

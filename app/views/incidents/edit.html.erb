@@ -1,6 +1,67 @@
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ"
+            type="text/javascript">
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript"> 
+    var map = null;
+    var geocoder = null;
+    
+    google.setOnLoadCallback(initialize);
+   
+    function initialize() 
+    {
+      geocoder = new GClientGeocoder();
+      if (GBrowserIsCompatible()) 
+      {
+        map = new GMap2(document.getElementById("map_canvas"));
+        map.setCenter(new GLatLng(32.98426, -96.734447), 13);
+        map.setUIToDefault();
+        
+        geocoder.getLocations("<%=h @incident.location %>", centerMap);
+
+        GEvent.addListener(map, 'click', 
+        function(overlay, latlng) 
+        {       
+          geocoder.getLocations(latlng, populateAddress);
+        }
+        );
+      }
+    }  
+
+    function centerMap(response) 
+    {
+      if (!response || response.Status.code != 200) {
+        alert("There was an error:" + response.Status.code);
+      } 
+      else 
+      {
+        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);
+        map.setCenter(point, 14);
+		map.addOverlay(new GMarker(point));
+      }
+        
+    }
+
+    function populateAddress(response) 
+    {
+      if (!response || response.Status.code != 200) {
+        alert("There was an error:" + response.Status.code);
+      } 
+      else 
+      {
+		document.getElementById("edit_incident_<%=h @incident.id %>").incident_location.value = response.Placemark[0].address;
+      }
+        
+    }
+</script>
+
 <h1>Editing incident</h1>
 
 <%= error_messages_for :incident %>
+
+<div id="map_canvas" class="google_map"></div> 
 
 <% form_for(@incident) do |f| %>
   <p>
@@ -29,4 +90,5 @@
 <% end %>
 
 <%= link_to 'Show', @incident %> |
+<%= link_to 'Close', close_incident_path(@incident), :confirm => 'Close this incident?', :method => :put %> |
 <%= link_to 'Back', incidents_path %>
