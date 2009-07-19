@@ -1,3 +1,47 @@
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ"
+            type="text/javascript">
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript"> 
+    var map = null;
+    var geocoder = null;
+    
+    google.setOnLoadCallback(initialize);
+   
+    function initialize() 
+    {
+      geocoder = new GClientGeocoder();
+      if (GBrowserIsCompatible()) 
+      {
+        map = new GMap2(document.getElementById("map_canvas"));
+        map.setUIToDefault();
+        map.disableDragging();
+        map.disableScrollWheelZoom();
+        geocoder.getLocations("<%=h @incident.location %>", centerMap);
+      }
+    }  
+
+    function centerMap(response) 
+    {
+      if (!response || response.Status.code != 200) {
+        alert("There was an error:" + response.Status.code);
+      } 
+      else 
+      {
+        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);
+        map.setCenter(point, 14);
+		map.addOverlay(new GMarker(point));
+      }
+        
+    }
+</script>
+
+<div id="map_canvas" class="google_map"></div> 
+
+<h1>Incident #<%=h@incident.id%></h1>
+
 <p>
   <b>Location:</b>
   <%=h @incident.location %>
@@ -37,6 +81,15 @@
        <br>Registration #: <%= @temp_ambulance.registration_number %>
        <%= link_to 'Undispatch', :action => 'undispatch', :id => @temp_ambulance.id, :incidentid => @incident.id %>
     <% end %>
+  <% end %>
+</p>
+
+<p>
+ <b>Status:</b>
+  <% if @incident.closed %>
+   Closed
+  <% else %>
+   Open
   <% end %>
 </p>
 <%= link_to 'Edit', edit_incident_path(@incident) %> |

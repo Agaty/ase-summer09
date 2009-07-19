@@ -1,15 +1,3 @@
-  <style type="text/css">
-    #map_canvas {
-      position: absolute;
-      top: 100px;
-      left: 50%;
-      width: 40%;
-      height: 80%;
-      padding: 4px;
-      border : 1px solid #000000;
-    }
-</style>
-
 <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ"
             type="text/javascript">
 </script>
@@ -18,10 +6,8 @@
 
 <script type="text/javascript"> 
     var map = null;
-    var mgr = null;
     var geocoder = null;
-    google.load('visualization', '1',
-          {'packages': ['table']});
+    
     google.setOnLoadCallback(initialize);
    
     function initialize() 
@@ -36,41 +22,31 @@
         GEvent.addListener(map, 'click', 
         function(overlay, latlng) 
         {       
-		  var lat = latlng.lat();
-		  var lon = latlng.lng();
-		  cLat =lat;
-		  cLng = lon;
-		  var latOffset = 0.01;
-		  var lonOffset = 0.01;
-		  var point = new GLatLng(lat, lon); 
-		    
           geocoder.getLocations(latlng, populateAddress);
-          
         }
         );
       }
     }  
 
-    function populateAddress(response) {
+    function populateAddress(response) 
+    {
       if (!response || response.Status.code != 200) {
         alert("There was an error:" + response.Status.code);
       } 
       else 
       {
-        place = response.Placemark[0];
-		document.getElementById("new_incident").incident_location.value = place.address;
+		document.getElementById("new_incident").incident_location.value = response.Placemark[0].address;
       }
         
     }
-      
-    </script>
+</script>
 
 
 <h1>New incident</h1>
 
 <%= error_messages_for :incident %>
 
-<div id="map_canvas" class="canvasStyle"></div> 
+<div id="map_canvas" class="google_map"></div> 
 
 <% form_for(@incident) do |f| %>
   <p>

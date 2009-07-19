@@ -2,7 +2,7 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.xml
   def index
-    @incidents = Incident.find(:all)
+    @incidents = Incident.find(:all, :conditions => "closed = FALSE")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -76,9 +76,17 @@ class IncidentsController < ApplicationController
 
   # DELETE /incidents/1
   # DELETE /incidents/1.xml
-  def destroy
+  def close
     @incident = Incident.find(params[:id])
-    @incident.destroy
+    @incident.closed = TRUE
+    @incident.save()
+    
+    @ambulances = Ambulance.find(:all, :conditions => "incident_id = " + String(@incident.id))
+    
+    for @ambulance in @ambulances
+      @ambulance.incident = nil;
+      @ambulance.save();
+    end
 
     respond_to do |format|
       format.html { redirect_to(incidents_url) }
