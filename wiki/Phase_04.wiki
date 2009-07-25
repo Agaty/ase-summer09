@@ -53,7 +53,7 @@ We will follow all standard Ruby on Rails practices for naming of objects method
 
 The following is a summary of the conventions we will be following, from the above site:
 
-  *Model Naming Convention*
+  * Model Naming Convention *
 
     * Table: orders
     * Class: Order
@@ -62,13 +62,13 @@ The following is a summary of the conventions we will be following, from the abo
     * Foreign Key: customer_id
     * Link Tables: items_orders
 
-  *Controller Naming Convention*
+  * Controller Naming Convention *
 
     * Class: OrdersController
     * File: /app/controllers/orders_controller.rb
     * Layout: /app/layouts/orders.html.erb
 
-  *View Naming Convention*
+  * View Naming Convention *
 
     * Helper: /app/helpers/orders_helper.rb
     * Helper Module: OrdersHelper
