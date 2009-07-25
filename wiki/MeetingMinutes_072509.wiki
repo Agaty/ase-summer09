@@ -25,7 +25,15 @@
   * Completed code
   * added access control diagram to phase 3
   * added package diagram to phase 4  
-  * drafted presentation
+  * drafted presentation 
+
+*Presentation*
+|| Section || Presenter ||
+|| Introduction, Problem Overview, Requirements || Akhil ||
+|| System Design, Technology chosen || Katie ||
+|| Object Design || Chad ||
+|| Test Plan || Rajeev ||
+|| Traceability, Demo || Ryan || 
 
 ==Task Delegation==
   * See above
