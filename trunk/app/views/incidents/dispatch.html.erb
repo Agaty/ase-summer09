@@ -1,9 +1,71 @@
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ"
+            type="text/javascript">
+</script>
+<script type="text/javascript" src="http://www.google.com/jsapi">
+</script>
+
+<script type="text/javascript"> 
+    var map = null;
+    var geocoder = null;
+	var ambulanceMarker = null;
+    
+    var addresses = [ ""<% for @temp_ambulance in @ambulances %>, "<%=h @temp_ambulance.location %>"<% end %>];
+    
+    google.setOnLoadCallback(initialize);
+   
+    function initialize() 
+    {
+      geocoder = new GClientGeocoder();
+      if (GBrowserIsCompatible()) 
+      {
+        map = new GMap2(document.getElementById("map_canvas"));
+        map.setUIToDefault();
+        map.disableDragging();
+        map.disableScrollWheelZoom();
+        geocoder.getLocations("<%=h @incident.location %>", centerMap);
+      }
+    }  
+
+    function centerMap(response) 
+    {
+      if (!response || response.Status.code != 200) {
+        alert("There was an error:" + response.Status.code);
+      } 
+      else 
+      {
+        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);
+        map.setCenter(point, 14);
+		map.addOverlay(new GMarker(point));
+      }
+    }
+    
+    function addAmbulance()
+    {
+    	if (ambulanceMarker!=null) {
+    	  map.removeOverlay(ambulanceMarker);
+        }
+
+    	geocoder.getLocations( addresses[document.getElementById("edit_incident_<%=h @incident.id %>").Ambulance.value], addAmbulanceCallback);
+    }
+    
+    function addAmbulanceCallback(response)
+    {
+
+   
+        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);
+    	ambulanceMarker = new GMarker(point);
+    	map.addOverlay(ambulanceMarker);
+    }
+</script>
+
+<div id="map_canvas" class="google_map"></div> 
+
 <h1>Dispatching Ambulance</h1>
 
 <% form_for(@incident) do |f| %>
   <p>
     <b>Ambulance</b><br />
-      <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number)) %>
+      <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :location), :onchange => "addAmbulance();") %>
   </p>
   <p>
     <%= f.submit "Dispatch" %>
