@@ -41,11 +41,11 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 == 1 Introduction ==
 
-   === _1.1 Object Design Trade offs_ ===
+   ===_1.1 Object Design Trade offs_===
 
 Response time is the highest priority so memory space is not considered very important.  Additionally, except where outlined in the previous documentation we will be building all software in-house (as opposed to purchasing off-the-shelf solutions).  
 
-   === _1.2 Interface documentation guidelines_ ===
+   ===_1.2 Interface documentation guidelines_===
 
 We will follow all standard Ruby on Rails practices for naming of objects methods and attributes according to the following popular RoR naming conventions web site:
 
@@ -53,27 +53,26 @@ We will follow all standard Ruby on Rails practices for naming of objects method
 
 The following is a summary of the conventions we will be following, from the above site:
 
-*Model Naming Convention*
+  *Model Naming Convention*
 
-  * Table: orders
-  * Class: Order
-  * File: /app/models/order.rb
-  * Primary Key: id
-  * Foreign Key: customer_id
-  * Link Tables: items_orders
+    * Table: orders
+    * Class: Order
+    * File: /app/models/order.rb
+    * Primary Key: id
+    * Foreign Key: customer_id
+    * Link Tables: items_orders
 
-*Controller Naming Convention*
+  *Controller Naming Convention*
 
-  * Class: OrdersController
-  * File: /app/controllers/orders_controller.rb
-  * Layout: /app/layouts/orders.html.erb
+    * Class: OrdersController
+    * File: /app/controllers/orders_controller.rb
+    * Layout: /app/layouts/orders.html.erb
 
-*View Naming Convention*
+  *View Naming Convention*
 
-  * Helper: /app/helpers/orders_helper.rb
-  * Helper Module: OrdersHelper
-  * Views: /app/views/orders/… (list.html.erb for example)
-
+    * Helper: /app/helpers/orders_helper.rb
+    * Helper Module: OrdersHelper
+    * Views: /app/views/orders/… (list.html.erb for example)
 
 == 2 Packages ==
 
