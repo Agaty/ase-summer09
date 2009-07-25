@@ -17,25 +17,25 @@ Ryan Kelly<br />
 </p>
 
 <br />
-<br />
 
 Project website: [http://code.google.com/p/ase-summer09 http://code.google.com/p/ase-summer09]
 
 Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 <br />
-<br />
 
-* Table of Contents *
+= Version =
 
-<wiki:toc max_depth="5" />
-
-=== Version ===
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/11/09 || Ryan || Initial draft ||
 || 0.2 || 6/25/09 || Chad || Formatting ||
 
-== Software Project Management Plan ==
+<br />
+<br />
+
+= Component/Object Specification Document =
+
+* Table of Contents *
 
 <wiki:toc max_depth="3" />
 
