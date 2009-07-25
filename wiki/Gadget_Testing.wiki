@@ -1,3 +1,0 @@
-#summary Testing Google Calendar app
-
-<wiki:gadget url="http://www.google.com/ig/modules/calendar3.xml" height="200" border="0" /> 
