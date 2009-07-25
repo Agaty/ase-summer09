@@ -9801,3 +9801,2051 @@ Processing HomeController#index (for 127.0.0.1 at 2009-07-18 22:43:19) [GET]
   Parameters: {"action"=>"index", "controller"=>"home"}
 Rendering home/index
 Completed in 0.01500 (66 reqs/sec) | Rendering: 0.01500 (100%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 12:33:06) [GET]
+  Session ID: 0a719809815103ebb5973405c4faab1f
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mSQL (0.031000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering home/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.01600 (100%) | DB: 0.03100 (193%) | 200 OK [http://localhost/]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 12:33:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--8bc886e6c8420c8fc45aab237b0e6f4ef5d19315
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.031000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.031000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.09300 (10 reqs/sec) | Rendering: 0.01600 (17%) | DB: 0.06200 (66%) | 200 OK [http://localhost/incidents/]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 12:33:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.078000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+Completed in 0.14100 (7 reqs/sec) | Rendering: 0.03100 (21%) | DB: 0.09400 (66%) | 200 OK [http://localhost/incidents/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:33:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.047000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+ERROR: compiling _run_erb_47app47views47incidents47dispatch46html46erb RAISED compile error
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") ).to_s); _erbout.concat "\n"
+                                                                                                                                                                                                              ^
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:48: syntax error, unexpected ')', expecting kEND
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") ).to_s); _erbout.concat "\n"
+                                                                                                                                                                                                                           ^
+Function body: def _run_erb_47app47views47incidents47dispatch46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<script src=\"http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ\"\n"
+_erbout.concat "            type=\"text/javascript\">\n"
+_erbout.concat "</script>\n"
+_erbout.concat "<script type=\"text/javascript\" src=\"http://www.google.com/jsapi\">\n"
+_erbout.concat "</script>\n"
+_erbout.concat "\n"
+_erbout.concat "<script type=\"text/javascript\"> \n"
+_erbout.concat "    var map = null;\n"
+_erbout.concat "    var geocoder = null;\n"
+_erbout.concat "    \n"
+_erbout.concat "    google.setOnLoadCallback(initialize);\n"
+_erbout.concat "   \n"
+_erbout.concat "    function initialize() \n"
+_erbout.concat "    {\n"
+_erbout.concat "      geocoder = new GClientGeocoder();\n"
+_erbout.concat "      if (GBrowserIsCompatible()) \n"
+_erbout.concat "      {\n"
+_erbout.concat "        map = new GMap2(document.getElementById(\"map_canvas\"));\n"
+_erbout.concat "        map.setUIToDefault();\n"
+_erbout.concat "        map.disableDragging();\n"
+_erbout.concat "        map.disableScrollWheelZoom();\n"
+_erbout.concat "        geocoder.getLocations(\""; _erbout.concat((h @incident.location ).to_s); _erbout.concat "\", centerMap);\n"
+_erbout.concat "      }\n"
+_erbout.concat "    }  \n"
+_erbout.concat "\n"
+_erbout.concat "    function centerMap(response) \n"
+_erbout.concat "    {\n"
+_erbout.concat "      if (!response || response.Status.code != 200) {\n"
+_erbout.concat "        alert(\"There was an error:\" + response.Status.code);\n"
+_erbout.concat "      } \n"
+_erbout.concat "      else \n"
+_erbout.concat "      {\n"
+_erbout.concat "        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);\n"
+_erbout.concat "        map.setCenter(point, 14);\n"
+_erbout.concat "\t\tmap.addOverlay(new GMarker(point));\n"
+_erbout.concat "      }\n"
+_erbout.concat "        \n"
+_erbout.concat "    }\n"
+_erbout.concat "</script>\n"
+_erbout.concat "\n"
+_erbout.concat "<div id=\"map_canvas\" class=\"google_map\"></div> \n"
+_erbout.concat "\n"
+_erbout.concat "<h1>Dispatching Ambulance</h1>\n"
+_erbout.concat "\n"
+ form_for(@incident) do |f| ; _erbout.concat "\n"
+_erbout.concat "  <p>\n"
+_erbout.concat "    <b>Ambulance</b><br />\n"
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") ).to_s); _erbout.concat "\n"
+_erbout.concat "  </p>\n"
+_erbout.concat "  <p>\n"
+_erbout.concat "    "; _erbout.concat(( f.submit "Dispatch" ).to_s); _erbout.concat "\n"
+_erbout.concat "  </p>\n"
+ end ; _erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat(( link_to 'Show', @incident ).to_s); _erbout.concat " |\n"
+_erbout.concat(( link_to 'Back', incidents_path ).to_s); _erbout
+end
+Backtrace: C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:57:in `compile_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:48: syntax error, unexpected tIDENTIFIER, expecting ')'
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") ).to_s); _erbout.concat "\n"
+                                                                                                                                                                                                              ^
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:48: syntax error, unexpected ')', expecting kEND
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") ).to_s); _erbout.concat "\n"
+                                                                                                                                                                                                                           ^) on line #48 of incidents/dispatch.html.erb:
+45: <% form_for(@incident) do |f| %>
+46:   <p>
+47:     <b>Ambulance</b><br />
+48:       <%= select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :registration_number), :onchange => "alert("hi");") %>
+49:   </p>
+50:   <p>
+51:     <%= f.submit "Dispatch" %>
+
+    app/views/incidents/dispatch.html.erb:57:in `compile_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:34:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:35:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.12400 (8 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (25%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 12:35:44) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;35;1mIncident Load (0.016000)[0m   [0mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (100%) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 12:35:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.01600 (51%) | 200 OK [http://localhost/incidents/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:35:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.016000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.01600 (25%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:37:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01500 (24%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:38:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.016000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03200 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:45:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNWMxNmYwMzc3YmY2NTgxMjFmMWFmMDhlMWU4MzNi%0ANWUiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fec72547a0e4c470874e4f85a9b21f9cec9911da
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 12:52:33) [GET]
+  Session ID: 2fcb4646c843afe477e0e9a7d32a17f3
+  Parameters: {"action"=>"index", "controller"=>"home"}
+  [4;36;1mSQL (0.047000)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.047000)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+Rendering home/index
+Completed in 0.10900 (9 reqs/sec) | Rendering: 0.07800 (71%) | DB: 0.09400 (86%) | 200 OK [http://localhost/]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 12:52:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--8bc886e6c8420c8fc45aab237b0e6f4ef5d19315
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.312000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.031000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.40500 (2 reqs/sec) | Rendering: 0.04700 (11%) | DB: 0.34300 (84%) | 200 OK [http://localhost/incidents/]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 12:52:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.016000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.047000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.015000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+Completed in 0.14100 (7 reqs/sec) | Rendering: 0.04700 (33%) | DB: 0.09400 (66%) | 200 OK [http://localhost/incidents/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:52:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.063000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.12500 (8 reqs/sec) | Rendering: 0.01600 (12%) | DB: 0.06300 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:54:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:56:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.03100 (39%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 12:57:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:03:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:04:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.01500 (19%) | DB: 0.03100 (39%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:05:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.03200 (51%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:14:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+ERROR: compiling _run_erb_47app47views47incidents47dispatch46html46erb RAISED compile error
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:12: syntax error, unexpected ')', expecting kDO_COND or ':' or '\n' or ';'
+_erbout.concat "    "; _erbout.concat((h for ambulance in @ambulances ).to_s); _erbout.concat "\n"
+                                                                       ^
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:70: syntax error, unexpected kDO_COND, expecting $end
+ form_for(@incident) do |f| ; _erbout.concat "\n"
+                       ^
+Function body: def _run_erb_47app47views47incidents47dispatch46html46erb(local_assigns)
+_erbout = ''; _erbout.concat "<script src=\"http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAq2pKI3_86wp5NZfs8DCdUhT2yXp_ZAY8_ufC3CFXhHIE1NvwkxSLOQLC4TyLhjWuClxqvyhFZZRfYQ\"\n"
+_erbout.concat "            type=\"text/javascript\">\n"
+_erbout.concat "</script>\n"
+_erbout.concat "<script type=\"text/javascript\" src=\"http://www.google.com/jsapi\">\n"
+_erbout.concat "</script>\n"
+_erbout.concat "\n"
+_erbout.concat "<script type=\"text/javascript\"> \n"
+_erbout.concat "    var map = null;\n"
+_erbout.concat "    var geocoder = null;\n"
+_erbout.concat "    \n"
+_erbout.concat "    var addresses = { null\n"
+_erbout.concat "    "; _erbout.concat((h for ambulance in @ambulances ).to_s); _erbout.concat "\n"
+_erbout.concat "    , ";  @ambulance.location ; _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    ";  end ; _erbout.concat "\n"
+_erbout.concat "    \n"
+_erbout.concat "    }\n"
+_erbout.concat "    \n"
+_erbout.concat "    google.setOnLoadCallback(initialize);\n"
+_erbout.concat "   \n"
+_erbout.concat "    function initialize() \n"
+_erbout.concat "    {\n"
+_erbout.concat "      geocoder = new GClientGeocoder();\n"
+_erbout.concat "      if (GBrowserIsCompatible()) \n"
+_erbout.concat "      {\n"
+_erbout.concat "        map = new GMap2(document.getElementById(\"map_canvas\"));\n"
+_erbout.concat "        map.setUIToDefault();\n"
+_erbout.concat "        map.disableDragging();\n"
+_erbout.concat "        map.disableScrollWheelZoom();\n"
+_erbout.concat "        geocoder.getLocations(\""; _erbout.concat((h @incident.location ).to_s); _erbout.concat "\", centerMap);\n"
+_erbout.concat "      }\n"
+_erbout.concat "    }  \n"
+_erbout.concat "\n"
+_erbout.concat "    function centerMap(response) \n"
+_erbout.concat "    {\n"
+_erbout.concat "      if (!response || response.Status.code != 200) {\n"
+_erbout.concat "        alert(\"There was an error:\" + response.Status.code);\n"
+_erbout.concat "      } \n"
+_erbout.concat "      else \n"
+_erbout.concat "      {\n"
+_erbout.concat "        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);\n"
+_erbout.concat "        map.setCenter(point, 14);\n"
+_erbout.concat "\t\tmap.addOverlay(new GMarker(point));\n"
+_erbout.concat "      }\n"
+_erbout.concat "        \n"
+_erbout.concat "    }\n"
+_erbout.concat "    \n"
+_erbout.concat "    function addAmbulance()\n"
+_erbout.concat "    {\n"
+_erbout.concat "    \tgeocoder.getLocations(\n"
+_erbout.concat "    \t\t\t\tambulances[document.getElementById(\"edit_incident_"; _erbout.concat((h @incident.id ).to_s); _erbout.concat "\").Ambulance.value]\n"
+_erbout.concat "    \t\t\t\t, addAmbulanceCallback);\n"
+_erbout.concat "    }\n"
+_erbout.concat "    \n"
+_erbout.concat "    function addAmbulanceCallback(response)\n"
+_erbout.concat "    {\n"
+_erbout.concat "        var point = new GLatLng(response.Placemark[0].Point.coordinates[1], response.Placemark[0].Point.coordinates[0]);\n"
+_erbout.concat "    \tvar myCustomIcon = new GIcon();\n"
+_erbout.concat "    \tmyCustomIcon.image = \"http://www.google.com/uds/samples/places/temp_marker.png\";\n"
+_erbout.concat "\n"
+_erbout.concat "    \tvar marker = new GMarker(point, icon:myCustomIcon);\n"
+_erbout.concat "    \tmap.addOverlay(marker);\n"
+_erbout.concat "    }\n"
+_erbout.concat "</script>\n"
+_erbout.concat "\n"
+_erbout.concat "<div id=\"map_canvas\" class=\"google_map\"></div> \n"
+_erbout.concat "\n"
+_erbout.concat "<h1>Dispatching Ambulance</h1>\n"
+_erbout.concat "\n"
+ form_for(@incident) do |f| ; _erbout.concat "\n"
+_erbout.concat "  <p>\n"
+_erbout.concat "    <b>Ambulance</b><br />\n"
+_erbout.concat "      "; _erbout.concat(( select_tag("Ambulance", "<option>Select an Ambulance</option>" + options_from_collection_for_select(@ambulances, :id, :location), :onchange => "addAmbulance();") ).to_s); _erbout.concat "\n"
+_erbout.concat "  </p>\n"
+_erbout.concat "  <p>\n"
+_erbout.concat "    "; _erbout.concat(( f.submit "Dispatch" ).to_s); _erbout.concat "\n"
+_erbout.concat "  </p>\n"
+ end ; _erbout.concat "\n"
+_erbout.concat "\n"
+_erbout.concat(( link_to 'Show', @incident ).to_s); _erbout.concat " |\n"
+_erbout.concat(( link_to 'Back', incidents_path ).to_s); _erbout
+end
+Backtrace: C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:70:in `compile_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:76:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/rails.rb:74:in `process'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:159:in `process_client'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `each'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:158:in `process_client'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `initialize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `new'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:285:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `initialize'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `new'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel.rb:268:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:282:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `each'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/configurator.rb:281:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/../lib/mongrel/command.rb:212:in `run'
+C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+C:/INSTAN~1/ruby/bin/mongrel_rails:19:in `load'
+C:/INSTAN~1/ruby/bin/mongrel_rails:19
+
+
+ActionView::TemplateError (compile error
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:12: syntax error, unexpected ')', expecting kDO_COND or ':' or '\n' or ';'
+_erbout.concat "    "; _erbout.concat((h for ambulance in @ambulances ).to_s); _erbout.concat "\n"
+                                                                       ^
+C:/INSTAN~1/rails_apps/cs6354/app/views/incidents/dispatch.html.erb:70: syntax error, unexpected kDO_COND, expecting $end
+ form_for(@incident) do |f| ; _erbout.concat "\n"
+                       ^) on line #12 of incidents/dispatch.html.erb:
+9:     var geocoder = null;
+10:     
+11:     var addresses = { null
+12:     <%=h for ambulance in @ambulances %>
+13:     , <% @ambulance.location %>
+14:     
+15:     <% end %>
+
+    app/views/incidents/dispatch.html.erb:70:in `compile_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:630:in `compile_and_render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:15:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.location) on line #13 of incidents/dispatch.html.erb:
+10:     
+11:     var addresses = { null
+12:     <% for ambulance in @ambulances %>
+13:     , <% @ambulance.location %>
+14:     
+15:     <% end %>
+16:     
+
+    app/views/incidents/dispatch.html.erb:13:in `_run_erb_47app47views47incidents47dispatch46html46erb'
+    app/views/incidents/dispatch.html.erb:12:in `each'
+    app/views/incidents/dispatch.html.erb:12:in `_run_erb_47app47views47incidents47dispatch46html46erb'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `send'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:637:in `compile_and_render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:365:in `render_template'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_view/base.rb:316:in `render_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1100:in `render_for_file'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:836:in `render_with_no_layout'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/layout.rb:262:in `render_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:51:in `render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1153:in `default_render'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1159:in `perform_action_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:76:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `synchronize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/rails.rb:74:in `process'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:159:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:158:in `process_client'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:285:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `initialize'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `new'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel.rb:268:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:282:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `each'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/configurator.rb:281:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:128:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/lib/mongrel/command.rb:212:in `run'
+    C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/mongrel-1.1.2-x86-mswin32/bin/mongrel_rails:281
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19:in `load'
+    C:/INSTAN~1/ruby/bin/mongrel_rails:19
+
+Rendering C:/INSTAN~1/ruby/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:15:25) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.01600 (25%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:19:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:20:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:22:20) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:23:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.12500 (8 reqs/sec) | Rendering: 0.01600 (12%) | DB: 0.01600 (12%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:24:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:25:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.03200 (51%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:26:01) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:26:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:27:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:28:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.14000 (7 reqs/sec) | Rendering: 0.03100 (22%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:29:27) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.09300 (10 reqs/sec) | Rendering: 0.03100 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:29:51) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01500 (24%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:31:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:32:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03200 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:33:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:34:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.12500 (8 reqs/sec) | Rendering: 0.01500 (12%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:34:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01500 (24%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:34:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:36:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:37:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:37:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:38:35) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:39:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:40:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:40:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:43:28) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (25%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:46:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.03100 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:47:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.016000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:48:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:49:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:50:34) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.09400 (10 reqs/sec) | Rendering: 0.03100 (32%) | DB: 0.01600 (17%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:50:36) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.03100 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:50:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.12500 (8 reqs/sec) | Rendering: 0.01600 (12%) | DB: 0.01600 (12%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:51:39) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:52:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:53:31) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (50%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:53:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:54:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (25%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:54:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.14100 (7 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (33%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 13:56:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.03200 (41%) | DB: 0.03100 (39%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:03:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:04:07) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (75%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:04:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.03200 (51%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:08:29) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:10:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.03100 (39%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:10:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:11:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.015000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04700 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:12:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.04600 (74%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:12:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.015000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:13:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.063000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.10900 (9 reqs/sec) | Rendering: 0.01500 (13%) | DB: 0.06300 (57%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:13:46) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (50%) | 200 OK [http://localhost/incidents]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 14:13:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering home/index
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.01500 (100%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:13:50) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2) [0m
+Completed in 0.04700 (21 reqs/sec) | Rendering: 0.03100 (65%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances/]
+
+
+Processing AmbulancesController#new (for 127.0.0.1 at 2009-07-25 14:13:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"new", "controller"=>"ambulances"}
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/new
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.04700 (60%) | DB: 0.01500 (19%) | 200 OK [http://localhost/ambulances/new]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:13:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2) [0m
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.01600 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances]
+
+
+Processing AmbulancesController#edit (for 127.0.0.1 at 2009-07-25 14:13:59) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"ambulances"}
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/edit
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 2) [0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.04700 (60%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances/2/edit]
+
+
+Processing AmbulancesController#update (for 127.0.0.1 at 2009-07-25 14:14:04) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"06f7fdff36f079e79393b1e161eca5974fa88031", "_method"=>"put", "action"=>"update", "id"=>"2", "ambulance"=>{"availability_id"=>"1", "driver_name"=>"Joe Schmoe", "registration_number"=>"5678", "location"=>"3002 Connection Dr. Irving TX"}, "controller"=>"ambulances"}
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mAmbulance Update (0.047000)[0m   [0mUPDATE `ambulances` SET `created_at` = '2009-07-12 23:23:24', `driver_name` = 'Joe Schmoe', `availability_id` = 1, `incident_id` = NULL, `location` = '3002 Connection Dr. Irving TX', `updated_at` = '2009-07-25 14:14:04', `registration_number` = 5678 WHERE `id` = 2[0m
+  [4;36;1mSQL (0.109000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/ambulances/2
+Completed in 0.17100 (5 reqs/sec) | DB: 0.15600 (91%) | 302 Found [http://localhost/ambulances/2]
+
+
+Processing AmbulancesController#show (for 127.0.0.1 at 2009-07-25 14:14:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIihBbWJ1bGFuY2Ugd2FzIHN1Y2Nlc3NmdWxseSB1cGRh%0AdGVkLgY6CkB1c2VkewY7B1Q%3D--5e3438ee9c07c521eba36d6a2416c5e6a3874439
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"ambulances"}
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/show
+  [4;35;1mAvailability Columns (0.016000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.10900 (9 reqs/sec) | Rendering: 0.07800 (71%) | DB: 0.01600 (14%) | 200 OK [http://localhost/ambulances/2]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:14:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 14:14:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering home/index
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.01500 (100%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:14:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.01600 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:14:24) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 5) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/5]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:14:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#edit (for 127.0.0.1 at 2009-07-25 14:15:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"edit", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/edit
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.06200 (79%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/5/edit]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:15:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:15:16) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"show", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 5) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/5]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:15:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/5]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:19:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06300 (15 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (25%) | 200 OK [http://localhost/incidents/dispatch/5]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:21:32) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMTllMzY3MDgwMTNjMGZiMGFjN2U1MzlmY2ExZTk2%0ANTEiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--9a332da61c8457bbf0b120a82e4dda4bdc108b63
+  Parameters: {"action"=>"dispatch", "id"=>"5", "controller"=>"incidents"}
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 5) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.03100 (49%) | 200 OK [http://localhost/incidents/dispatch/5]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 14:28:16) [GET]
+  Session ID: f5fc332e06156745ff10ff3e87582bc6
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering home/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.01600 (100%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:28:28) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--8bc886e6c8420c8fc45aab237b0e6f4ef5d19315
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Load (0.015000)[0m   [0;1mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.01500 (48%) | 200 OK [http://localhost/ambulances/]
+
+
+Processing AmbulancesController#new (for 127.0.0.1 at 2009-07-25 14:28:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"new", "controller"=>"ambulances"}
+  [4;35;1mAmbulance Columns (0.015000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/new
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.01500 (48%) | 200 OK [http://localhost/ambulances/new]
+
+
+Processing AmbulancesController#create (for 127.0.0.1 at 2009-07-25 14:29:13) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "action"=>"create", "ambulance"=>{"availability_id"=>"1", "driver_name"=>"Ryan Kelly", "registration_number"=>"9999", "location"=>"800 W Renner Rd, Richardson, TX 75080"}, "controller"=>"ambulances"}
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mAmbulance Create (0.000000)[0m   [0;1mINSERT INTO `ambulances` (`incident_id`, `updated_at`, `availability_id`, `driver_name`, `registration_number`, `created_at`, `location`) VALUES(NULL, '2009-07-25 14:29:13', 1, 'Ryan Kelly', 9999, '2009-07-25 14:29:13', '800 W Renner Rd, Richardson, TX 75080')[0m
+  [4;35;1mSQL (0.140000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/ambulances/3
+Completed in 0.15600 (6 reqs/sec) | DB: 0.14000 (89%) | 302 Found [http://localhost/ambulances]
+
+
+Processing AmbulancesController#show (for 127.0.0.1 at 2009-07-25 14:29:14) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIihBbWJ1bGFuY2Ugd2FzIHN1Y2Nlc3NmdWxseSBjcmVh%0AdGVkLgY6CkB1c2VkewY7B1Q%3D--f8c1b1275fd7a4950aa7f64de1cb8890d6788132
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 3) [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/show
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.04700 (21 reqs/sec) | Rendering: 0.03100 (65%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances/3]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:29:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances]
+
+
+Processing AmbulancesController#edit (for 127.0.0.1 at 2009-07-25 14:29:26) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"edit", "id"=>"2", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/edit
+  [4;35;1mAvailability Columns (0.000000)[0m   [0mSHOW FIELDS FROM `availabilities`[0m
+  [4;36;1mAvailability Load (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.04700 (21 reqs/sec) | Rendering: 0.01500 (31%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances/2/edit]
+
+
+Processing AmbulancesController#update (for 127.0.0.1 at 2009-07-25 14:29:41) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "_method"=>"put", "action"=>"update", "id"=>"2", "ambulance"=>{"availability_id"=>"1", "driver_name"=>"Joe Schmoe", "registration_number"=>"5678", "location"=>"280 W Renner Rd, Richardson, TX 75080"}, "controller"=>"ambulances"}
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mAmbulance Update (0.000000)[0m   [0;1mUPDATE `ambulances` SET `created_at` = '2009-07-12 23:23:24', `driver_name` = 'Joe Schmoe', `availability_id` = 1, `incident_id` = NULL, `location` = '280 W Renner Rd, Richardson, TX 75080', `updated_at` = '2009-07-25 14:29:41', `registration_number` = 5678 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.141000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/ambulances/2
+Completed in 0.15600 (6 reqs/sec) | DB: 0.14100 (90%) | 302 Found [http://localhost/ambulances/2]
+
+
+Processing AmbulancesController#show (for 127.0.0.1 at 2009-07-25 14:29:42) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIihBbWJ1bGFuY2Ugd2FzIHN1Y2Nlc3NmdWxseSB1cGRh%0AdGVkLgY6CkB1c2VkewY7B1Q%3D--d37f18367887b75ee9fd482b22acb1f7d8cd14d5
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 2) [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/show
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.01600 (51%) | 200 OK [http://localhost/ambulances/2]
+
+
+Processing AmbulancesController#index (for 127.0.0.1 at 2009-07-25 14:29:47) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"ambulances"}
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` [0m
+Rendering template within layouts/ambulances
+Rendering ambulances/index
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (`availabilities`.`id` = 1) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/ambulances]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-07-25 14:30:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"home"}
+Rendering home/index
+Completed in 0.01500 (66 reqs/sec) | Rendering: 0.01500 (100%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:30:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.09400 (10 reqs/sec) | Rendering: 0.01600 (17%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/]
+
+
+Processing IncidentsController#new (for 127.0.0.1 at 2009-07-25 14:31:23) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"new", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+Rendering template within layouts/incidents
+Rendering incidents/new
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.01600 (51%) | 200 OK [http://localhost/incidents/new]
+
+
+Processing IncidentsController#create (for 127.0.0.1 at 2009-07-25 14:31:57) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"incident"=>{"severity"=>"5", "description"=>"Gas leak explosion", "number_patients"=>"12", "location"=>"705 N Waterview Dr, Richardson, TX 75080, USA"}, "commit"=>"Create", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "action"=>"create", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mIncident Create (0.000000)[0m   [0mINSERT INTO `incidents` (`severity`, `updated_at`, `closed`, `description`, `number_patients`, `created_at`, `location`) VALUES(5, '2009-07-25 14:31:57', 0, 'Gas leak explosion', 12, '2009-07-25 14:31:57', '705 N Waterview Dr, Richardson, TX 75080, USA')[0m
+  [4;36;1mSQL (0.109000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/incidents/6
+Completed in 0.12500 (8 reqs/sec) | DB: 0.10900 (87%) | 302 Found [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:31:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidJbmNpZGVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--2fe7b9ce5fdb0a19da0167961ccd4463fa4a6dd0
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 6) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 6) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.01600 (51%) | 200 OK [http://localhost/incidents/6]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:33:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"show", "id"=>"6", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 6) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 6) [0m
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.01600 (50%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/6]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:34:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#new (for 127.0.0.1 at 2009-07-25 14:34:55) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"new", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Rendering template within layouts/incidents
+Rendering incidents/new
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.01600 (50%) | DB: 0.01600 (50%) | 200 OK [http://localhost/incidents/new]
+
+
+Processing IncidentsController#create (for 127.0.0.1 at 2009-07-25 14:35:53) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"incident"=>{"severity"=>"1", "description"=>"Golf Kart Accident", "number_patients"=>"1", "location"=>"5677-5799 Arapaho Rd, Dallas, TX 75248, USA"}, "commit"=>"Create", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "action"=>"create", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mIncident Create (0.000000)[0m   [0;1mINSERT INTO `incidents` (`severity`, `updated_at`, `closed`, `description`, `number_patients`, `created_at`, `location`) VALUES(1, '2009-07-25 14:35:53', 0, 'Golf Kart Accident', 1, '2009-07-25 14:35:53', '5677-5799 Arapaho Rd, Dallas, TX 75248, USA')[0m
+  [4;35;1mSQL (0.156000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/incidents/7
+Completed in 0.17100 (5 reqs/sec) | DB: 0.15600 (91%) | 302 Found [http://localhost/incidents]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:35:54) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidJbmNpZGVudCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--2fe7b9ce5fdb0a19da0167961ccd4463fa4a6dd0
+  Parameters: {"action"=>"show", "id"=>"7", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 7) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 7) [0m
+Completed in 0.10900 (9 reqs/sec) | Rendering: 0.09400 (86%) | DB: 0.01500 (13%) | 200 OK [http://localhost/incidents/7]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:36:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;35;1mIncident Columns (0.063000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.07800 (12 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.06300 (80%) | 200 OK [http://localhost/incidents]
+
+
+Processing IncidentsController#edit (for 127.0.0.1 at 2009-07-25 14:36:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.016000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/edit
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.01600 (100%) | 200 OK [http://localhost/incidents/3/edit]
+
+
+Processing IncidentsController#edit (for 127.0.0.1 at 2009-07-25 14:36:53) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/edit
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01600 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/3/edit]
+
+
+Processing IncidentsController#update (for 127.0.0.1 at 2009-07-25 14:38:01) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"incident"=>{"severity"=>"3", "description"=>"Car Crash", "number_patients"=>"4", "location"=>"1807-1899 US-380, Denton, TX 76201, USA"}, "commit"=>"Update", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "_method"=>"put", "action"=>"update", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mIncident Update (0.000000)[0m   [0mUPDATE `incidents` SET `created_at` = '2009-07-18 13:34:22', `closed` = 0, `location` = '1807-1899 US-380, Denton, TX 76201, USA', `severity` = 3, `description` = 'Car Crash', `updated_at` = '2009-07-25 14:38:01', `number_patients` = 4 WHERE `id` = 3[0m
+  [4;36;1mSQL (0.156000)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/incidents/3
+Completed in 0.17200 (5 reqs/sec) | DB: 0.15600 (90%) | 302 Found [http://localhost/incidents/3]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:38:03) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidJbmNpZGVudCB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--64dd5500e4f7af6a35bdc632a99b7caf9184d379
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mIncident Columns (0.016000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;35;1mAmbulance Columns (0.000000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.01600 (51%) | 200 OK [http://localhost/incidents/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:38:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.015000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01600 (25%) | DB: 0.01500 (24%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#update (for 127.0.0.1 at 2009-07-25 14:38:32) [PUT]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"commit"=>"Dispatch", "authenticity_token"=>"7eb2493fb0a80424b0906166148be5b4c6428de3", "_method"=>"put", "action"=>"update", "id"=>"3", "controller"=>"incidents", "Ambulance"=>"1"}
+  [4;35;1mIncident Columns (0.000000)[0m   [0mSHOW FIELDS FROM `incidents`[0m
+  [4;36;1mIncident Load (0.000000)[0m   [0;1mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+  [4;35;1mAmbulance Columns (0.016000)[0m   [0mSHOW FIELDS FROM `ambulances`[0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (`ambulances`.`id` = 1) [0m
+  [4;35;1mSQL (0.000000)[0m   [0mBEGIN[0m
+  [4;36;1mAmbulance Update (0.000000)[0m   [0;1mUPDATE `ambulances` SET `created_at` = '2009-07-12 23:22:59', `driver_name` = 'Carl Douglass', `availability_id` = 1, `incident_id` = 3, `location` = '3001 Connection Dr. Irving, TX', `updated_at` = '2009-07-25 14:38:32', `registration_number` = 4321 WHERE `id` = 1[0m
+  [4;35;1mSQL (0.140000)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mBEGIN[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+  [4;36;1mIncident Update (0.000000)[0m   [0;1mUPDATE `incidents` SET `created_at` = '2009-07-18 13:34:22', `closed` = 0, `location` = '1807-1899 US-380, Denton, TX 76201, USA', `severity` = 3, `description` = 'Car Crash', `updated_at` = '2009-07-25 14:38:32', `number_patients` = 4 WHERE `id` = 3[0m
+  [4;35;1mSQL (0.125000)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/incidents/3
+Completed in 0.29600 (3 reqs/sec) | DB: 0.28100 (94%) | 302 Found [http://localhost/incidents/3]
+
+
+Processing IncidentsController#show (for 127.0.0.1 at 2009-07-25 14:38:33) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIidJbmNpZGVudCB3YXMgc3VjY2Vzc2Z1bGx5IHVwZGF0%0AZWQuBjoKQHVzZWR7BjsHVA%3D%3D--64dd5500e4f7af6a35bdc632a99b7caf9184d379
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"incidents"}
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/show
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSELECT count(*) AS count_all FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+  [4;36;1mAmbulance Load (0.000000)[0m   [0;1mSELECT * FROM `ambulances` WHERE (ambulances.incident_id = 3) [0m
+Completed in 0.04700 (21 reqs/sec) | Rendering: 0.03100 (65%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/3]
+
+
+Processing IncidentsController#dispatch (for 127.0.0.1 at 2009-07-25 14:38:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"dispatch", "id"=>"3", "controller"=>"incidents"}
+  [4;35;1mAvailability Load (0.000000)[0m   [0mSELECT * FROM `availabilities` WHERE (description = 'Active') LIMIT 1[0m
+  [4;36;1mAvailability Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `availabilities`[0m
+  [4;35;1mAmbulance Load (0.000000)[0m   [0mSELECT * FROM `ambulances` WHERE (availability_id = 1 AND incident_id is null) [0m
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (`incidents`.`id` = 3) [0m
+Rendering template within layouts/incidents
+Rendering incidents/dispatch
+  [4;36;1mAmbulance Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `ambulances`[0m
+Completed in 0.06200 (16 reqs/sec) | Rendering: 0.01500 (24%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents/dispatch/3]
+
+
+Processing IncidentsController#index (for 127.0.0.1 at 2009-07-25 14:38:56) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlMjQyZWFlMWNjNTkxOWU3MjU0MTA4ZmU4OWI1ZDlj%0AZTciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--be0d41d7c5e5ac88f00cce6137661286630c4773
+  Parameters: {"action"=>"index", "controller"=>"incidents"}
+  [4;35;1mIncident Load (0.000000)[0m   [0mSELECT * FROM `incidents` WHERE (closed = FALSE) [0m
+Rendering template within layouts/incidents
+Rendering incidents/index
+  [4;36;1mIncident Columns (0.000000)[0m   [0;1mSHOW FIELDS FROM `incidents`[0m
+Completed in 0.03100 (32 reqs/sec) | Rendering: 0.01500 (48%) | DB: 0.00000 (0%) | 200 OK [http://localhost/incidents]

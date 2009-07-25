@@ -15,9 +15,10 @@
       geocoder = new GClientGeocoder();
       if (GBrowserIsCompatible()) 
       {
-        var map = new GMap2(document.getElementById("map_canvas"));
+        var map = new GMap2(document.getElementById("map_canvas"),{googleBarOptions:{showOnLoad:true}});
         map.setCenter(new GLatLng(32.98426, -96.734447), 13);
         map.setUIToDefault();
+        map.enableGoogleBar();
 
         GEvent.addListener(map, 'click', 
         function(overlay, latlng) 
