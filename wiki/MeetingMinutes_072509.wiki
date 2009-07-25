@@ -13,6 +13,14 @@
   * Review & Finalize Phase 4 and Phase 6 deliverables
   * Review Presentation (assign tasks)
 
+|| Action || Status||
+|| Revise Phase 1+2 (Requirements)|| ||
+|| Revise Phase 3 (System Design) || ||
+|| Complete Phase 4 (Object) || ||
+|| Code Changes || ||
+|| Complete Phase 6 (Test) || ||
+|| Create Powerpoint presentation || ||
+
 ==Meeting Notes==
   
 
