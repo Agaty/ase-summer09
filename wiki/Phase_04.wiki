@@ -32,6 +32,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.3 || 6/26/09 || Katie || Added section 1 ||
 || 0.4 || 6/26/09 || Chad || Updated section 2 ||
 || 0.5 || 6/26/09 || Chad || Updated section 3 ||
+|| 0.6 || 6/26/09 || Katie || Updated section 2,3 ||
 
 <br />
 <br />
@@ -103,37 +104,25 @@ Adding further to the subsystem decomposition from Phase 3:
 
   * Model
     * The model layer corresponds to persistent storing of incident and ambulance data. It is contained in the models package, which uses a MySQL database. This subsystem is responsible for creating, retrieving, updating and deleting records from the database.  Updating the database is accomplished by updating the corresponding Ruby object, as Ruby supports this feature by default.
-
   * View
-
     * The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems, with provided services also listed.
-
       * The Call taker UI subsystem: The call taker UI subsystem handles the screens that the call taker uses. It provides the following services to the call taker:
-
         * Create Incidents 
-
       * The Dispatcher UI subsystem: The dispatcher UI subsystem handles the screens that the dispatcher uses. It provides the following services to the dispatcher:
-
         * View assigned and unassigned incidents
         * View list of ambulances
         * Recall ambulance
         * Review and update incident 
-
       * The Ambulance Admin UI subsystem: The ambulance administrator UI subsystem handles the screens that the ambulance administrator uses. It provides the following services to the ambulance administrator:
-
         * View list of ambulances
         * Add new ambulance
-        * Update the status of ambulance 
-
+        * Update the status of ambulance
+      * The Home UI subsystem: The home UI subsystem shows the available views to the user. This allows a single person (with the correct permissions) to access both the ambulance administrator interface as well as the call taker UI. 
     * The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems corresponding to each of the three subsystems in the UI layer. Additionally, there is one master controller subsystem, referred to as the ADS controller, that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
-
       * Call Taker controller: The call taker controller subsystem is responsible for receiving data from the call taker UI subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
-
       * Dispatcher controller: The dispatcher controller subsystem is responsible for receiving data from the dispatcher subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
-
       * Ambulance Admin controller: The ambulance admin controller subsystem is responsible for receiving data from the ambulance admin UI subsystem, processing it and passing it onto the ADS controller for further processing or saving in the database.
-
-      * ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem. 
+      * ADS controller: The ADS controller is the main controlling subsystem that is responsible for regulating the permissions for the different UI.
 
 == 3 Class interfaces Glossary ==
 
@@ -152,8 +141,14 @@ http://ase-summer09.googlecode.com/files/Class.jpg
 This class provides information on individual users in the system, and this information is used by the system to determine access rights and available roles.
 
       =====_3.2.1.1 User Public Interface_=====
+  * create - adds a user to the system
+  * remove - removes a user from the system
+  * update - allows the name or ID of the user to be modified
+  * get - allows the retrieval of the user attributes
 
       =====_3.2.1.2 User Public Attributes_=====
+  * name 
+  * id 
 
     ====_3.2.2 Role_====
 
@@ -162,19 +157,33 @@ This class is an enumeration of all roles that are available in the system, and 
       =====_3.2.2.1 Role Public Interface_=====
 
       =====_3.2.2.2 Role Public Attributes_=====
+  * role - an enum for the allows roles within the system, such as ambulance administrator
 
     ====_3.2.3 Incident_====
 
 This class represents all relevant information and methods for an individual emergency incident in the system.
 
       =====_3.2.3.1 Incident Public Interface_=====
+  * create - creates a new incident
+  * remove - sets the state of the incident to "Closed"
+  * update - allows for modification of the incident's attributes
 
       =====_3.2.3.2 Incident Public Attributes_=====
+  * State - this is essentially an enum for "Open" or "Closed". Once an incident has been serviced, it remains in a closed state. This keeps the record in the database but does not appear to the ambulance dispatcher.
+  * Patient Location - a string address
+  * Patient Severity - an integer between 1 and 5 indicating the severity of the patient's condition. This attribute is discussed in further detail in the Requirements Analysis.
+  * Number of patients - an integer indicating the number of patients associated with this incident.
+  * Notes - a string for additional incident information, patient information and contact information.
 
     ====_3.2.4 Ambulance_====
 
 This class represents the necessary information about ambulances that the system uses for incident assignment.
 
       =====_3.2.4.1 Ambulance Public Interface_=====
+  * create - Adding an ambulance to the system
+  * remove - Removing an ambulance from the system
+  * dispatch - Allocating an ambulance to a specific incident
 
       =====_3.2.4.2 Ambulance Public Attributes_=====
+  * Availability - this is essentially an enum for "Available", "Unavailable--temporary", and "Unavailable--permanent"
+  * Location Address 
