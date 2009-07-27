@@ -30,7 +30,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.1 || 6/11/09 || Ryan || Initial draft ||
 || 0.2 || 6/25/09 || Chad || Formatting ||
 || 0.3 || 6/26/09 || Katie || Added section 1 ||
-
+|| 0.4 || 6/26/09 || Chad || Updated section 2 ||
 <br />
 <br />
 
@@ -100,24 +100,37 @@ Using the coding guidelines above, these subsystems are naturally mapped into th
 Adding further to the subsystem decomposition from Phase 3:
 
   * Model
-    * The model layer corresponds to persistent storing of incident and ambulance data. It consists of the ADS Database subsystem. We are using MySQL database to implement the ADS database subsystem. This subsystem is responsible for creating, retrieving, updating and deleting records from the database. 
+    * The model layer corresponds to persistent storing of incident and ambulance data. It is contained in the models package, which uses a MySQL database. This subsystem is responsible for creating, retrieving, updating and deleting records from the database.  Updating the database is accomplished by updating the corresponding Ruby object, as Ruby supports this feature by default.
+
   * View
-    * The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems. We also list the services provided by each of these subsystems.
+
+    * The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems, with provided services also listed.
+
       * The Call taker UI subsystem: The call taker UI subsystem handles the screens that the call taker uses. It provides the following services to the call taker:
+
         * Create Incidents 
+
       * The Dispatcher UI subsystem: The dispatcher UI subsystem handles the screens that the dispatcher uses. It provides the following services to the dispatcher:
+
         * View assigned and unassigned incidents
         * View list of ambulances
         * Recall ambulance
         * Review and update incident 
+
       * The Ambulance Admin UI subsystem: The ambulance administrator UI subsystem handles the screens that the ambulance administrator uses. It provides the following services to the ambulance administrator:
+
         * View list of ambulances
         * Add new ambulance
         * Update the status of ambulance 
-    * The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems one corresponding to each of the three subsystems in the UI layer. And there is one master controller subsystem that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
+
+    * The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems corresponding to each of the three subsystems in the UI layer. Additionally, there is one master controller subsystem, referred to as the ADS controller, that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
+
       * Call Taker controller: The call taker controller subsystem is responsible for receiving data from the call taker UI subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+
       * Dispatcher controller: The dispatcher controller subsystem is responsible for receiving data from the dispatcher subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+
       * Ambulance Admin controller: The ambulance admin controller subsystem is responsible for receiving data from the ambulance admin UI subsystem, processing it and passing it onto the ADS controller for further processing or saving in the database.
+
       * ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem. 
 
 == 3 Class interfaces Glossary ==
