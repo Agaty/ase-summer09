@@ -86,8 +86,11 @@ The following is a summary of the conventions we will be following, from the abo
 == 2 Packages ==
 
 The second section of the ODD, Packages, describes the decomposition of subsystems into packages and the file organization of the code. This includes an overview of each package, its dependencies with other packages, and its expected usage. 
+
+http://ase-summer09.googlecode.com/files/Package.jpg
  
 == 3 Class interfaces Glossary ==
 
 The third section, Class interfaces, describes the classes and their public interfaces. This includes an overview of each class, its dependencies with other classes and packages, its public attributes, operations, and the exceptions they can raise. 
- 
+
+http://ase-summer09.googlecode.com/files/Class.jpg 
