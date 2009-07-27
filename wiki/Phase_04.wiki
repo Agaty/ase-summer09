@@ -81,7 +81,7 @@ ge. Below is a simple package diagram showing the subsystems of the model, view,
 
 http://ase-summer09.googlecode.com/files/Package.jpg
 
-These subsystems are naturally mapped into the following code layout:
+Using the coding guidelines above, these subsystems are naturally mapped into the following code layout:
   * app/
     * models/
       * ambulance.rb
@@ -97,8 +97,33 @@ These subsystems are naturally mapped into the following code layout:
       * incidents_controller.rb
       * home_controller.rb
 
+Adding further to the subsystem decomposition from Phase 3:
+
+  * Model
+    * The model layer corresponds to persistent storing of incident and ambulance data. It consists of the ADS Database subsystem. We are using MySQL database to implement the ADS database subsystem. This subsystem is responsible for creating, retrieving, updating and deleting records from the database. 
+  * View
+    * The view layer corresponds to the graphical user interface layer. This layer consists of subsystems responsible for interacting with the various users of the system. The view layer consists of the following subsystems. We also list the services provided by each of these subsystems.
+      * The Call taker UI subsystem: The call taker UI subsystem handles the screens that the call taker uses. It provides the following services to the call taker:
+        * Create Incidents 
+      * The Dispatcher UI subsystem: The dispatcher UI subsystem handles the screens that the dispatcher uses. It provides the following services to the dispatcher:
+        * View assigned and unassigned incidents
+        * View list of ambulances
+        * Recall ambulance
+        * Review and update incident 
+      * The Ambulance Admin UI subsystem: The ambulance administrator UI subsystem handles the screens that the ambulance administrator uses. It provides the following services to the ambulance administrator:
+        * View list of ambulances
+        * Add new ambulance
+        * Update the status of ambulance 
+    * The Controller layer: The controller layer consists of the main controlling subsystems. There are three subsystems one corresponding to each of the three subsystems in the UI layer. And there is one master controller subsystem that receives data from the above three subsystems and passes it onto the model layer to be stored in the persistent database system. The subsystems in the controller layer are as follows:
+      * Call Taker controller: The call taker controller subsystem is responsible for receiving data from the call taker UI subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+      * Dispatcher controller: The dispatcher controller subsystem is responsible for receiving data from the dispatcher subsystem and processing it and passing it onto the ADS controller for further processing or saving in the database.
+      * Ambulance Admin controller: The ambulance admin controller subsystem is responsible for receiving data from the ambulance admin UI subsystem, processing it and passing it onto the ADS controller for further processing or saving in the database.
+      * ADS controller: The ADS controller is the main controlling subsystem that is responsible for receiving data from the call taker, dispatcher and ambulance admin controller subsystems, processing it and passing it onto the ADS database subsystem to be stored. This subsystem is also responsible for receiving requests for data from the other controller subsystems and then fetching it from the model layer and passing it onto the requesting controller subsystem. 
+
 == 3 Class interfaces Glossary ==
 
-The third section, Class interfaces, describes the classes and their public interfaces. This includes an overview of each class, its dependencies with other classes and packages, its public attributes, operations, and the exceptions they can raise. 
+This section provides an overview for each class as well as defining its public interface and public attributes.
+
+The class diagram from the Requirements Analysis Document has been further refined to eliminate unnecessary information and to follow the coding conventions outlined above.
 
 http://ase-summer09.googlecode.com/files/Class.jpg 
