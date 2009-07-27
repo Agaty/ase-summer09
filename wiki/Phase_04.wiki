@@ -31,6 +31,8 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.2 || 6/25/09 || Chad || Formatting ||
 || 0.3 || 6/26/09 || Katie || Added section 1 ||
 || 0.4 || 6/26/09 || Chad || Updated section 2 ||
+|| 0.5 || 6/26/09 || Chad || Updated section 3 ||
+
 <br />
 <br />
 
@@ -38,7 +40,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 * Table of Contents *
 
-<wiki:toc max_depth="3" />
+<wiki:toc max_depth="5" />
 
 The Component/Object Specification Document describes the trade-offs made by developers, interface and coding guidelines, and subsystem/class interface definitions. These guidelines and definitions assist the developers who implement the various subsystems. It also serves as a reference for test engineers.
 
@@ -139,4 +141,40 @@ This section provides an overview for each class as well as defining its public 
 
 The class diagram from the Requirements Analysis Document has been further refined to eliminate unnecessary information and to follow the coding conventions outlined above.
 
+  ===_3.1 Class Diagram_===
+
 http://ase-summer09.googlecode.com/files/Class.jpg 
+
+  ===_3.2 Class Overviews_===
+
+    ====_3.2.1 User_====
+
+This class provides information on individual users in the system, and this information is used by the system to determine access rights and available roles.
+
+      =====_3.2.1.1 User Public Interface_=====
+
+      =====_3.2.1.2 User Public Attributes_=====
+
+    ====_3.2.2 Role_====
+
+This class is an enumeration of all roles that are available in the system, and this information is used as a basis for access rights to the three views.
+
+      =====_3.2.2.1 Role Public Interface_=====
+
+      =====_3.2.2.2 Role Public Attributes_=====
+
+    ====_3.2.3 Incident_====
+
+This class represents all relevant information and methods for an individual emergency incident in the system.
+
+      =====_3.2.3.1 Incident Public Interface_=====
+
+      =====_3.2.3.2 Incident Public Attributes_=====
+
+    ====_3.2.4 Ambulance_====
+
+This class represents the necessary information about ambulances that the system uses for incident assignment.
+
+      =====_3.2.4.1 Ambulance Public Interface_=====
+
+      =====_3.2.4.2 Ambulance Public Attributes_=====
