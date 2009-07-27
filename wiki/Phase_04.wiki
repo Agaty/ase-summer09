@@ -82,7 +82,7 @@ Below is a summary of these conventions:
 This section of the Components/Object Specification document outlines the decomposition of subsystems into packages and the file organization of the code. As previously discussed in the Phase 3 System Design Document, an MVC architecture was chosen.
 ge. Below is a simple package diagram showing the subsystems of the model, view, and controller. 
 
-http://ase-summer09.googlecode.com/files/Package.jpg
+http://ase-summer09.googlecode.com/files/package2.png
 
 Using the coding guidelines above, these subsystems are naturally mapped into the following code layout:
   * app/
