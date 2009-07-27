@@ -61,23 +61,18 @@ http://itsignals.cascadia.com.au/?p=7.
 
 Below is a summary of these conventions:
 
-  * Model Naming Convention *
-    * Table: orders
-    * Class: Order
-    * File: /app/models/order.rb
-    * Primary Key: id
-    * Foreign Key: customer_id
-    * Link Tables: items_orders
-
-  * Controller Naming Convention *
-    * Class: OrdersController
-    * File: /app/controllers/orders_controller.rb
-    * Layout: /app/layouts/orders.html.erb
-
-  * View Naming Convention *
-    * Helper: /app/helpers/orders_helper.rb
-    * Helper Module: OrdersHelper
-    * Views: /app/views/orders/… (list.html.erb for example)
+  * Variables
+    * Local variables shall begin with a lower case letter
+    * Instance variables shall begin with a single '@' character
+    * Class variables shall begin with two '@' characters
+    * Global variables shall begin with a single '$' character
+    * Constants shall be given in all upper case characters
+  * Methods and Classes
+    * Instance methods shall begin with a lower case letter
+    * Classes shall begin with an upper case letter
+    * Classes shall be associated with files by name, for example: Class "Order" in the model has corresponding file "app/models/order.rb"
+  * Files, Directories and Tables
+    * Files, directories and database tables shall begin with a lower case letter
 
 == 2 Packages ==
 
