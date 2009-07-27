@@ -56,14 +56,12 @@ Software architects must weigh a variety of benefits and costs when designing a 
 
    ===_1.2 Interface documentation guidelines_===
 
-We will follow all standard Ruby on Rails practices for naming of objects methods and attributes according to the following popular RoR naming conventions web site:
+We shall follow all of the standard Ruby on Rails practices for the naming of objects methods and attributes. A more complete listing of these guidelines can be found  
+http://itsignals.cascadia.com.au/?p=7.
 
-*http://itsignals.cascadia.com.au/?p=7
-
-The following is a summary of the conventions we will be following, from the above site:
+Below is a summary of these conventions:
 
   * Model Naming Convention *
-
     * Table: orders
     * Class: Order
     * File: /app/models/order.rb
@@ -72,23 +70,38 @@ The following is a summary of the conventions we will be following, from the abo
     * Link Tables: items_orders
 
   * Controller Naming Convention *
-
     * Class: OrdersController
     * File: /app/controllers/orders_controller.rb
     * Layout: /app/layouts/orders.html.erb
 
   * View Naming Convention *
-
     * Helper: /app/helpers/orders_helper.rb
     * Helper Module: OrdersHelper
     * Views: /app/views/orders/… (list.html.erb for example)
 
 == 2 Packages ==
 
-The second section of the ODD, Packages, describes the decomposition of subsystems into packages and the file organization of the code. This includes an overview of each package, its dependencies with other packages, and its expected usage. 
+This section of the Components/Object Specification document outlines the decomposition of subsystems into packages and the file organization of the code. As previously discussed in the Phase 3 System Design Document, an MVC architecture was chosen.
+ge. Below is a simple package diagram showing the subsystems of the model, view, and controller. 
 
 http://ase-summer09.googlecode.com/files/Package.jpg
- 
+
+These subsystems are naturally mapped into the following code layout:
+  * app/
+    * models/
+      * ambulance.rb
+      * incident.rb
+      * availability.rb
+    * views/
+      * ambulances/
+      * incidents/
+      * layouts/
+      * home/
+    * controllers
+      * ambulances_controller.rb
+      * incidents_controller.rb
+      * home_controller.rb
+
 == 3 Class interfaces Glossary ==
 
 The third section, Class interfaces, describes the classes and their public interfaces. This includes an overview of each class, its dependencies with other classes and packages, its public attributes, operations, and the exceptions they can raise. 
