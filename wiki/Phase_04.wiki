@@ -29,6 +29,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || *Version* || *Date* || *Author* || *Comments                                   * ||
 || 0.1 || 6/11/09 || Ryan || Initial draft ||
 || 0.2 || 6/25/09 || Chad || Formatting ||
+|| 0.3 || 6/26/09 || Katie || Added section 1 ||
 
 <br />
 <br />
@@ -39,11 +40,19 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 
 <wiki:toc max_depth="3" />
 
+The Component/Object Specification Document describes the trade-offs made by developers, interface and coding guidelines, and subsystem/class interface definitions. These guidelines and definitions assist the developers who implement the various subsystems. It also serves as a reference for test engineers.
+
 == 1 Introduction ==
 
    ===_1.1 Object Design Trade offs_===
 
-Response time is the highest priority so memory space is not considered very important.  Additionally, except where outlined in the previous documentation we will be building all software in-house (as opposed to purchasing off-the-shelf solutions).  
+Software architects must weigh a variety of benefits and costs when designing a software system. Below we outline some of the considerations and choices made in the design of the ambulance dispatch system (ADS). See the Phase 3 System Design Document for a complete list of project design goals.
+
+  # Delivery time vs. Functionality: Functionality is the highest design goal as stated in the System Design Document. This logically follows since a failure of the ADS could cause a loss of human life. Our clients originally commissioned this project to become more efficient to reduce costs thus prefer timely deliverables, however, they place a higher importance on functionality thus may tolerate delays in the schedule.
+  # Security vs. Usability: Our clients have already implemented a secure login system throughout their computer network in addition to restricting physical access to the rooms where their computers are located, thus a lower importance is placed on security. Since time is often critical in the ambulance dispatch process, our clients do not want to restrict usability to increase security. Thus only non-intrusive security shall be added to this system.
+  # Speed vs. Cost: Since the ADS must remain highly responsive due to its purpose, the client has agreed to invest in adequate client and server computers. As discussed in prior documents, we are then able to assume that there are no memory or bandwidth contraints on the system.
+  # Files vs. Database: Our system shall use a database to record events in the system. This was primarily chosen to allow multiple user access as call takers, ambulance dispatchers, and ambulance administrators may need concurrent access as noted in the Phase 2 Requirements Elicitation Document.
+  # In-house design vs purchasing off-the-shelf solutions: Our clients have opted for in-house design of the software system to retain greater control of the system's functionality and to increase documentation and flexibility for future in-house projects.
 
    ===_1.2 Interface documentation guidelines_===
 
