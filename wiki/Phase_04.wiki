@@ -33,6 +33,7 @@ Wiki website: [http://code.google.com/p/ase-summer09/w/list]
 || 0.4 || 6/26/09 || Chad || Updated section 2 ||
 || 0.5 || 6/26/09 || Chad || Updated section 3 ||
 || 0.6 || 6/26/09 || Katie || Updated section 2,3 ||
+|| 0.7 || 6/27/09 || Ryan || Some clarification ||
 
 <br />
 <br />
