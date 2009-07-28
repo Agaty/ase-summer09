@@ -131,7 +131,7 @@ The class diagram from the Requirements Analysis Document has been further refin
 
   ===_3.1 Class Diagram_===
 
-http://ase-summer09.googlecode.com/files/Class.jpg 
+http://ase-summer09.googlecode.com/files/class2.png 
 
   ===_3.2 Class Overviews_===
 
