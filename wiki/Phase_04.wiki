@@ -93,7 +93,6 @@ Using the coding guidelines above, these subsystems are naturally mapped into th
     * views/
       * ambulances/
       * incidents/
-      * layouts/
       * home/
     * controllers
       * ambulances_controller.rb
@@ -164,14 +163,24 @@ This class is an enumeration of all roles that are available in the system, and 
 This class represents all relevant information and methods for an individual emergency incident in the system.
 
       =====_3.2.3.1 Incident Public Interface_=====
-  * create - creates a new incident
-  * remove - sets the state of the incident to "Closed"
-  * update - allows for modification of the incident's attributes
+  * index - provide data on all incidents for the index view
+  * show - provide complete data on one incident for the show view
+
+  * new - retrieve a new instance for the new view
+  * create - create an incident with the provided attributes
+
+  * edit - retrieve the current data for showing the update view
+  * update - complete an update with the provided attributes
+
+  * close - set the status on the incident to closed
+
+  * dispatch - retrieve the available ambulance data for the dispatch view
+  * undispatch - disassociate the provided ambulance from the incident.
 
       =====_3.2.3.2 Incident Public Attributes_=====
-  * State - this is essentially an enum for "Open" or "Closed". Once an incident has been serviced, it remains in a closed state. This keeps the record in the database but does not appear to the ambulance dispatcher.
-  * Patient Location - a string address
-  * Patient Severity - an integer between 1 and 5 indicating the severity of the patient's condition. This attribute is discussed in further detail in the Requirements Analysis.
+  * Closed - this has two valid values: "Open" or "Closed". Once an incident has been serviced, it remains in a closed state. This keeps the record in the database but does not appear to the ambulance dispatcher.
+  * Location - a string address
+  * Severity - an integer between 1 and 5 indicating the severity of the patient's condition. This attribute is discussed in further detail in the Requirements Analysis.
   * Number of patients - an integer indicating the number of patients associated with this incident.
   * Notes - a string for additional incident information, patient information and contact information.
 
@@ -180,10 +189,19 @@ This class represents all relevant information and methods for an individual eme
 This class represents the necessary information about ambulances that the system uses for incident assignment.
 
       =====_3.2.4.1 Ambulance Public Interface_=====
-  * create - Adding an ambulance to the system
-  * remove - Removing an ambulance from the system
-  * dispatch - Allocating an ambulance to a specific incident
+  * index - provide data on all ambulances for the index view
+  * show - provide complete data on one ambulance for the show view
+
+  * new - retrieve a new instance for the new view
+  * create - create an ambulance with the provided attributes
+
+  * edit - retrieve the current data for showing the update view
+  * update - complete an update with the provided attributes
+
+  * destroy - delete an ambulance from the system
+
 
       =====_3.2.4.2 Ambulance Public Attributes_=====
   * Availability - this is essentially an enum for "Available", "Unavailable--temporary", and "Unavailable--permanent"
-  * Location Address 
+  * Location - Current known address of this ambulance
+  * Driver_name - Current record of driver associated with this ambulance
